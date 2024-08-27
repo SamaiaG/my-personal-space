@@ -1,0 +1,204 @@
+:root{
+  --primary-color: rgb(205, 17, 17);
+  --secodary-color: rgb(255, 222, 9);
+  --background-color:  linear-gradient(90deg, rgba(0,73,120,1) 54%, rgba(0,118,178,1) 100%);
+}
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: rgb(0,73,120);
+    background: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .canvas, .s, .mid,  .letter-bottom, .letter-mid, .letter-mid2{
+    position: absolute;
+  }
+  .pentagon {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: -20vmin
+  }
+  .p-part{
+    background: var(--primary-color);
+    border: solid 3vmin;
+    border-color: var(--primary-color) transparent transparent transparent;
+    position: relative;
+  }
+  .p2, .p3{
+    border-color: var(--primary-color) var(--primary-color) var(--primary-color)transparent;
+    width: 27vmin;
+    height: 70vmin;
+    box-shadow: 16px 6px 6px #232628
+  }
+  .p1{
+    width: 60.9vmin;
+    height: 30vmin;
+    top: 69.9vmin;
+  }
+
+  .p2{
+    transform: rotate(47deg);
+   top: 38.8vmin;
+   left: 14vmin;
+  }
+  .p3{
+    transform: scaleX(-1) rotate(44deg);
+    top: -30.3vmin;
+    left: -16.3vmin;
+    height: 68.8vmin;
+  }
+  .p1::before,.p1::after, .p2::before, .p3::before, .p3::after{
+    content:'';
+    position: relative;
+    display: flex;
+    width: 3vmin;
+    height: 3vmin;
+    background: var(--primary-color);
+  }
+  .p1::before, .p1::after, .p2::before,  .p3::before{
+  top: -3vmin;
+  left: -3vmin;
+ }
+ .p1::before, .p1::after{
+  z-index: 7;
+ }
+ .p1::after{
+  top: -6vmin;
+  left: 54.6vmin;
+ }
+ .p3::after{
+   top: 59.9vmin;
+  left: -3vmin;
+ }
+
+ .top1, .top2, .top3 {
+  position: relative;
+  background: var(--secodary-color);
+ }
+ .top1{
+  width: 33vmin;
+  height: 23vmin;
+  clip-path: polygon(74% 0%, 100% 43%, 56% 100%, 0% 60%, 19% 0%, 28% 30%, 74% 30%);
+  top: 27vmin;
+  left:80vmin;
+ }
+
+ .top2{
+  width: 45vmin;
+  height: 22vmin;
+  border-radius: 50%;
+  top: 0;
+  left:46.2vmin;
+ }
+  
+ .top3 {
+  width: 27vmin;
+  height: 11vmin;
+  clip-path: polygon(23% 20%, 100% 20%, 100% 100%, -10% 100%);
+  transform: rotate(-44deg) scaleX(-1);
+  top: -22vmin;
+  left: 25.2vmin;
+}
+.top1::before,  .p2::after, .top3::before, .letter-mid2::before,  .letter-bottom::before{
+  content: '';
+  display: flex;
+  position: absolute;
+
+}
+
+ .top1::before{
+  width: 20vmin;
+  height: 21vmin;
+  background: var(--primary-color);
+  border-radius: 50%;
+  top: 14vmin;
+  left: -2vmin;
+  transform: rotate(25deg);
+ }
+
+ .p2::after {
+  width: 6vmin;
+  height: 3vmin;
+  background: var(--secodary-color);
+  clip-path: polygon(0 0, 60% 100%, 100% 0);
+  transform: rotate(-45deg);
+  top: 7vmin;
+  left: -9vmin;
+}
+ 
+.top3::before{
+  width: 30vmin;
+  height: 7vmin;
+  background: var(--primary-color);
+  border-radius: 50%;
+  top: 7vmin;
+  left: -2vmin;
+  transform: rotate(5deg);
+}
+
+.letter-mid{
+  width: 21vmin;
+  height: 17vmin;
+  clip-path: ellipse(50% 26% at 50% 50%);
+  background: var(--secodary-color);
+  top: 52vmin;
+  left:67vmin;
+  transform: rotate(-8deg);
+}
+.letter-mid2{
+  width: 41vmin;
+  height: 9vmin;
+  top: 55vmin;
+  left:45vmin;
+  transform: rotate(-1deg);
+  background: var(--secodary-color);
+  clip-path: polygon(0% 0%, 100% 25%, 64% 100%, 21% 103%);
+}
+.letter-mid2::before{
+  width: 22vmin;
+  height: 7vmin;
+  background: var(--primary-color);
+  border-radius: 50%;
+  top: 7vmin;
+  left: 2.5vmin;
+ }
+
+ .letter-bottom{
+  width: 21vmin;
+  height: 11vmin;
+  clip-path: polygon(100% 0%, 50% 100%, 0% 0%);
+  background: var(--secodary-color);
+  top: 69vmin;
+  left:58vmin;
+  overflow: visible;
+ }
+ .letter-bottom::before{
+  width: 26vmin;
+  height: 15vmin;
+  background: var(--primary-color);
+  border-radius: 50%;
+  top: -12vmin;
+  left: -2.5vmin;
+ }
+ .s {
+  top: 33vmin;
+  left: -40vmin
+ }
+ .mid{
+  top: -3vmin;
+  left: -2vmin
+ }

@@ -1,0 +1,441 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.canvas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.background {
+  width: 90vmin;
+  height: 65vmin;
+  background-color: #c08f8f;
+  border-radius: 50%;
+  transform: rotate(-40deg);
+  opacity: 0.48;
+  z-index: -4;
+  position: relative;
+}
+.girl {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+}
+.head {
+  position: relative;
+}
+
+.face {
+  width: 28vmin;
+  height: 25vmin;
+  background: #fcead5;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15%;
+  position: relative;
+}
+
+.eyes,
+.eyebrows,
+.blushes {
+  display: flex;
+  width: 60%;
+  justify-content: space-around;
+  align-items: center;
+}
+.eye {
+  width: 4.2vmin;
+  height: 5.5vmin;
+  border-radius: 50% 50% 5% 25%;
+  background-color: white;
+  box-shadow: 0 -5px 5px #eed3d9;
+}
+
+.iris {
+  width: 3vmin;
+  height: 3vmin;
+  background: #434040;
+  border-radius: 50%;
+  position: relative;
+  top: 45%;
+  left: 16%;
+}
+.light {
+  position: relative;
+  width: 1vmin;
+  height: 1vmin;
+  background: white;
+  border-radius: 50%;
+  top: 10%;
+  left: 10%;
+}
+
+.e2 {
+  transform: scaleX(-1);
+}
+.l2 {
+  left: 61%;
+}
+
+.eyebrow {
+  width: 7vmin;
+  height: 2vmin;
+  border-radius: 50%/1vmin;
+  border: solid 0.6vmin;
+  border-color: #713d0e transparent transparent transparent;
+}
+.blush {
+  width: 8vmin;
+  height: 2vmin;
+  border-radius: 50%;
+  background: #fbc0c0;
+  box-shadow: 0 0 0.62rem #fbc0c0;
+  filter: blur(4px);
+  opacity: 0.66;
+}
+.nose {
+  width: 2.4vmin;
+  height: 2.4vmin;
+  border-radius: 50%;
+  border: solid 0.5vmin;
+  border-color: #caa482 #caa482 #caa482 transparent;
+  transform: rotate(-30deg);
+  opacity: 0.8;
+}
+.mouth {
+  width: 7vmin;
+  height: 6.5vmin;
+  border-radius: 50%;
+  border: solid 0.5vmin;
+  border-color: transparent transparent transparent #caa482;
+  transform: rotate(-45deg);
+  opacity: 0.8;
+  position: relative;
+  top: -6%;
+}
+
+.hair {
+  position: absolute;
+  top: -20%;
+}
+
+.hair-front {
+  display: flex;
+  gap: 20%;
+  position: relative;
+  left: 6.5%;
+}
+.front {
+  width: 13vmin;
+  height: 27vmin;
+  background: #713d0e;
+  border-radius: 130% 0 130% 0;
+  transform: rotate(30deg);
+}
+.f2 {
+  transform: scaleX(-1) rotate(30deg);
+}
+.hair-back {
+  width: 40vmin;
+  height: 34vmin;
+  border-radius: 50% 50% 0 0;
+  background: #713d0e;
+  position: relative;
+  top: -20vmin;
+  z-index: -1;
+}
+.hair-back::after {
+  content: '';
+  display: block;
+  position: relative;
+  width: 40vmin;
+  height: 7vmin;
+  background: #713d0e;
+  top: 95%;
+  border-radius: 0 0 50% 50%;
+  clip-path: polygon(
+    0% 100%,
+    0% 0%,
+    100% 0%,
+    100% 100%,
+    94% 100%,
+    93% 20%,
+    91% 100%,
+    88% 100%,
+    86% 40%,
+    82% 159%,
+    13% 100%,
+    11% 50%,
+    9% 100%
+  );
+}
+
+.neck {
+  width: 6vmin;
+  height: 8vmin;
+  background: #fcead5;
+  position: relative;
+  top: -1vmin;
+}
+
+.body {
+  width: 28vmin;
+  height: 34vmin;
+  background: #a0b2cc;
+  border-radius: 50%;
+  position: absolute;
+  top: 85%;
+}
+
+.table {
+  width: 100vmin;
+  height: 5vmin;
+  background-color: #c6b09c;
+  position: relative;
+  top: 12vmin;
+}
+
+.on-table {
+  width: 100vmin;
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
+  position: relative;
+}
+
+.laptop {
+  width: 34vmin;
+  height: 21vmin;
+  border-radius: 10%;
+  background-color: #d9d9d9;
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shirt-neck {
+  width: 3.2vmin;
+  height: 6vmin;
+  background: white;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  position: absolute;
+  transform: rotate(203deg);
+  left: 35%;
+  top: -3%;
+}
+.s2 {
+  transform: scaleY(-1) rotate(17deg);
+  left: 52%;
+  top: -3%;
+}
+
+.logo {
+  width: 3vmin;
+  height: 3vmin;
+  border-radius: 50%;
+  background: #fcfcfc;
+  position: relative;
+  z-index: 5;
+}
+.logo::before {
+  content: '';
+  display: block;
+  width: 2.5vmin;
+  height: 2.5vmin;
+  border-radius: 50%;
+  background: #fcfcfc;
+  position: relative;
+  top: -33%;
+  left: 8%;
+  z-index: 5;
+}
+.logo::after {
+  content: '';
+  display: block;
+  width: 1.2vmin;
+  height: 2.5vmin;
+  border-radius: 50% 0 50% 0;
+  background: #fcfcfc;
+  position: absolute;
+  top: -103%;
+  left: 18%;
+  z-index: 5;
+  transform: rotate(-45deg);
+}
+.bite {
+  width: 1vmin;
+  height: 1.2vmin;
+  border-radius: 50%;
+  background: #d9d9d9;
+  position: relative;
+  z-index: 5;
+  top: -50%;
+  left: 80%;
+}
+
+.tee {
+  position: absolute;
+  right: 20%;
+}
+.cup {
+  width: 7vmin;
+  height: 12vmin;
+  background: #eae7e7;
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+  position: relative;
+}
+.cup-cap {
+  position: relative;
+  width: 8.2vmin;
+  height: 1.2vmin;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  background: #924f88;
+  left: -6%;
+  top: -3%;
+}
+
+.flower {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 10%;
+}
+
+.pot {
+  width: 12vmin;
+  height: 8.2vmin;
+  background: #b4b8e0;
+  border-radius: 0 0 50% 50%;
+  z-index: 6;
+}
+
+.stem {
+  width: 6.1vmin;
+  height: 15vmin;
+  border: solid 0.6vmin;
+  border-radius: 50%;
+  border-color: green transparent transparent green;
+  transform: rotate(15deg);
+  position: relative;
+  top: 4vmin;
+  left: 25%;
+}
+.stem::before {
+  content: '';
+  display: block;
+  width: 3.1vmin;
+  height: 10vmin;
+  border-radius: 50%;
+  background-color: green;
+  position: relative;
+  transform: rotate(-20deg);
+  left: -75%;
+}
+
+.center {
+  width: 1.2vmin;
+  height: 1.5vmin;
+  border-radius: 50%;
+  background-color: #f1ed8f;
+  position: relative;
+  top: -10.5vmin;
+  left: 45%;
+  z-index: 9;
+}
+
+.petals {
+  position: relative;
+  top: -16.5vmin;
+  left: -50%;
+}
+.petal {
+  width: 3.6vmin;
+  height: 6.4vmin;
+  border-radius: 50%;
+  background-color: #c5425f;
+  position: absolute;
+  z-index: 8;
+  top: 0;
+}
+.petal.p1 {
+  top: 0;
+  left: 9.4vmin;
+}
+.petal.p2 {
+  top: 1vmin;
+  left: 12vmin;
+  transform: rotate(41deg);
+}
+.petal.p3 {
+  top: 4vmin;
+  left: 12vmin;
+  transform: rotate(105deg);
+}
+.petal.p4 {
+  top: 5vmin;
+  left: 9vmin;
+  transform: rotate(190deg);
+}
+.petal.p5 {
+  top: 1.8vmin;
+  left: 7.5vmin;
+  transform: rotate(112deg);
+}
+
+@keyframes hi {
+  0%,
+  100% {
+    top: 45%;
+  }
+  50% {
+    top: 35%;
+  }
+}
+@keyframes cheeks {
+  0%,
+  100% {
+    filter: blur(6px);
+    opacity: 0.66;
+  }
+  50% {
+    filter: blur(3px);
+    opacity: 0.88;
+  }
+}
+@keyframes smile {
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+.girl:hover .blush {
+  animation: cheeks 3s infinite;
+}
+.girl:hover .iris {
+  top: 35%;
+}
+.girl:hover .mouth {
+  animation: smile 3s forwards;
+}

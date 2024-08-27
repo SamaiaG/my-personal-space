@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ACC7EE ;
+}
+
+.plate {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.part1{
+    width: 77vmin;
+    height: 12vmin;
+    background: #827F7F ;
+    border-radius: 50%;
+    z-index: 1;
+    position: absolute;
+    top: 5vmin;
+}
+
+.part2{
+    width: 100vmin;
+    height: 21vmin;
+    background: #D9D9D9;
+    border-radius: 50%;
+    border: solid 0.1vmin gray
+}
+.plate-bottom{
+    width: 77vmin;
+    height: 12vmin;
+    background: #D9D9D9;
+    border-radius: 40%;
+    z-index: -1;
+    position: relative;
+    top: -10vmin
+}
+
+.cake{
+    position: relative;
+    top: 18vmin;
+    z-index: 2;
+}
+.cake-top, .cake-bottom{
+    width: 66.5vmin;
+    height: 6vmin;
+    background: white;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: 0px 0.1vmin 1.5vmin lightgray;
+    top: 3vmin;
+    z-index: 3;
+}
+.cake-bottom{
+    top: -3.3vmin;
+    left: 0;
+    z-index: -1;
+    clip-path: inset( 0 28vmin 0  0); 
+    box-shadow: none;
+}
+.c1{
+    width: 66.5vmin;
+    height: 33vmin;
+    background: white;
+    position: relative;
+    border-radius: 2%;
+}
+.inside-part{
+    width: 35vmin;
+    height: 33vmin;
+    background: #C5425F;
+    position: absolute;
+    z-index: 4;
+    top: 5.5vmin;
+    left: 31vmin;
+    clip-path: polygon(0% 0%, 100% 4%, 100% 100%, 73% 100%, 20% 100%, 20% 10%);
+}
+
+.cream{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    z-index: 5;
+    left: 37vmin;
+    top: 6vmin;
+    height: 33vmin;
+}
+.cream-line{
+    display: flex;
+    position: relative;
+   
+}
+.line-point{
+    width: 4.7vmin;
+    height: 1.7vmin;
+    background: white;
+    border-radius: 40%;
+    position: relative;
+}

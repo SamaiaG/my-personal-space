@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: midnightblue ;
+    overflow: hidden;
+}
+
+.space{
+    padding-top: 6.6vmin;
+
+}
+
+.globe{
+    width: 76vmin ;
+    height: 75vmin ;
+    background-color: #80C1E6;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.ground{
+    width: 75vmin ;
+    height: 38vmin ;
+    background-color: green;
+    border-radius: 375px 375px 0 0;
+    transform: rotate(240deg);
+    position: relative;
+    top: 28vmin;
+    left: -16vmin
+}
+
+.mix{
+    height: 9vmin;
+    width: 35vmin;
+    border-radius: 45%;
+    position: relative;
+    top: -37vmin;
+    left: 25vmin
+}
+
+.green{
+    background-color: green;
+}
+
+.blue {
+    background-color: #80C1E6;
+}
+
+.b1{
+    top: -22vmin;
+    left: 29vmin;
+    transform: rotate(-5deg);
+}
+.g1, .b2{
+    left: 15vmin
+}
+.g2{
+    left: 18vmin
+}
+
+.g3{
+    left: 26vmin;
+}
+.b4{
+    left:30vmin;
+    z-index: 3;
+}
+.g4{
+    left: 28vmin;
+    top: -36vmin;
+    transform: rotate(347deg);
+}
+
+.dark{
+    position: absolute;
+	margin: auto;
+	top: 11vmin;
+	right: 4vmin;
+	bottom: 0;
+	left: 0;
+	width: 75vmin;
+	height: 75vmin;
+	background-color: transparent;
+	border-radius: 50%;
+	box-shadow: 2.5vmin 2.5vmin 0px 0px #393737;
+    z-index: 20;
+    transform: rotate(274deg);
+    opacity: 0.33;
+}
+
+.plane {
+    position: relative;
+    z-index: 92;
+    left: 2vmin;
+    top: -6vmin;
+    transform: rotate(15deg);
+
+}
+
+.wing1, .wing2, .middle {
+    position: absolute;
+    z-index: 92;
+  }
+
+.wing1, .wing2 {
+    width: 27.7vmin;
+    height: 27.7vmin;
+    clip-path: polygon(100% 0, 0% 100%, 59% 85%);
+    background-color: white;
+    transform: rotate(15deg);
+
+}
+
+ .wing2 {
+    transform: rotateY(180deg) rotate(302deg);
+    position: absolute;
+    top: 10vmin;
+    left: 12vmin;
+}
+ 
+
+
+.mid1{
+    width: 27.7vmin;
+    height: 21vmin;
+    background-color: white;
+    position: absolute;
+    left: 8vmin;
+    top: 8.7vmin;
+    clip-path: polygon(14% 58%, 0% 100%, 100% 0);
+    transform: rotate(338deg);
+
+
+}
+.mid2{
+    width: 6vmin;
+    height: 6vmin;
+    background-color: white;
+    position: absolute;
+    left: 12vmin;
+    top: 27.9vmin;
+    clip-path: polygon(91% 0, 0% 100%, 96% 10%);
+    transform: rotate(349deg);
+
+}
+
+ 
