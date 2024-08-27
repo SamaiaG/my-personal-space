@@ -5,12 +5,13 @@
         <h1>This is me,</h1>
         <h2>and below is my kind of therapy.</h2>
       </div>
-      <iframe src="/100 days of CSS/girl/girl.html" title="girl" class="me"></iframe>
+      <iframe src="https://samaiag.github.io/css-fun/girl/index.html" title="girl" class="me"></iframe>
     </div>
   </BaseSection>
 
   <div class="container">
     <iframe src="/100 days of CSS/shark/index.html" title="shark"></iframe>
+     <!--
     <iframe src="/100 days of CSS/flower pot/index.html" title="flower"></iframe>
     <iframe src="/100 days of CSS/minimalist dog/index.html" title="dog"></iframe>
     <iframe src="/100 days of CSS/peter griffin/index.html" title="peter griffin"></iframe>
@@ -25,10 +26,10 @@
     <iframe src="/100 days of CSS/skaters/index.html" title="skaters"></iframe>
     <iframe src="/100 days of CSS/sunset/index.html" title="sunset"></iframe>
     <iframe src="/100 days of CSS/elephant/index.html" title="elephant"></iframe>
-    <!-- <iframe src="/100 days of CSS/fishes/index.html" title="fishes"></iframe> -->
+    <iframe src="/100 days of CSS/fishes/index.html" title="fishes"></iframe> 
 
     <iframe src="/100 days of CSS/egg/index.html" title="egg"></iframe>
-    <!--     <iframe src="/100 days of CSS/butterfly/index.html" title="butterfly"></iframe>
+  <iframe src="/100 days of CSS/butterfly/index.html" title="butterfly"></iframe>
     <iframe src="/100 days of CSS/cat/index.html" title="cat"></iframe> -->
   </div>
 </template>

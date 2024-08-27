@@ -48,8 +48,8 @@
             <iframe
               class="d-block w-100"
               alt="First slide [800x400]"
-              src="/100 days of CSS/girl/girl.html"
-              title="girl"
+              src="https://samaiag.github.io/css-fun/girl/index.html"
+              title="me"
               data-holder-rendered="true"
             ></iframe>
           </div>
