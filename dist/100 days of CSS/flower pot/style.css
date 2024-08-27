@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flower {
+  position: relative;
+  width: 100vmin;
+  height: 100vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pot {
+  width: 50vmin;
+  height: 44vmin;
+  background: #f8f8f8;
+  box-shadow: inset 0.5vmin -1vmin 2vmin rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border: solid 0.8vmin black;
+  overflow: hidden;
+}
+
+.pot::before {
+  content: '';
+  position: relative;
+  display: flex;
+  width: 35vmin;
+  height: 20vmin;
+  border-radius: 50%;
+  border: solid 0.5vmin black;
+  box-shadow:
+    inset 0 5vmin #ccc,
+    inset 0 5vmin 0 0.5vmin,
+    inset 0 0 0 15vmin rgba(100, 60, 30, 0.75),
+    0 0 2vmin 5vmin #fff;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.2) 0.25vmin, transparent 0.25vmin),
+    radial-gradient(rgba(0, 0, 0, 0.2) 0.25vmin, transparent 0.25vmin),
+    radial-gradient(rgba(0, 0, 0, 0.2) 0.125vmin, transparent 0.25vmin),
+    radial-gradient(rgba(0, 0, 0, 0.2) 0.25vmin, transparent 0.25vmin),
+    radial-gradient(rgba(0, 0, 0, 0.2) 0.125vmin, transparent 0.25vmin),
+    radial-gradient(rgba(0, 0, 0, 0.2) 0.25vmin, transparent 0.25vmin);
+  background-size:
+    15% 13%,
+    10% 10%,
+    20% 20%,
+    30% 30%,
+    40% 40%,
+    50% 50%;
+  background-position:
+    15% 13%,
+    10% 10%,
+    -18% 20%,
+    38% 30%,
+    40% 40%,
+    50% 50%;
+  top: 1%;
+  left: 13%;
+}
+
+.plant {
+  position: absolute;
+  width: 20vmin;
+  height: 40vmin;
+  box-shadow:
+    2vmin 0 0 -1vmin,
+    3.5vmin 0 0 -1vmin green,
+    4.5vmin 0 0 -1vmin;
+  clip-path: polygon(0% 5%, 75% 5%, 75% 0%, 150% 0%, 150% 80%, 95% 85.5%, 0% 70%);
+  z-index: 1;
+  border-radius: 50%;
+  top: 8%;
+  left: 30%;
+}
+.plant::after {
+  content: '';
+  position: relative;
+  display: block;
+  width: 3vmin;
+  height: 2vmin;
+  border-radius: 50%;
+  top: 78.5%;
+  left: 89.5%;
+  box-shadow: -0.6vmin 1vmin 0 -0.25vmin;
+}
+
+.leave {
+  width: 20vmin;
+  height: 15vmin;
+  background-color: green;
+  position: absolute;
+  border-radius: 100% 0 100%;
+  border: solid 0.5vmin black;
+  transform: rotate(20deg);
+  top: 5.2%;
+  left: 24%;
+}
+.l2 {
+  transform: rotate(350deg);
+  top: 18%;
+  left: 51.5%;
+  z-index: 1;
+}
+
+.shadow {
+  width: 40vmin;
+  height: 20vmin;
+  background-color: #000000;
+  border-radius: 50%;
+  z-index: -1;
+  position: absolute;
+  top: 55%;
+  opacity: 0.3;
+  filter: blur(15px);
+}
+
+.s2 {
+  z-index: 0;
+  width: 20vmin;
+  height: 10vmin;
+  top: 36%;
+}
+
+.flower:hover .l2 {
+  animation: leaveFall 5s linear forwards;
+}
+
+@keyframes leaveFall {
+  0% {
+    transform: rotate(350deg);
+    left: 51.5%;
+    top: 18%;
+  }
+  100% {
+    transform: rotate(6deg);
+    left: 53.5%;
+    top: 62%;
+  }
+}

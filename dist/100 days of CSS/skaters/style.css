@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ACC7EE ;
+    padding: 2vmin;
+}
+
+.shoe {
+    width: 62vmin;
+    height: 62vmin;
+    background: #EED3D9;
+    clip-path: polygon(9% 0%, 37% 0, 50% 53%, 79% 64%, 139% 100%, 50% 100%, 0 100%);
+    border-radius: 10%;
+    position: relative;
+    top: 10vmin
+}
+
+.bonds{
+    display: flex;
+    position: relative;
+    z-index: 1;
+    top: 10vmin
+}
+.bond {
+    width: 25vmin;
+    height: 14vmin;
+    background: #C9C9C9;
+    position: relative;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    border-radius: 20%;
+}
+.wheels{
+    display: flex;
+    gap: 2vmin
+}
+
+.wheel{
+    width: 20vmin;
+    height: 20vmin;
+    background: #F5A6B8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wheel-inside {
+    width: 15vmin;
+    height: 15vmin;
+    background: #EED3D9;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wheel-point{
+    width: 5vmin;
+    height: 5vmin;
+    background: #B5C0D0 ;
+    border-radius: 50%;
+    position: relative;
+}
+
+.laces{
+    position: relative;
+    top: 32vmin;
+    left:39vmin;
+    z-index: 3;
+}
+.lace{
+    display: flex;
+    align-items: center;
+   position: absolute;
+}
+
+.line {
+    width: 5vmin;
+    height: 0.5vmin;
+    background: white;
+    z-index: 6;
+    position: absolute;
+}
+.circle{
+    width: 2vmin;
+    height: 2vmin;
+    background: white;
+    z-index: 6;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.l1{
+    left:-14vmin;
+    top: -3vmin
+}
+.l2{
+    top: 1vmin;
+    left: -13vmin
+}
+.l3{
+    top: 5.5vmin;
+    left: -5vmin;
+    transform: rotate(341deg);
+}
+.l4{
+    top: 9vmin;
+    left: 1vmin;
+    transform: rotate(323deg);
+}
+.l5{
+    top: 11vmin;
+    left: 6vmin;
+    transform: rotate(323deg);
+}
