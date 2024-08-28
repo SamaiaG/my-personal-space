@@ -7,14 +7,6 @@
           <div class="carousel-item">
             <img
               class="d-block w-100"
-              alt="First slide [800x400]"
-              src="@/assets/images/projects_covers/cover1.png"
-              data-holder-rendered="true"
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              class="d-block w-100"
               alt="Second slide [800x400]"
               src="@/assets/images/projects_covers/cover2.png"
               data-holder-rendered="true"
@@ -160,10 +152,10 @@ onMounted(() => {
   padding: 0 10vmin;
 }
 .carousel-control-prev-icon {
-  background-image: url('@/assets/images/chevron-left.svg');
+  background-image: url('@/assets/images/icons/chevron-left.svg');
 }
 .carousel-control-next-icon {
-  background-image: url('@/assets/images/chevron-right.svg');
+  background-image: url('@/assets/images/icons/chevron-right.svg');
 }
 .h-link {
   color: #f4a460;

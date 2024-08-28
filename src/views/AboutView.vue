@@ -5,22 +5,22 @@
       <div class="main-info">
         <div class="my-info">
           <figure class="fig born-date">
-            <img src="@/assets/images/calendar.png" alt="Birthdate" class="l-icon birthdate" />
+            <img src="@/assets/images/icons/calendar.png" alt="Birthdate" class="l-icon birthdate" />
             <figcaption class="birthdate-text">17 September 1996</figcaption>
           </figure>
           <figure class="fig birthplace">
             <figcaption class="birthplace-text">born in</figcaption>
             <img
-              src="@/assets/images/moldova.png"
+              src="@/assets/images/icons/moldova.png"
               alt="Republic of Moldova"
               class="l-icon birthplace-img"
             />
           </figure>
           <figure class="fig current-place">
             <figcaption class="current-place-text">currently based in</figcaption>
-            <img src="@/assets/images/germany.png" alt="Germany" class="l-icon birthplace-img" />
+            <img src="@/assets/images/icons/germany.png" alt="Germany" class="l-icon birthplace-img" />
             <figcaption class="fig current-city">
-              (<img src="@/assets/images/cologne.png" class="l-icon city" />)
+              (<img src="@/assets/images/icons/cologne.png" class="l-icon city" />)
             </figcaption>
           </figure>
         </div>
