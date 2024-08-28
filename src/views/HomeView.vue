@@ -13,6 +13,7 @@
     </div>
   </BaseSection>
   <BaseSection class="second-section">
+<<<<<<< HEAD
     <ProjectDescription
   title="The Pick"
   description="This is a homepage design and build for a concept project – a chat application. I have designed the page first then later built a responsive page in Webflow."
@@ -28,6 +29,10 @@
   imageSrc="@/assets/images/chatapp.png"
   projectLink="/another-project"
 />
+=======
+    <ProjectDescription />
+    <ProjectDescription />
+>>>>>>> parent of 718c6b9 (some changes ???)
     <BaseButton class="more-projects">
       <RouterLink to="/portfolio" class="h-link">see more projects</RouterLink></BaseButton
     >

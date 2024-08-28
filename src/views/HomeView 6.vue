@@ -13,8 +13,21 @@
     </div>
   </BaseSection>
   <BaseSection class="second-section">
-    <ProjectDescription />
-    <ProjectDescription />
+    <ProjectDescription
+  title="The Pick"
+  description="This is a homepage design and build for a concept project – a chat application. I have designed the page first then later built a responsive page in Webflow."
+  :tags="['Website Design', 'Figma', 'Web Development']"
+  imageSrc="../assets/images/thePick.jpg"
+  projectLink="/project"
+/>
+
+<ProjectDescription
+  title="Another Project"
+  description="Description for another project."
+  :tags="['Graphic Design', 'Photoshop']"
+  imageSrc="../assets/images/anotherProject.jpg"
+  projectLink="/another-project"
+/>
     <BaseButton class="more-projects">
       <RouterLink to="/portfolio" class="h-link">see more projects</RouterLink></BaseButton
     >
