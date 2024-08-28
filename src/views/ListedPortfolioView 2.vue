@@ -57,7 +57,7 @@
             <iframe
               class="d-block w-100"
               alt="Second slide [800x400]"
-              src="https://samaiag.github.io/css-fun/flower%20pot/index.html"
+              src="/100 days of CSS/flower pot/index.html"
               title="girl"
               data-holder-rendered="true"
             ></iframe>
@@ -66,7 +66,7 @@
             <iframe
               class="d-block w-100"
               alt="Third slide [800x400]"
-              src="https://samaiag.github.io/css-fun/anxiety/index.html"
+              src="/100 days of CSS/anxiety/index.html"
               title="girl"
               data-holder-rendered="true"
             ></iframe>

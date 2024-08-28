@@ -17,19 +17,19 @@
     <iframe src="https://samaiag.github.io/css-fun/rabbit/index.html" title="rabbit"></iframe>
     <iframe src="https://samaiag.github.io/css-fun/curious%20cat/index.html" title="forest"></iframe>
     <iframe src="https://samaiag.github.io/css-fun/superman/index.html" title="superman"></iframe>
-    <iframe src="https://samaiag.github.io/css-fun/anxiety/index.html" title="anxiety"></iframe>
-    <iframe src="https://samaiag.github.io/css-fun/backing/index.html" title="cake"></iframe>
-    <iframe src="https://samaiag.github.io/css-fun/gym/index.html" title="gym"></iframe>
-    <iframe src="https://samaiag.github.io/css-fun/photography/index.html" title="camera"></iframe>
-    <iframe src="https://samaiag.github.io/css-fun/travel/index.html" title="globe"></iframe>
-    <iframe src="https://samaiag.github.io/css-fun/skaters/index.html" title="skaters"></iframe>
-    <iframe src="https://samaiag.github.io/css-fun/sunset/index.html" title="sunset"></iframe>
-    <iframe src="https://samaiag.github.io/css-fun/elephant/index.html" title="elephant"></iframe>
-    <iframe src="https://samaiag.github.io/css-fun/fishes/index.html" title="fishes"></iframe> 
+    <iframe src="/100 days of CSS/anxiety/index.html" title="anxiety"></iframe>
+    <iframe src="/100 days of CSS/backing/cake.html" title="cake"></iframe>
+    <iframe src="/100 days of CSS/gym/index.html" title="gym"></iframe>
+    <iframe src="/100 days of CSS/photography/index.html" title="camera"></iframe>
+    <iframe src="/100 days of CSS/travel/index.html" title="globe"></iframe>
+    <iframe src="/100 days of CSS/skaters/index.html" title="skaters"></iframe>
+    <iframe src="/100 days of CSS/sunset/index.html" title="sunset"></iframe>
+    <iframe src="/100 days of CSS/elephant/index.html" title="elephant"></iframe>
+    <iframe src="/100 days of CSS/fishes/index.html" title="fishes"></iframe> 
 
-    <iframe src="https://samaiag.github.io/css-fun/egg/index.html" title="egg"></iframe>
-  <iframe src="https://samaiag.github.io/css-fun/butterfly/index.html" title="butterfly"></iframe>
-    <iframe src="https://samaiag.github.io/css-fun/cat/index.html" title="cat"></iframe>
+    <iframe src="/100 days of CSS/egg/index.html" title="egg"></iframe>
+  <iframe src="/100 days of CSS/butterfly/index.html" title="butterfly"></iframe>
+    <iframe src="/100 days of CSS/cat/index.html" title="cat"></iframe>
   </div>
 </template>
 
