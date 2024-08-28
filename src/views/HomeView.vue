@@ -17,15 +17,15 @@
   title="The Pick"
   description="This is a homepage design and build for a concept project – a chat application. I have designed the page first then later built a responsive page in Webflow."
   :tags="['Website Design', 'Figma', 'Web Development']"
-  imageSrc="../assets/images/thePick.jpg"
+  imageSrc="@/assets/images/thePick.jpg"
   projectLink="/project"
 />
 
 <ProjectDescription
-  title="Another Project"
-  description="Description for another project."
-  :tags="['Graphic Design', 'Photoshop']"
-  imageSrc="../assets/images/anotherProject.jpg"
+  title="Team App"
+  description="This is a homepage design and build for a concept project – a chat application. I have designed the page first then later built a responsive page in Webflow."
+  :tags="['Website Design', 'Figma', 'Webflow']"
+  imageSrc="@/assets/images/chatapp.png"
   projectLink="/another-project"
 />
     <BaseButton class="more-projects">
