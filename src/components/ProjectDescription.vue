@@ -4,29 +4,54 @@
       <p class="sub-tag">LATEST WORK</p>
       <h1>{{ title }}</h1>
       <div class="tags">
-        <div class="tag t1">Website Design</div>
-        <div class="tag t2">Figma</div>
-        <div class="tag t3">Web Development</div>
+        <div v-for="(tag, index) in tags" :key="index" :class="['tag', `t${index + 1}`]">
+          {{ tag }}
+        </div>
       </div>
       <p class="description">
         {{ description }}
       </p>
       <BaseButton class="see-project">
-        <RouterLink to="/project" class="h-link">see this project</RouterLink>
+        <RouterLink :to="projectLink" class="h-link">see this project</RouterLink>
       </BaseButton>
     </div>
     <div class="left-part">
-      <img src="../assets/images/thePick.jpg" alt="project image" class="project-image" />
+      <img :src="imageSrc" alt="project image" class="project-image" />
+
     </div>
   </div>
 </template>
 
 <script setup>
+import { defineProps } from 'vue'
 import BaseButton from '@/components/BaseButton.vue'
 
-const title = 'The Pick'
-const description =
-  'This is a homepage design and build for a concept project – a chat application. I have designed the page first then later built a responsive page in Webflow.'
+// Define the props that can be passed to the component
+const props = defineProps({
+  title: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  tags: {
+    type: Array,
+    default: () => []
+  },
+  imageSrc: {
+    type: String,
+    required: true
+  },
+  projectLink: {
+    type: String,
+    required: true
+  }
+})
+
+// Destructure props for easier access
+const { title, description, tags, imageSrc, projectLink } = props
 </script>
 
 <style scoped>
