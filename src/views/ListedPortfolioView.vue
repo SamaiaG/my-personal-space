@@ -82,10 +82,12 @@
     </div>
     <RouterLink to="/cssfun" class="h-link">see more css fun tries...</RouterLink>
   </BaseSection>
+  <BaseBlob />
 </template>
 
 <script setup>
 import BaseSection from '@/components/BaseSection.vue'
+import BaseBlob from '@/components/BaseBlob.vue'
 import { onMounted } from 'vue'
 
 onMounted(() => {

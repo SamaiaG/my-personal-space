@@ -28,15 +28,16 @@
 }
 
 .popup {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 70%;
   padding: 5vmin;
+  max-height: 90vh;
   background-color: white;
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
-  overflow: hidden;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
 }
@@ -46,5 +47,8 @@
   right: 2vmin;
   width: 3vmin;
   cursor: pointer;
+}
+:deep(.blob-container) {
+  display: none;
 }
 </style>

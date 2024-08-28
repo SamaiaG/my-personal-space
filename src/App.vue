@@ -9,3 +9,4 @@ import TheFooter from './components/TheFooter.vue'
   <RouterView class="content" />
   <TheFooter class="footer" />
 </template>
+

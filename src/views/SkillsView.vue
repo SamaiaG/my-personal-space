@@ -89,10 +89,12 @@
     </BaseSection>
     <p class="question" @click="handleQuestionClick">What did I use to create this webpage?</p>
   </div>
+  <BaseBlob />
 </template>
 
 <script setup>
 import BaseSection from '@/components/BaseSection.vue'
+import BaseBlob from '@/components/BaseBlob.vue';
 import { ref } from 'vue'
 
 const isQuestionClicked = ref(false)

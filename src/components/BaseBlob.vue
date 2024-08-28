@@ -9,13 +9,13 @@
 
 <style scoped>
 .blob-container {
+  display: block;
+  position: fixed;
   width: 100%;
   height: 100%;
-  position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
-}
+  z-index: -1;}
 
 .blob {
   position: absolute;
@@ -33,7 +33,7 @@
     rgba(211, 84, 0, 1) 35%,
     rgba(244, 164, 96, 1) 100%
   );
-  animation: move1 20s linear infinite reverse;
+  animation: move1 20s linear reverse infinite;
 }
 .b2,
 .b4 {
@@ -44,7 +44,7 @@
     rgba(36, 65, 107, 1) 35%,
     rgba(88, 147, 212, 1) 100%
   );
-  animation: move2 20s linear infinite reverse;
+  animation: move2 20s linear reverse infinite;
 }
 
 .b1 {
@@ -52,31 +52,38 @@
   left: 0;
 }
 .b2 {
-  top: 190%;
-  left: 110vmin;
+  top: 20%;
+  right: 5%;
 }
 .b3 {
-  top: 100vmin;
-  left: 60vmin;
+  top: 60%;
+  right: 30%;
 }
 .b4 {
-  top: 130vmin;
-  left: 10vmin;
+  top: 30%;
+  left: 30%;
 }
 @keyframes move1 {
   0% {
     transform: translate(0, 0) rotate(0);
   }
+  50% {
+    transform: translate(80%, 20%) rotate(180deg);
+  }
   100% {
-    transform: translate(30vmin, 20vmin) rotate(180deg);
+    transform: translate(0, 0) rotate(360deg);
   }
 }
+
 @keyframes move2 {
   0% {
     transform: translate(0, 0) rotate(0);
   }
+  50% {
+    transform: translate(-70%, -40%) rotate(180deg);
+  }
   100% {
-    transform: translate(-10vmin, 0) rotate(180deg);
+    transform: translate(0, 0) rotate(360deg);
   }
 }
 </style>

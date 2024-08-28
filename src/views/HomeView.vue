@@ -20,26 +20,27 @@
     >
   </BaseSection>
 
-  <BaseBlob class="blob" />
-  <BasePopup @close="closePopup" v-show="isAboutViewVisible">
+  <BasePopup @close="closePopup" v-show="isAboutViewVisible" >
     <AboutView />
   </BasePopup>
   <BasePopup @close="closePopup" v-show="isSkillsViewVisible">
     <SkillsView />
   </BasePopup>
   <ContactView class="contact" />
+
+  <BaseBlob class="the-blobs" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import BaseSection from '@/components/BaseSection.vue'
 import BaseButton from '@/components/BaseButton.vue'
-import BaseBlob from '@/components/BaseBlob.vue'
 import ProjectDescription from '@/components/ProjectDescription.vue'
 import AboutView from './AboutView.vue'
 import SkillsView from './SkillsView.vue'
 import BasePopup from '@/components/BasePopup.vue'
 import ContactView from './ContactView.vue'
+import BaseBlob from '@/components/BaseBlob.vue'
 
 const isAboutViewVisible = ref(false)
 const isSkillsViewVisible = ref(false)
@@ -111,4 +112,5 @@ h1 {
   flex-direction: row !important;
   margin-bottom: none;
 }
+
 </style>

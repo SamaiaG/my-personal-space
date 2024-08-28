@@ -31,10 +31,12 @@
   <iframe src="https://samaiag.github.io/css-fun/butterfly/index.html" title="butterfly"></iframe>
     <iframe src="https://samaiag.github.io/css-fun/cat/index.html" title="cat"></iframe>
   </div>
+  <BaseBlob />
 </template>
 
 <script setup>
 import BaseSection from '@/components/BaseSection.vue'
+import BaseBlob from '@/components/BaseBlob.vue';
 </script>
 
 <style scoped>

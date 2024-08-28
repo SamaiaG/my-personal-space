@@ -1,10 +1,12 @@
 <template>
   <div class="section">
     <div class="s-container">
-      <slot></slot>
+      <slot>
+      </slot>
     </div>
   </div>
 </template>
+
 
 <style scoped>
 .section {
