@@ -15,20 +15,18 @@
   <BaseSection class="second-section">
     <ProjectDescription
   title="The Pick"
-  description="This is a homepage design and build for a concept project – a chat application. I have designed the page first then later built a responsive page in Webflow."
+  description="This is a homepage design and build for a concept project – a chat application."
   :tags="['Website Design', 'Figma', 'Web Development']"
-  imageSrc="@/assets/images/thePick.jpg"
+  imageSrc="src/assets/images/thePick.jpg"
   projectLink="/project"
 />
-
 <ProjectDescription
-  title="Team App"
-  description="This is a homepage design and build for a concept project – a chat application. I have designed the page first then later built a responsive page in Webflow."
+  title="The Pick"
+  description="This is a homepage design and build for a concept project – a chat application."
   :tags="['Website Design', 'Figma', 'Webflow']"
-  imageSrc="@/assets/images/chatapp.png"
-  projectLink="/another-project"
+  imageSrc="src/assets/images/chatapp.png"
+  projectLink="/project"
 />
-
     <BaseButton class="more-projects">
       <RouterLink to="/portfolio" class="h-link">see more projects</RouterLink></BaseButton
     >
@@ -55,6 +53,8 @@ import SkillsView from './SkillsView.vue'
 import BasePopup from '@/components/BasePopup.vue'
 import ContactView from './ContactView.vue'
 import BaseBlob from '@/components/BaseBlob.vue'
+
+import thePickImage from '@/assets/images/thePick.jpg'
 
 const isAboutViewVisible = ref(false)
 const isSkillsViewVisible = ref(false)

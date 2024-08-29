@@ -2,7 +2,7 @@
   <div class="popup-bg">
     <div class="popup" @click.stop>
       <img
-        src="../assets/images/Close_MD.svg"
+        src="../assets/images/icons/Close_MD.svg"
         alt="close"
         class="close-icon"
         @click="$emit('close')"
