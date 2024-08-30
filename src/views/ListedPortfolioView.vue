@@ -20,6 +20,17 @@
               data-holder-rendered="true"
             />
           </div>
+          <div class="carousel-item">
+              <iframe
+              class="d-block see-more  w-100"
+              alt="Fourth slide [800x400]"
+              src="https://samaiag.github.io/css-fun/backing/index.html"
+              title="cake"
+              data-holder-rendered="true"
+            ></iframe>
+            <button class="see-more-btn"><RouterLink to="/cssfun" class="h-link">see all projects...</RouterLink>
+            </button>
+          </div>
         </div>
         <button class="carousel-control-prev" href="#" role="button">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -29,7 +40,6 @@
         </button>
       </div>
     </div>
-    <RouterLink to="/projects" class="h-link">see more projects...</RouterLink>
   </BaseSection>
   <BaseSection class="css-projects">
     <h1>Some CSS Fun</h1>
@@ -63,6 +73,17 @@
               data-holder-rendered="true"
             ></iframe>
           </div>
+          <div class="carousel-item">
+              <iframe
+              class="d-block see-more  w-100"
+              alt="Fourth slide [800x400]"
+              src="https://samaiag.github.io/css-fun/backing/index.html"
+              title="cake"
+              data-holder-rendered="true"
+            ></iframe>
+            <button class="see-more-btn"><RouterLink to="/cssfun" class="h-link">see more css fun tries...</RouterLink>
+            </button>
+          </div>
         </div>
         <button class="carousel-control-prev" href="#" role="button">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -72,7 +93,6 @@
         </button>
       </div>
     </div>
-    <RouterLink to="/cssfun" class="h-link">see more css fun tries...</RouterLink>
   </BaseSection>
   <BaseBlob />
 </template>
@@ -145,8 +165,8 @@ onMounted(() => {
   display: block;
 }
 .d-block {
-  height: 400px;
-  width: 800px;
+  height: 40vmin;
+  width: 80vmin;
 }
 .carousel-inner {
   padding: 0 10vmin;
@@ -158,14 +178,35 @@ onMounted(() => {
   background-image: url('@/assets/images/icons/chevron-right.svg');
 }
 .h-link {
-  color: #f4a460;
+  color: #595c62;
+  text-decoration: none;
+  font-size: 3vmin;
+}
+
+.see-more-btn{
   font-family: 'Raleway', sans-serif;
+  position: absolute;
+  top: 16.5vmin;
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(16px);
+  border: none;
+  padding: 1vmin 3vmin;
+width: 100%;
 }
 .h-link:hover {
-  color: #f16529;
+  color: #424448;
 }
 h1 {
   font-family: 'Raleway', sans-serif;
   letter-spacing: 0.1vmin;
 }
+.see-more{
+filter: blur(6px);
+opacity: 0.5;
+display: flex!important;
+justify-content: center;
+align-items: center;
+
+}
+
 </style>

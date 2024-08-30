@@ -15,16 +15,17 @@
   <BaseSection class="second-section">
     <ProjectDescription
   title="The Pick"
-  description="This is a homepage design and build for a concept project – a chat application."
+  description="This is a tool for making the choice-making easier."
   :tags="['Website Design', 'Figma', 'Web Development']"
   imageSrc="src/assets/images/thePick.jpg"
   projectLink="/project"
 />
 <ProjectDescription
-  title="The Pick"
-  description="This is a homepage design and build for a concept project – a chat application."
+  title="Team App"
+  description="  This is a homepage design and build for a concept project – a chat application. I have
+        designed the page first then later built a responsive page in Webflow."
   :tags="['Website Design', 'Figma', 'Webflow']"
-  imageSrc="src/assets/images/chatapp.png"
+  imageSrc="src/assets/images/chatapp.jpg"
   projectLink="/project"
 />
     <BaseButton class="more-projects">
