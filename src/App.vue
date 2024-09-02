@@ -10,3 +10,13 @@ import TheFooter from './components/TheFooter.vue'
   <TheFooter class="footer" />
 </template>
 
+<style scoped>
+.header {
+  position: fixed;
+  z-index: 99;
+}
+.content {
+  margin-top: 10.8vmin;
+}
+
+</style>

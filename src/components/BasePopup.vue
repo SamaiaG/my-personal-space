@@ -1,5 +1,5 @@
 <template>
-  <div class="popup-bg">
+  <div class="popup-bg" @click="handleBackgroundClick">
     <div class="popup" @click.stop>
       <img
         src="../assets/images/icons/Close_MD.svg"
@@ -12,7 +12,16 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { defineEmits } from 'vue';
+
+const emit = defineEmits(['close']);
+
+function handleBackgroundClick() {
+  emit('close');
+}
+</script>
+
 
 <style scoped>
 .popup-bg {
