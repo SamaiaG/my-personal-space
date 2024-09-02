@@ -1,4 +1,5 @@
 <template>
+<div class="home">
   <BaseSection class="hero-section">
     <h1>Hi and welcome!</h1>
     <p class="description">
@@ -18,15 +19,14 @@
   description="This is a tool for making the choice-making easier."
   :tags="['Website Design', 'Figma', 'Web Development']"
   imageSrc="src/assets/images/thePick.jpg"
-  projectLink="/project"
+   projectId="1"
 />
 <ProjectDescription
   title="Team App"
-  description="  This is a homepage design and build for a concept project – a chat application. I have
-        designed the page first then later built a responsive page in Webflow."
+  description="All-in-one place for your remote team to chat, collaborate and track project progress."
   :tags="['Website Design', 'Figma', 'Webflow']"
   imageSrc="src/assets/images/chatapp.jpg"
-  projectLink="/project"
+   projectId="2"
 />
     <BaseButton class="more-projects">
       <RouterLink to="/portfolio" class="h-link">see more projects</RouterLink></BaseButton
@@ -42,6 +42,7 @@
   <ContactView class="contact" />
 
   <BaseBlob class="the-blobs" />
+</div>
 </template>
 
 <script setup>

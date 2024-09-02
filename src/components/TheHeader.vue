@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="h-container">
-      <RouterLink to="/"> <div id="logo"></div></RouterLink>
+      <RouterLink to="/">  <div id="logo"></div></RouterLink>
       <nav class="nav">
         <RouterLink to="/about" class="h-link">About me</RouterLink>
         <RouterLink to="/skills" class="h-link">Skills</RouterLink>
@@ -21,13 +21,13 @@
 }
 
 #logo {
-  width: 7vmin;
-  padding-top: 1.5vmin;
-  background-image: url('../assets/images/logo_color.png');
-  background-size: contain;
+  background-image: url('../assets/images/logoS.svg');
+  background-size: cover;
   background-position: center;
   width: 10vmin;
   height: 10vmin;
+  margin-left:0.8vmin;
+  margin-top: 0.8vmin
 }
 #logo:hover {
   background-image: url('../assets/images/logo_w.png');
@@ -40,7 +40,7 @@
   font-size: 1rem;
   text-decoration: none;
   color: #393737;
-  padding: 1vmin 2vmin;
+  padding: 0.8vmin 2vmin;
   place-content: center;
 }
 .h-link:hover,

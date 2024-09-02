@@ -1,4 +1,5 @@
 <template>
+  <div class="contact-view">
   <BaseSection class="contact-section">
     <div class="contactContainer">
       <h2 class="contactTitle">Let's get in touch</h2>
@@ -61,6 +62,7 @@
       </form>
     </div>
   </BaseSection>
+</div>
 </template>
 
 <script setup>

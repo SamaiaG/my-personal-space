@@ -1,4 +1,5 @@
 <template>
+  <div class="listed-portfolio">
   <BaseSection class="projects">
     <h1>Some projects</h1>
     <div class="bd-example">
@@ -6,28 +7,27 @@
         <div class="carousel-inner">
           <div class="carousel-item">
             <img
-              class="d-block w-100"
-              alt="Second slide [800x400]"
-              src="@/assets/images/projects_covers/cover2.png"
+              class="d-block project-image w-100"
+              alt="First slide [800x400]"
+              src="@/assets/images/projects_covers/coverpro1.png"
               data-holder-rendered="true"
             />
           </div>
           <div class="carousel-item">
             <img
-              class="d-block w-100"
-              alt="Third slide [800x400]"
-              src="@/assets/images/projects_covers/cover3.png"
+              class="d-block project-image w-100"
+              alt="Second slide [800x400]"
+              src="@/assets/images/projects_covers/coverpro2.png"
               data-holder-rendered="true"
             />
           </div>
           <div class="carousel-item">
-              <iframe
-              class="d-block see-more  w-100"
-              alt="Fourth slide [800x400]"
-              src="https://samaiag.github.io/css-fun/backing/index.html"
-              title="cake"
+              <img
+              class="d-block project-image see-more  w-100"
+              alt="More slide [800x400]"
+              src="@/assets/images/projects_covers/coverpro2.png"              title="cake"
               data-holder-rendered="true"
-            ></iframe>
+            ></img>
             <button class="see-more-btn"><RouterLink to="/cssfun" class="h-link">see all projects...</RouterLink>
             </button>
           </div>
@@ -95,6 +95,7 @@
     </div>
   </BaseSection>
   <BaseBlob />
+</div>
 </template>
 
 <script setup>
@@ -165,8 +166,8 @@ onMounted(() => {
   display: block;
 }
 .d-block {
-  height: 40vmin;
-  width: 80vmin;
+  height: 35vmin;
+  width: 90vmin;
 }
 .carousel-inner {
   padding: 0 10vmin;
@@ -180,15 +181,14 @@ onMounted(() => {
 .h-link {
   color: #595c62;
   text-decoration: none;
-  font-size: 3vmin;
+  font-size: 4vmin;
 }
 
 .see-more-btn{
   font-family: 'Raleway', sans-serif;
   position: absolute;
-  top: 16.5vmin;
-  background: rgba(255,255,255,0.3);
-  backdrop-filter: blur(16px);
+  top: 14vmin;
+  background: none;
   border: none;
   padding: 1vmin 3vmin;
 width: 100%;
@@ -208,5 +208,7 @@ justify-content: center;
 align-items: center;
 
 }
-
+.project-image{
+  object-fit: content!important;
+}
 </style>

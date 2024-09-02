@@ -75,8 +75,8 @@
       directly. <br />
       I’ll be happy to share more infos with you.
     </p>
+    <BaseBlob />
   </div>
-  <BaseBlob />
 </template>
 
 <script setup>
@@ -91,15 +91,18 @@ import BaseBlob from '@/components/BaseBlob.vue'
   font-weight: 200;
   color: #393737;
   letter-spacing: 0.2vmin;
-  padding: 0 16vmin;
+  padding: 0 26vmin;
   display: flex;
   flex-direction: column;
   gap: 5vmin;
 }
 
 .about-me {
-  margin: 0 -16vmin;
+ margin: 0 -26vmin;
+ padding: 6vmin 26vmin;
+ width: auto!important;
 }
+
 h1 {
   color: black;
 }

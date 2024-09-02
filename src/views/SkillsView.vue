@@ -88,8 +88,9 @@
       </div>
     </BaseSection>
     <p class="question" @click="handleQuestionClick">What did I use to create this webpage?</p>
-  </div>
   <BaseBlob />
+</div>
+
 </template>
 
 <script setup>

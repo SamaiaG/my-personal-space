@@ -1,4 +1,5 @@
 <template>
+  <div class="css-art">
   <BaseSection class="first-css-section">
     <div class="presentation">
       <div class="text">
@@ -32,6 +33,7 @@
     <iframe src="https://samaiag.github.io/css-fun/cat/index.html" title="cat"></iframe>
   </div>
   <BaseBlob />
+</div>
 </template>
 
 <script setup>

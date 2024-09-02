@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import ProjectView from '../views/ProjectView.vue'
+import ProjectComponent from '@/components/ProjectComponent.vue'
 import ListedPortfolioView from '@/views/ListedPortfolioView.vue'
 import AboutView from '@/views/AboutView.vue'
 import SkillsView from '@/views/SkillsView.vue'
@@ -17,9 +17,10 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/project',
-      name: 'project',
-      component: ProjectView
+      path: '/project/:projectId',  // Dynamic route with a parameter
+      name: 'projectComponent',
+      component: ProjectComponent,
+      props: true, 
     },
     {
       path: '/portfolio',

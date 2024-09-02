@@ -12,7 +12,8 @@
         {{ description }}
       </p>
       <BaseButton class="see-project">
-        <RouterLink :to="projectLink" class="h-link">see this project</RouterLink>
+        <RouterLink :to="{ name: 'projectComponent', params: { projectId: projectId } }" class="h-link">see this project
+        </RouterLink>
       </BaseButton>
     </div>
     <div class="left-part">
@@ -24,14 +25,14 @@
 
 <script setup>
 import BaseButton from '@/components/BaseButton.vue'
-import { defineProps } from 'vue'
 
 const props = defineProps({
   title: String,
   description: String,
   tags: Array,
   imageSrc: String,
-  projectLink: String
+  projectLink: String,
+  projectId: String
 })
 </script>
 

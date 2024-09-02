@@ -15,6 +15,7 @@
   padding: 6vmin 16vmin;
   height: auto;
   margin-bottom: 3vmin;
+  width: 100%;
 }
 .s-container {
   display: flex;
