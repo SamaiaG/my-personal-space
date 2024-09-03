@@ -49,8 +49,5 @@
   .section{
     padding: 6vmin;
   }
-  .s-container{
-    gap: 2vmin;
-  }
 }
 </style>

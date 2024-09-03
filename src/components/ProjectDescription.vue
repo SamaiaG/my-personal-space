@@ -1,8 +1,8 @@
 <template>
   <div class="project-description">
-    <div class="right-part">
+    <div class="left-part">
       <p class="sub-tag">LATEST WORK</p>
-      <h1>{{ title }}</h1>
+      <RouterLink :to="{ name: 'projectComponent', params: { projectId: projectId } }" class="title">{{title}}</RouterLink>
       <div class="tags">
         <div v-for="(tag, index) in tags" :key="index" :class="['tag', `t${index + 1}`]">
           {{ tag }}
@@ -11,14 +11,13 @@
       <p class="description">
         {{ description }}
       </p>
-      <BaseButton class="see-project">
-        <RouterLink :to="{ name: 'projectComponent', params: { projectId: projectId } }" class="h-link">see this project
-        </RouterLink>
-      </BaseButton>
     </div>
-    <div class="left-part">
+    <div class="right-part">
       <img :src="imageSrc" alt="project image" class="project-image" />
     </div>
+    <BaseButton class="see-project">
+        <RouterLink :to="{ name: 'projectComponent', params: { projectId: projectId } }" class="h-link">see this project...</RouterLink>
+    </BaseButton>
   </div>
 </template>
 
@@ -40,30 +39,32 @@ const props = defineProps({
 <style scoped>
 .project-description {
   width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   margin: 5vmin 0;
+  align-items: center;
 }
-.right-part {
-  width: 50%;
+.left-part {
+  grid-column: 1/2;
+  grid-row: 1/2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  width: 100%;
   gap: 3vmin;
 }
-
-.sub-tag {
-  font-size: 1.5vmin;
-  color: #393737;
-  font-weight: 400;
-  font-family: 'Raleway', sans-serif;
+.right-part{
+  grid-column: 2/3;
+  grid-row: 1/3;
+  display: flex;
 }
-h1 {
+
+.title {
   font-size: 4vmin;
   color: #393737;
   font-family: 'Raleway', sans-serif;
+  text-decoration: none;
 }
 .tag {
   background-color: #f9efe7;
@@ -84,9 +85,11 @@ h1 {
 }
 .project-image {
   width: 60vmin;
+  filter: drop-shadow(8px 8px 4px rgba(17, 12, 46, 0.2));
 }
 .see-project {
-  width: 30vmin !important;
+  grid-column: 1/2;
+  grid-row: 2/3;
   padding: 2vmin 4vmin !important;
   background: rgb(230, 126, 34);
   background: linear-gradient(158deg, rgba(230, 126, 34, 0.8) 24%, rgba(226, 156, 95, 0.8) 100%);
@@ -97,5 +100,43 @@ h1 {
 }
 .h-link:hover {
   text-decoration: underline;
+}
+.sub-tag {
+  font-size: 1.5vmin;
+  color: #393737;
+  font-weight: 400;
+  font-family: 'Raleway', sans-serif;
+  align-self: self-start;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .project-description {
+   display: flex;
+   flex-direction: column;
+    margin:0;
+  }
+  .left-part {
+    align-items: center;
+    gap: 1.5vmin
+  }
+
+.see-project{
+  padding: 0.5vmin 1.5vmin !important;
+  margin: 2vmin; 
+  align-self: end; 
+  background: transparent;
+}
+.h-link{
+  color: rgb(230, 126, 34);
+  font-weight: 600;
+}
+.tags {
+  justify-content: center;
+}
+.tag{
+  font-size: 1.2vmin;
+  padding: 0.6vmin 1.5vmin;
+}
 }
 </style>

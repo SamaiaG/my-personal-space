@@ -24,13 +24,13 @@
       title="The Pick"
       description="This is a tool for making the choice-making easier."
       :tags="['Website Design', 'Figma', 'Web Development']"
-      imageSrc="src/assets/images/thePick.jpg"
+      imageSrc="src/assets/images/thepick.png"
       projectId="1"/>
     <ProjectDescription
       title="Team App"
       description="All-in-one place for your remote team to chat, collaborate and track project progress."
       :tags="['Website Design', 'Figma', 'Webflow']"
-      imageSrc="src/assets/images/chatapp.jpg"
+      imageSrc="src/assets/images/chatapp.png"
       projectId="2"
     />
     <BaseButton class="more-projects">
@@ -60,8 +60,6 @@ import SkillsView from './SkillsView.vue'
 import BasePopup from '@/components/BasePopup.vue'
 import ContactView from './ContactView.vue'
 import BaseBlob from '@/components/BaseBlob.vue'
-
-import thePickImage from '@/assets/images/thePick.jpg'
 
 const isAboutViewVisible = ref(false)
 const isSkillsViewVisible = ref(false)
@@ -172,25 +170,20 @@ const closePopup = () => {
 }
 
 .hero-intro {
-  grid-template-columns: auto;
-  grid-template-rows: auto auto auto;
+  display: flex;
+  flex-direction: column;
   padding-top: 0;
   text-align: center;
   gap: 0;
 }
-.right-part{
-  grid-column: 1/2;
-  grid-row: 2/3;
-}
+
 .buttons{
-  grid-column: 1/2;
-  grid-row: 3/4;
   justify-content: center;
-  margin-top: 2vmin;
+  margin: 7vmin;
 }
 .title{
   font-size: 5vmin;
-  padding-top: 0;
+  padding-top: 1vmin;
 }
 .description {
   font-size: 2vmin;

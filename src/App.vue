@@ -19,4 +19,12 @@ import TheFooter from './components/TheFooter.vue'
   margin-top: 10.8vmin;
 }
 
+@media (max-width: 768px) {
+  .header {
+  position: relative;
+}
+.content {
+  margin-top: 0;
+}
+}
 </style>
