@@ -45,9 +45,14 @@
   position: relative;
   z-index: 1;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .section{
     padding: 6vmin;
+  }
+}
+@media (max-width: 768px) {
+  .section{
+    padding: 3vmin;
   }
 }
 </style>

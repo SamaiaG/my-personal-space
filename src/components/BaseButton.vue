@@ -6,7 +6,7 @@
 
 <style scoped>
 .base-button {
-  max-width: 35vmin;
+  max-width: 25vw;
   max-height: 7vmin;
   background: rgb(230, 126, 34);
   background: linear-gradient(
@@ -16,14 +16,15 @@
   );
   color: white;
   border: none;
-  padding: 2vmin 4vmin;
-  font-size: 2vmin;
+  padding: 0.8vw 2vw;
+  font-size: 1vw;
   cursor: pointer;
+  border-radius: 0.5vmin;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .base-button {
-    padding: 1vmin 2.5vmin;
+    padding: 0.7vw 2vw;
   }
 }
 </style>

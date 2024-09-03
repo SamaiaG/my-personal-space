@@ -5,7 +5,7 @@
       <div class="left-part">
         <h1 class="title">Hi and welcome!</h1>
         <p class="description">
-          I am Samaia - a newbie developer, and this is<br />
+          I am Samaia - a newbie developer, and this is
           the place I created to put the things together.
         </p>
       </div>
@@ -78,55 +78,61 @@ const closePopup = () => {
 </script>
 
 <style scoped>
-.hero-section {
-  height: 80vh !important;
-}
 .hero-intro {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 49% 49%;
   grid-template-rows: auto;
-  padding-top: 5vmin;
-  gap: 3vmin;
   width: 100%;
+  gap: 2%;
+  padding-left: 4vw
 }
 
 .left-part {
   grid-column: 1/2;
   grid-row: 1/2;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: stretch;
+  padding-bottom:2vw ;
 }
 
 .right-part {
   grid-column: 2/3;
   grid-row: 1/3;
+  height: 70vh;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
 }
 
 .title{
   font-weight: 800;
-  font-size: 5rem;
+  font-size: 4vw;
   color: #393737;
   font-family: 'Raleway', sans-serif;
-  padding-top: 10vmin;
+  padding-top: 5vw;
+  text-align: left;
+  padding-bottom:2vw ;
+
 }
 
 .description {
   font-weight: 400;
-  font-size: 3vmin;
+  font-size: 1.7vw;
   color: #393737;
   font-family: 'Raleway', sans-serif;
   line-height: 120%;
   letter-spacing: 0.1vmin;
+  text-align: left;
 }
 .buttons {
   grid-column: 1/2;
   grid-row: 2/3;
   display: flex;
   justify-content: start;
-  align-items: end;
-  gap: 6vmin;
-  margin-bottom: 2vmin;
+  align-items: start;
+  gap: 3vw;
 }
 
 .skills {
@@ -156,8 +162,20 @@ const closePopup = () => {
 }
 
 .me {
-  width: 60vmin;
-  height: 55vmin;
+  width: 100%;
+  height:90%;
+}
+
+@media (max-width: 1024px) {
+  .hero-intro {
+    padding: 4vw 0 4vw 10vw;
+  }
+  .right-part{
+    height: auto;
+  }
+  .me{
+    height:120%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -173,6 +191,7 @@ const closePopup = () => {
   display: flex;
   flex-direction: column;
   padding-top: 0;
+  padding-left: 0;
   text-align: center;
   gap: 0;
 }
@@ -184,9 +203,14 @@ const closePopup = () => {
 .title{
   font-size: 5vmin;
   padding-top: 1vmin;
+  text-align: center;
 }
 .description {
   font-size: 2vmin;
+  text-align: center;
+}
+.me{
+  height: 40vh;
 }
 }
 </style>
