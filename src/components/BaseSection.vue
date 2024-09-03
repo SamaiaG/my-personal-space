@@ -8,20 +8,21 @@
 </template>
 
 
-<style scoped>
+<style>
 .section {
   background-color: rgb(255, 255, 255, 0.2);
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-  padding: 6vmin 16vmin;
-  height: auto;
-  margin-bottom: 3vmin;
   width: 100%;
+  height: 100%;
+  padding: 6vmin 16vmin;
+  margin-bottom: 3vmin;
 }
 .s-container {
   display: flex;
   position: relative;
-  flex-direction: column;
   width: 100%;
+  height: 100%;
+  flex-direction: column;
   justify-content: start;
   align-items: center;
   gap: 6vmin;
@@ -43,5 +44,13 @@
 .section-content {
   position: relative;
   z-index: 1;
+}
+@media (max-width: 768px) {
+  .section{
+    padding: 6vmin;
+  }
+  .s-container{
+    gap: 2vmin;
+  }
 }
 </style>

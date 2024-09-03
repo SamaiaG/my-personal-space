@@ -5,9 +5,6 @@
   --color-background-soft: var(--vt-c-white-soft);
   --color-background-mute: var(--vt-c-white-mute);
 
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-
   --color-heading: var(--vt-c-text-light-1);
   --color-text: #393737;
 
@@ -16,8 +13,6 @@
   --primary-color: #213956;
   --secondary-color: #c4baa9;
 
-  --primary-op: #21395699;
-  --secondary-op: #c4baa999;
 
   --dark-shade: #232323;
 }
