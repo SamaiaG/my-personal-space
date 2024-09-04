@@ -79,13 +79,13 @@ import BaseButton from '@/components/BaseButton.vue'
   gap: 3vmin;
 }
 .contactTitle {
-  font-size: 5vmin;
+  font-size: 4vw;
   font-weight: 600;
   font-family: 'Raleway', sans-serif;
   text-align: center;
 }
 .contactMessage {
-  font-size: 2vmin;
+  font-size: 1.7vw;
   font-weight: 400;
   font-family: 'Raleway', sans-serif;
   line-height: 120%;

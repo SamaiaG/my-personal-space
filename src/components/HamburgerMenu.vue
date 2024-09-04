@@ -18,10 +18,11 @@ const props = defineProps({
     display: flex;
     flex-direction: column;
     position: absolute;
-    background-color: rgba(243, 139, 74, 0.8); 
+    background-color: rgba(243, 139, 74, 0.9); 
     box-shadow: rgba(17, 12, 46, 0.45) 0px 48px 100px 0px;
     width: 35vmin;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
 }
 .h-link{
     text-decoration: none;

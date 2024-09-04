@@ -182,7 +182,13 @@ const closePopup = () => {
 @media (max-width: 768px) {
   :deep(.contactContainer) {
   flex-direction: column !important;
-  margin-bottom: 0;
+  margin-top: 3vmin
+}
+:deep(.contactTitle){
+  font-size: 24px;
+}
+:deep(.contactMessage){
+  font-size: 16px;
 }
 .hero-section {
   height: auto !important;
@@ -211,6 +217,9 @@ const closePopup = () => {
 }
 .me{
   height: 45vh;
+}
+.second-section{
+  padding-bottom: 10vmin;
 }
 }
 </style>

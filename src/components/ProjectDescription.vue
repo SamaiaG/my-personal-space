@@ -58,6 +58,8 @@ const props = defineProps({
   grid-column: 2/3;
   grid-row: 1/3;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .title {
@@ -68,8 +70,10 @@ const props = defineProps({
 }
 .tag {
   background-color: #f9efe7;
-  padding: 0.8vmin 2vmin;
-  color: black;
+  opacity: 0.8;
+  backdrop-filter: blur(10px) ;
+  padding: 0.5vmin 1vmin;
+  color: #393737;
   font-size: 1.5vmin;
 }
 .tags {
@@ -84,13 +88,14 @@ const props = defineProps({
   font-size: 2vmin;
 }
 .project-image {
-  width: 60vmin;
+  height: 40vw;
   filter: drop-shadow(8px 8px 4px rgba(17, 12, 46, 0.2));
 }
 .see-project {
   grid-column: 1/2;
   grid-row: 2/3;
-  padding: 2vmin 4vmin !important;
+  width: 25vmin;
+  padding: 1vmin 4vmin !important;
   background: rgb(230, 126, 34);
   background: linear-gradient(158deg, rgba(230, 126, 34, 0.8) 24%, rgba(226, 156, 95, 0.8) 100%);
 }
@@ -114,18 +119,20 @@ const props = defineProps({
   .project-description {
    display: flex;
    flex-direction: column;
-    margin:0;
+   gap: 4vmin
   }
   .left-part {
     align-items: center;
-    gap: 1.5vmin
+    gap: 4vmin
   }
 
 .see-project{
+  font-size: 12px;
   padding: 0.5vmin 1.5vmin !important;
-  margin: 2vmin; 
+  margin: 6vmin; 
   align-self: end; 
   background: transparent;
+  width: auto
 }
 .h-link{
   color: rgb(230, 126, 34);
@@ -135,8 +142,18 @@ const props = defineProps({
   justify-content: center;
 }
 .tag{
-  font-size: 1.2vmin;
-  padding: 0.6vmin 1.5vmin;
+  font-size: 2vmin;
+  padding: 1vmin 2vmin;
+}
+.title {
+  font-size: 28px;
+}
+.description{
+  font-size: 16px;
+  text-align: center;
+}
+.project-image {
+  height: 70vw;
 }
 }
 </style>
