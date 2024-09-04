@@ -22,13 +22,13 @@
   <BaseSection class="second-section">
     <ProjectDescription
       title="The Pick"
-      description="This is a tool for making the choice-making easier."
+      description="This is a tool for making the choice-making easier. I have designed the page interface first with Figma, then later built it with Vue.js."
       :tags="['Website Design', 'Figma', 'Web Development']"
-      imageSrc="src/assets/images/thepick.png"
+      imageSrc="thepick.png"
       projectId="1"/>
     <ProjectDescription
       title="Team App"
-      description="All-in-one place for your remote team to chat, collaborate and track project progress."
+      description="This is a homepage design and build for a concept project – a chat application. I have designed the page first with Figma then later built a responsive page in Webflow."
       :tags="['Website Design', 'Figma', 'Webflow']"
       imageSrc="src/assets/images/chatapp.png"
       projectId="2"
@@ -176,6 +176,11 @@ const closePopup = () => {
   }
   .me{
     height:120%;
+  }
+  :deep(.popup){
+    width: 95% !important;
+    padding: 0;
+    max-height: 95vh;
   }
 }
 

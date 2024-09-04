@@ -1,11 +1,5 @@
 <template>
   <div class="chart-container">
-    <ul class="languages">
-      <li>Romanian</li>
-      <li>Russian</li>
-      <li>German</li>
-      <li>English</li>
-    </ul>
     <canvas ref="chartRef"></canvas>
   </div>
 </template>
@@ -90,21 +84,10 @@ onMounted(() => {
 <style scoped>
 .chart-container {
   width: 100vmin;
-  height: 20vmin;
   display: flex;
+  padding: 0 2vmin;
 }
 canvas {
   width: 100%;
-}
-.languages {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2.3vmin;
-  list-style: none;
-  font-family: 'Raleway', sans-serif;
-  color: #393737;
-  letter-spacing: 0.2vmin;
 }
 </style>

@@ -43,6 +43,7 @@ const props = defineProps({
   grid-template-columns: 1fr 1fr;
   margin: 5vmin 0;
   align-items: center;
+  gap: 5vmin;
 }
 .left-part {
   grid-column: 1/2;
@@ -67,6 +68,9 @@ const props = defineProps({
   color: #393737;
   font-family: 'Raleway', sans-serif;
   text-decoration: none;
+}
+.title:hover{
+  font-weight: 700;
 }
 .tag {
   background-color: #f9efe7;

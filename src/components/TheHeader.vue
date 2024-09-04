@@ -8,10 +8,7 @@
         <RouterLink to="/portfolio" class="h-link">Portfolio</RouterLink>
         <RouterLink to="/contact" class="h-link">Contact</RouterLink>
       </div>
-      <div class="hamburger" @click="toggleHam">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-        <path  d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
-      </div>
+      <div class="hamburger" :class="{ 'is-open': isHamOpen }" @click="toggleHam"></div>
       <HamburgerMenu class="hamburger-menu" v-if="isHamOpen" :closeHam="toggleHam" />
     </div>
   </header>
@@ -53,7 +50,7 @@ onUnmounted(() => {
 }
 
 #logo {
-  background-image: url('../assets/images/logoS.svg');
+  background-image: url('../assets/images/logo.svg');
   background-size: cover;
   background-position: center;
   width: 10vmin;
@@ -67,16 +64,19 @@ onUnmounted(() => {
 
 .hamburger {
   display: none;
-  width: 9vmin;
-  cursor: pointer;
-  fill: #F16529;
-  padding: 2.5vmin 2vmin 2vmin 2vmin;
+  background-image: url('../assets/images/icons/bars-solid.svg');
+  background-size: cover;
+  background-position: center;
+  width: 6.5vmin;
+  height: 6.5vmin;
+  margin-right:1vmin;
+  margin-top: 2vmin
 }
 
-.hamburger:hover {
-  background-color: rgba(243, 139, 74, 0.8);
-  fill:white
+.hamburger.is-open{
+  background-image: url('../assets/images/icons/xmark-solid.svg');
 }
+
 
 .nav-wide {
   display: flex;
@@ -97,8 +97,8 @@ a:hover {
 
 .hamburger-menu{
   position: fixed;
-  top: 11vmin;
-  right: 6vmin;
+  top: 10.3vmin;
+  right: 0;
 }
 @media (max-width: 768px) {
   .nav-wide{

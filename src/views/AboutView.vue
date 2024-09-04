@@ -6,10 +6,10 @@
         <div class="my-info">
           <figure class="fig born-date">
             <img src="@/assets/images/icons/calendar.png" alt="Birthdate" class="l-icon birthdate" />
-            <figcaption class="birthdate-text">17 September 1996</figcaption>
+            <figcaption class="birthdate-text text">17 September 1996</figcaption>
           </figure>
           <figure class="fig birthplace">
-            <figcaption class="birthplace-text">born in</figcaption>
+            <figcaption class="birthplace-text text">born in</figcaption>
             <img
               src="@/assets/images/icons/moldova.png"
               alt="Republic of Moldova"
@@ -17,7 +17,7 @@
             />
           </figure>
           <figure class="fig current-place">
-            <figcaption class="current-place-text">currently based in</figcaption>
+            <figcaption class="current-place-text text">currently based in</figcaption>
             <img src="@/assets/images/icons/germany.png" alt="Germany" class="l-icon birthplace-img" />
             <figcaption class="fig current-city">
               (<img src="@/assets/images/icons/cologne.png" class="l-icon city" />)
@@ -103,7 +103,7 @@ import BaseBlob from '@/components/BaseBlob.vue'
  width: auto!important;
 }
 
-h1 {
+.name {
   color: black;
 }
 .main-info {
@@ -166,5 +166,21 @@ h1 {
 .gmail {
   color: #5893d4;
   text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+ .about{
+  padding: 0 6vmin;
+ }
+.se{
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 5vmin;
+  font-size: 14px;
+}
+.name{
+  font-size: 24px;
+}
 }
 </style>
