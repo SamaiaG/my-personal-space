@@ -24,13 +24,13 @@
       title="The Pick"
       description="This is a tool for making the choice-making easier. I have designed the page interface first with Figma, then later built it with Vue.js."
       :tags="['Website Design', 'Figma', 'Web Development']"
-      imageSrc="thepick.png"
+      imageSrc="project_cover/thepick.png"
       projectId="1"/>
     <ProjectDescription
       title="Team App"
       description="This is a homepage design and build for a concept project – a chat application. I have designed the page first with Figma then later built a responsive page in Webflow."
       :tags="['Website Design', 'Figma', 'Webflow']"
-      imageSrc="src/assets/images/chatapp.png"
+      imageSrc="project_cover/teamApp.png"
       projectId="2"
     />
     <BaseButton class="more-projects">

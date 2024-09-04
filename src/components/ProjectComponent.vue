@@ -6,11 +6,11 @@
       <p class="project-description">
         {{ projectDescription }}
       </p>
-    <RouterLink :to="projectLink" class="h-link">see this project live
-      </RouterLink>
+      <a :href="projectLink" class="h-link" target="_blank" rel="noopener noreferrer">
+        see this project live
+      </a>
       </BaseSection>
-    <img :src="projectImage" alt="project image" class="project-image" />
-  </div>
+      <img :src="projectImage" alt="project image" class="project-image" />  </div>
 </template>
 
 <script setup>
@@ -18,34 +18,34 @@
   import { useRoute } from 'vue-router'
   import BaseSection from '@/components/BaseSection.vue'
   
+  import image1 from '@/assets/images/projects_covers/thePickEntire.png'
+  import image2 from '@/assets/images/projects_covers/teamAppEntire.png'
+
   const route = useRoute()
-  
-  // Define reactive properties to hold project data
-  const projectTitle = ref('')
-  const projectDescription = ref('')
- const projectImage = ref('')
-  const projectLink = ref('/')
-  
-  onMounted(() => {
+const projectTitle = ref('')
+const projectDescription = ref('')
+const projectImage = ref('')
+const projectLink = ref('')
+
+onMounted(() => {
   const projectId = route.params.projectId
 
   // Assuming data is fetched based on projectId
   const projectData = getProjectDetailsById(projectId)
   projectTitle.value = projectData.title
   projectDescription.value = projectData.description
-  projectImage.value = projectData.imageSrc  
+  projectImage.value = projectData.imageSrc
+  projectLink.value = projectData.Plink
 })
 
-// Example function to simulate fetching project data
 function getProjectDetailsById(id) {
   const projects = [
-    { id: '1', title: 'Project 1', description: 'This is the first project', imageSrc:'thepickentire.png'  },
-    { id: '2', title: 'Project 2', description: 'This is the second project', imageSrc: '/thepickentire.png' },
-    // Add more projects as needed
+    { id: '1', title: 'The Pick', description: 'This is a tool for making the choice-making easier. I have designed the page interface first with Figma, then later built it with Vue.js.', imageSrc: image1, Plink: '/' },
+    { id: '2', title: 'Team App', description: 'This is a homepage design and build for a concept project – a chat application. I have designed the page first with Figma then later built a responsive page in Webflow.', imageSrc: image2, Plink: 'https://samaias-team-app.webflow.io/' },
   ]
   return projects.find(project => project.id === id) || {}
 }
-  </script>
+</script>
   
 
 <style scoped>
@@ -68,6 +68,9 @@ function getProjectDetailsById(id) {
   font-size: 8vmin;
   font-weight: 200;
 }
+.project-description {
+  text-align: center;
+}
  .h-link {
   text-decoration: none;
   color: black;
@@ -75,7 +78,7 @@ function getProjectDetailsById(id) {
   background: linear-gradient(0deg, rgba(255, 232, 114, 1) 0%, rgba(255, 255, 255, 0) 100%);
 }
 .project-image {
-  width: 120vmin;
+  width: 80vmin;
   position: relative;
   top: -30vmin;
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
