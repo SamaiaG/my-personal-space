@@ -9,8 +9,8 @@
       <a :href="projectLink" class="h-link" target="_blank" rel="noopener noreferrer">
         see this project live
       </a>
-      </BaseSection>
-      <img :src="projectImage" alt="project image" class="project-image" />  </div>
+    </BaseSection>
+    <img :src="projectImage" alt="project image" class="project-image" />  </div>
 </template>
 
 <script setup>
@@ -49,23 +49,27 @@ function getProjectDetailsById(id) {
   
 
 <style scoped>
+:deep(.s-container){
+  gap: 4vw;
+}
 .project-showcase {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .project-section {
-  height: 80vh !important;
+  height: 70vh !important;
 }
 .sub-tag {
   color: rgb(0, 0, 0, 0.35);
   font-family: 'Raleway', sans-serif;
   letter-spacing: 0.3vmin;
   text-transform: uppercase;
+  font-size: 1.5vmin;
 }
 .project-title {
   color: #393737;
-  font-size: 8vmin;
+  font-size: 4vmin;
   font-weight: 200;
 }
 .project-description {
@@ -78,9 +82,39 @@ function getProjectDetailsById(id) {
   background: linear-gradient(0deg, rgba(255, 232, 114, 1) 0%, rgba(255, 255, 255, 0) 100%);
 }
 .project-image {
-  width: 80vmin;
+  width: 80vw;
   position: relative;
-  top: -30vmin;
+  top: -25vh;
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+  margin-bottom: -20vh;
+  z-index: 999;
+}
+@media (max-width: 1024px) {
+  .project-section {
+    height: 60vh !important;
+}
+.project-image {
+  top: -20vh;
+  margin-bottom: -10vh;
+}
+
+  }
+  @media (max-width: 768px){
+    .project-section {
+    height: 40vh !important;
+}
+    .project-title {
+      font-size: 32px;
+    }
+    .project-description {
+      font-size: 12px;
+    }
+    .h-link {
+      font-size: 10px;
+    }
+    .project-image {
+  top: -8vh;
+  margin-bottom: -5vh;
+}
 }
 </style>
