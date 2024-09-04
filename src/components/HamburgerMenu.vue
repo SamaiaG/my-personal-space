@@ -18,22 +18,23 @@ const props = defineProps({
     display: flex;
     flex-direction: column;
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.8); 
+    background-color: rgba(243, 139, 74, 0.8); 
     box-shadow: rgba(17, 12, 46, 0.45) 0px 48px 100px 0px;
-    width: 25vmin;
+    width: 35vmin;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .h-link{
     text-decoration: none;
-    color: #393737;
+    color: #f9efe7;
     font-family: 'Raleway', sans-serif;
     padding: 1.5vmin;
-    font-size: 2.5vmin;
+    font-size: 18px;
     cursor: pointer;
+    padding: 14px 16px;
 }
 .h-link:hover{
-    background-color: rgba(243, 139, 74, 0.8);
-    color: #f9efe7;
+    color: rgba(243, 139, 74, 0.8);
+    background-color: #f9efe7;
     font-family: 'Raleway', sans-serif;
     
 }

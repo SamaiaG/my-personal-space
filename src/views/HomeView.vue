@@ -61,6 +61,7 @@ import BasePopup from '@/components/BasePopup.vue'
 import ContactView from './ContactView.vue'
 import BaseBlob from '@/components/BaseBlob.vue'
 
+
 const isAboutViewVisible = ref(false)
 const isSkillsViewVisible = ref(false)
 
@@ -168,7 +169,7 @@ const closePopup = () => {
 
 @media (max-width: 1024px) {
   .hero-intro {
-    padding: 4vw 0 4vw 10vw;
+    padding: 8vw 0 4vw 10vw;
   }
   .right-part{
     height: auto;
@@ -190,7 +191,7 @@ const closePopup = () => {
 .hero-intro {
   display: flex;
   flex-direction: column;
-  padding-top: 0;
+  padding-top: 5vw;
   padding-left: 0;
   text-align: center;
   gap: 0;
@@ -198,19 +199,18 @@ const closePopup = () => {
 
 .buttons{
   justify-content: center;
-  margin: 7vmin;
+  margin: 9vw 0;
 }
 .title{
-  font-size: 5vmin;
-  padding-top: 1vmin;
+  font-size: 32px;
   text-align: center;
 }
 .description {
-  font-size: 2vmin;
+  font-size: 16px;
   text-align: center;
 }
 .me{
-  height: 40vh;
+  height: 45vh;
 }
 }
 </style>

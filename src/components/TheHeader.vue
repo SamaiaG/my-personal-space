@@ -49,7 +49,7 @@ onUnmounted(() => {
   width: 100vw;
   justify-content: space-between;
   padding: 0 16vmin;
-  backdrop-filter: blur(10px) brightness(95%);
+  backdrop-filter: blur(10px) ;
 }
 
 #logo {
