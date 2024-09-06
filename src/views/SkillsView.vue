@@ -1,40 +1,39 @@
 <template>
-  <div class="skills-section">
+  <div class="my-skills">
     <p class="description">
       This is my range of skills and things I had the possibility to get in touch with.<br />
       Each represents a part of my experience, which I use and develop constantly.
     </p>
 
-    <BaseSection>
-      <div class="skill-icons">
+    <BaseSection class="skills-section">
         <div class="icons-row r1">
           <img
             :class="{ highlighted: isQuestionClicked }"
-            src="../assets/images/skillsicons/html.png"
+            src="../assets/images/skillsicons/html.svg"
             alt="html"
             class="icon i1"
           />
           <img
             :class="{ highlighted: isQuestionClicked }"
-            src="../assets/images/skillsicons/css.png"
+            src="../assets/images/skillsicons/css.svg"
             alt="css"
             class="icon i2"
           />
           <img
             :class="{ highlighted: isQuestionClicked }"
-            src="../assets/images/skillsicons/js.png"
+            src="../assets/images/skillsicons/js.svg"
             alt="js"
             class="icon i3"
           />
           <img
             :class="{ highlighted: isQuestionClicked }"
-            src="../assets/images/skillsicons/figma.png"
+            src="../assets/images/skillsicons/figma.svg"
             alt="figma"
             class="icon i4"
           />
           <img
             :class="{ highlighted: isQuestionClicked }"
-            src="../assets/images/skillsicons/vue.png"
+            src="../assets/images/skillsicons/vue.svg"
             alt="vue"
             class="icon i5"
           />
@@ -42,50 +41,35 @@
         <div class="icons-row r2">
           <img
             :class="{ highlighted: isQuestionClicked }"
-            src="../assets/images/skillsicons/webflowColor.png"
+            src="../assets/images/skillsicons/webflow.svg"
             alt="webflow"
-            class="icon2 i6"
+            class="icon i6"
           />
-          <figure :class="{ highlighted: isQuestionClicked }" class="icon2 tailwind">
-            <img
-              :class="{ highlighted: isQuestionClicked }"
-              src="../assets/images/skillsicons/tailwindcss.png"
-              alt="tailwind short"
-              class="icon2 i7"
-            />
-            <img src="../assets/images/skillsicons/tailwind.png" alt="tailwind" class="icon2 i7" />
-          </figure>
+        
+            <img  :class="{ highlighted: isQuestionClicked }" src="../assets/images/skillsicons/tailwind.svg" alt="tailwind" class="icon i7" />
           <img
             :class="{ highlighted: isQuestionClicked }"
-            src="../assets/images/skillsicons/github.png"
+            src="../assets/images/skillsicons/github.svg"
             alt="github"
-            class="icon2 i8"
+            class="icon i8"
           />
-          <img src="../assets/images/skillsicons/postman.png" alt="postman" class="icon2 i9" />
+          <img src="../assets/images/skillsicons/postman.svg" alt="postman" class="icon i9" />
         </div>
         <div class="icons-row r3">
-          <img src="../assets/images/skillsicons/adobexd.png" alt="adobexd" class="icon2 i10" />
-          <figure :class="{ highlighted: isQuestionClicked }" class="icon2 bootstrap">
+          <img src="../assets/images/skillsicons/adobe.svg" alt="adobexd" class="icon i10" />
             <img
-              :class="{ highlighted: isQuestionClicked }"
-              src="../assets/images/skillsicons/bootstrapShort.png"
-              alt="bootstrap short"
-              class="icon2 i11"
-            />
-            <img
-              src="../assets/images/skillsicons/bootstrap.png"
+            :class="{ highlighted: isQuestionClicked }"
+              src="../assets/images/skillsicons/bootstrap.svg"
               alt="bootstrap"
-              class="icon2 i11"
+              class="icon i11"
             />
-          </figure>
-          <img src="../assets/images/skillsicons/jira.png" alt="jira" class="icon2 i12" />
+          <img src="../assets/images/skillsicons/jira.svg" alt="jira" class="icon i12" />
           <img
-            src="../assets/images/skillsicons/confluence.png"
+            src="../assets/images/skillsicons/confluence.svg"
             alt="confluence"
-            class="icon2 i13"
+            class="icon i13"
           />
         </div>
-      </div>
     </BaseSection>
     <p class="question" @click="handleQuestionClick">What did I use to create this webpage?</p>
   <BaseBlob />
@@ -106,16 +90,45 @@ const handleQuestionClick = () => {
 </script>
 
 <style scoped>
-.skills-section {
-  margin: 5vmin 0;
+.my-skills {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 3vmin;
 }
+.skills-section {
+  height: 60vh;
+  justify-content: space-between;
+}
+:deep(.s-container){
+  justify-content: center;
+}
+.description {
+  text-align: center;
+  letter-spacing: 0.1vmin;
+  line-height: 2.5vmin;
+  color: #393737;
+  margin-top: 5vmin;
+}
+
+.icons-row {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  gap: 8vw;
+  width: 100%;
+  height: 30%;
+  flex-wrap: wrap;
+}
+
 .icon {
-  width: auto;
+  display: flex;
   object-fit: contain;
+  height: 3vw;
+}
+
+figure {
+  margin: 0;
 }
 
 .icon:not(.highlighted),
@@ -125,39 +138,6 @@ const handleQuestionClick = () => {
 .highlighted {
   filter: grayscale(0%);
   filter: contrast(120%);
-}
-.icon2 {
-  display: flex;
-  object-fit: contain;
-}
-
-.icons-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 5vmin;
-}
-
-.skill-icons {
-  display: flex;
-  flex-direction: column;
-  gap: 5vmin;
-}
-.bootstrap,
-.tailwind {
-  display: flex;
-  gap: 1vmin;
-}
-.skill-icons figure {
-  margin: 0;
-}
-
-.description {
-  text-align: center;
-  letter-spacing: 0.1vmin;
-  line-height: 2.5vmin;
-  color: #393737;
 }
 .question {
   color: #5893d4;
@@ -169,5 +149,13 @@ const handleQuestionClick = () => {
   cursor: pointer;
   text-decoration: underline;
   filter: contrast(150%);
+}
+
+.r1 .icon{
+  height: 6vw;
+}
+@media (max-width: 768px) {
+
+
 }
 </style>

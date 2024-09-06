@@ -4,25 +4,27 @@
       <h1 class="name">Samaia Gahramanov</h1>
       <div class="main-info">
         <div class="my-info">
-          <figure class="fig born-date">
+
+          <div class="fig born-date">
             <img src="@/assets/images/icons/calendar.png" alt="Birthdate" class="l-icon birthdate" />
-            <figcaption class="birthdate-text text">17 September 1996</figcaption>
-          </figure>
-          <figure class="fig birthplace">
-            <figcaption class="birthplace-text text">born in</figcaption>
+            <p class="birthdate-text text">17 September 1996</p>
+          </div>
+
+          <div class="fig birthplace">
+            <p class="birthplace-text text">born in the Republic of Moldova</p>
             <img
               src="@/assets/images/icons/moldova.png"
               alt="Republic of Moldova"
               class="l-icon birthplace-img"
             />
-          </figure>
-          <figure class="fig current-place">
-            <figcaption class="current-place-text text">currently based in</figcaption>
+          </div>
+          <div class="fig current-place">
+            <p class="current-place-text text"> based in Germany</p>
             <img src="@/assets/images/icons/germany.png" alt="Germany" class="l-icon birthplace-img" />
-            <figcaption class="fig current-city">
-              (<img src="@/assets/images/icons/cologne.png" class="l-icon city" />)
-            </figcaption>
-          </figure>
+            <p class="fig current-city text"> 
+              (Cologne <img src="@/assets/images/icons/cologne.png" class="l-icon city" />)
+            </p>
+          </div>
         </div>
         <div class="my-image">
           <img src="../assets/images/my-photo.png" alt="" class="my-photo" />
@@ -65,7 +67,10 @@
       </div>
     </div>
     <div class="languages">
-      <LanguagesChart />
+      <div class="romanian l-bar">Romanian (Native)</div>
+      <div class="russian l-bar">Russian</div>
+      <div class="german l-bar">German</div>
+      <div class="english l-bar">English</div>
     </div>
     <p class="contact">
       For more details, please
@@ -81,7 +86,6 @@
 
 <script setup>
 import BaseSection from '@/components/BaseSection.vue'
-import LanguagesChart from '@/components/LanguagesChart.vue'
 import BaseBlob from '@/components/BaseBlob.vue'
 </script>
 
@@ -91,28 +95,26 @@ import BaseBlob from '@/components/BaseBlob.vue'
   font-weight: 200;
   color: #393737;
   letter-spacing: 0.2vmin;
-  padding: 0 26vmin;
   display: flex;
   flex-direction: column;
   gap: 5vmin;
 }
-
-.about-me {
- margin: 0 -26vmin;
- padding: 6vmin 26vmin;
- width: auto!important;
+:deep(.s-container){
+  gap: 3vmin;
 }
 
-.name {
-  color: black;
-}
 .main-info {
   display: flex;
   align-items: center;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
 }
-
+.my-info{
+  display: flex;
+  flex-direction: column;
+  gap: 1vmin;
+  font-size: 2vw;
+}
 .my-photo {
   width: 22vmin;
 }
@@ -128,9 +130,7 @@ import BaseBlob from '@/components/BaseBlob.vue'
   width: 4vmin;
   height: 4vmin;
 }
-.born-date {
-  margin-bottom: 4vmin;
-}
+
 .birthplace {
   margin: 0 !important;
 }
@@ -138,9 +138,12 @@ import BaseBlob from '@/components/BaseBlob.vue'
 .se {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2vmin;
-  margin: 0 3vmin 2vmin 3vmin;
+  grid-template-columns: 50% 50%;
+  margin: 0 0 5vmin 0;
+  gap: 6vmin;
+}
+.text{
+  margin: 0;
 }
 
 .what,
@@ -154,11 +157,9 @@ import BaseBlob from '@/components/BaseBlob.vue'
   color: #5893d4;
   font-style: italic;
 }
-.languages {
-  align-self: center;
-}
+
 .contact {
-  margin-bottom: 8vmin;
+  padding: 2vmin 0 8vmin 0;
   text-align: center;
   font-size: 2vmin;
   letter-spacing: 0.2vmin;
@@ -167,20 +168,71 @@ import BaseBlob from '@/components/BaseBlob.vue'
   color: #5893d4;
   text-decoration: none;
 }
-
-@media (max-width: 1024px) {
- .about{
-  padding: 0 6vmin;
- }
-.se{
+.studies-and-experience, .languages{
+  padding: 2vmin 15%;
+  width: 100%;
+}
+.languages{
+  align-self: center;
+}
+.l-bar{
+  height: 4vmin;
   display: flex;
-  flex-direction: column;
-  gap: 0;
-  margin-bottom: 5vmin;
+  align-items: center;
+  justify-content: start;
+  font-size: 1.5vmin;
+  font-weight: 600;
+  color: white;
+  padding: 2vmin 4vmin;
+  border-radius: 0.5vmin;
+  margin: 0 0 1vmin 0;
+}
+
+.romanian{
+  width: 100%;
+  background: rgb(211,84,0);
+  background: linear-gradient(90deg, rgba(211,84,0,1) 0%, rgba(244,164,96,1) 35%);
+}
+
+.russian{
+  width: 90%;
+  background: rgb(244,164,96);
+  background: linear-gradient(90deg, rgba(244,164,96,1) 0%, rgba(88,147,212,1) 62%);
+}
+.german{
+  width: 70%;
+  background: rgb(88,147,212);
+  background: linear-gradient(90deg, rgba(88,147,212,1) 0%, rgba(36,65,107,1) 81%);
+}
+.english{
+  width: 60%;
+  background: rgb(36,65,107);
+  background: linear-gradient(90deg, rgba(36,65,107,1) 0%, rgba(235,235,235,1) 81%);
+}
+@media (max-width: 1024px) {
+.main-info{
   font-size: 14px;
 }
+.about-me{
+  padding: 5vmin 8vmin;
+}
+
 .name{
   font-size: 24px;
+}
+.studies-and-experience{
+  padding: 2vmin 8vmin;
+}
+}
+@media (max-width: 768px) {
+  .se{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    font-size: 14px;
+  }
+  .main-info{
+  font-size: 14px;
 }
 }
 </style>

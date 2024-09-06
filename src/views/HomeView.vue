@@ -39,10 +39,10 @@
   </BaseSection>
 
   <BasePopup @close="closePopup" v-show="isAboutViewVisible" >
-    <AboutView />
+    <AboutView class="popup-section"/>
   </BasePopup>
   <BasePopup @close="closePopup" v-show="isSkillsViewVisible">
-    <SkillsView />
+    <SkillsView class="popup-section"/>
   </BasePopup>
 
   <ContactView class="contact" />
@@ -166,7 +166,9 @@ const closePopup = () => {
   width: 100%;
   height:90%;
 }
-
+:deep(.popup-section>.section){
+  padding: 6vmin 2vmin;
+}
 @media (max-width: 1024px) {
   .hero-intro {
     padding: 8vw 0 4vw 10vw;

@@ -40,7 +40,7 @@ function handleBackgroundClick() {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 70%;
-  padding: 5vmin;
+  padding: 0;
   max-height: 90vh;
   background-color: white;
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
