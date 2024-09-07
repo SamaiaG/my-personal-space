@@ -229,7 +229,7 @@ import BaseBlob from '@/components/BaseBlob.vue'
     display: flex;
     flex-direction: column;
     gap: 0;
-    font-size: 14px;
+    font-size: 12px;
   }
   .main-info{
   font-size: 14px;

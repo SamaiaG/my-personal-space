@@ -6,70 +6,66 @@
     </p>
 
     <BaseSection class="skills-section">
-        <div class="icons-row r1">
+      <div class="skills-container">
           <img
             :class="{ highlighted: isQuestionClicked }"
             src="../assets/images/skillsicons/html.svg"
             alt="html"
-            class="icon i1"
+            class="icon i1 r1"
           />
           <img
             :class="{ highlighted: isQuestionClicked }"
             src="../assets/images/skillsicons/css.svg"
             alt="css"
-            class="icon i2"
+            class="icon i1 r1"
           />
           <img
             :class="{ highlighted: isQuestionClicked }"
             src="../assets/images/skillsicons/js.svg"
             alt="js"
-            class="icon i3"
+            class="icon r1"
           />
           <img
             :class="{ highlighted: isQuestionClicked }"
             src="../assets/images/skillsicons/figma.svg"
             alt="figma"
-            class="icon i4"
+            class="icon r1"
           />
           <img
             :class="{ highlighted: isQuestionClicked }"
             src="../assets/images/skillsicons/vue.svg"
             alt="vue"
-            class="icon i5"
+            class="icon r1"
           />
-        </div>
-        <div class="icons-row r2">
           <img
             :class="{ highlighted: isQuestionClicked }"
             src="../assets/images/skillsicons/webflow.svg"
             alt="webflow"
-            class="icon i6"
+            class="icon r2"
           />
         
-            <img  :class="{ highlighted: isQuestionClicked }" src="../assets/images/skillsicons/tailwind.svg" alt="tailwind" class="icon i7" />
+            <img  :class="{ highlighted: isQuestionClicked }" src="../assets/images/skillsicons/tailwind.svg" alt="tailwind" class="icon r2" />
           <img
             :class="{ highlighted: isQuestionClicked }"
             src="../assets/images/skillsicons/github.svg"
             alt="github"
-            class="icon i8"
+            class="icon r2"
           />
-          <img src="../assets/images/skillsicons/postman.svg" alt="postman" class="icon i9" />
-        </div>
-        <div class="icons-row r3">
-          <img src="../assets/images/skillsicons/adobe.svg" alt="adobexd" class="icon i10" />
+          <img src="../assets/images/skillsicons/postman.svg" alt="postman" class="icon r2" />
+          <img src="../assets/images/skillsicons/adobe.svg" alt="adobexd" class="icon r2" />
             <img
             :class="{ highlighted: isQuestionClicked }"
               src="../assets/images/skillsicons/bootstrap.svg"
               alt="bootstrap"
-              class="icon i11"
+              class="icon r2"
             />
-          <img src="../assets/images/skillsicons/jira.svg" alt="jira" class="icon i12" />
+          <img src="../assets/images/skillsicons/jira.svg" alt="jira" class="icon r2" />
           <img
             src="../assets/images/skillsicons/confluence.svg"
             alt="confluence"
-            class="icon i13"
+            class="icon r2"
           />
-        </div>
+          </div>
     </BaseSection>
     <p class="question" @click="handleQuestionClick">What did I use to create this webpage?</p>
   <BaseBlob />
@@ -98,10 +94,17 @@ const handleQuestionClick = () => {
 }
 .skills-section {
   height: 60vh;
-  justify-content: space-between;
+}
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 :deep(.s-container){
   justify-content: center;
+  gap: 0;
 }
 .description {
   text-align: center;
@@ -111,26 +114,22 @@ const handleQuestionClick = () => {
   margin-top: 5vmin;
 }
 
-.icons-row {
-  display: flex;
-  align-items: center;
-  justify-content:center;
-  gap: 8vw;
-  width: 100%;
-  height: 30%;
-  flex-wrap: wrap;
+.r1{
+  flex: 0 0 20%;
 }
 
+.r2{
+  flex: 0 0 25%;
+}
 .icon {
+  width: 100%;
   display: flex;
   object-fit: contain;
   height: 3vw;
 }
-
-figure {
-  margin: 0;
+.r1{
+  height: 6vw;
 }
-
 .icon:not(.highlighted),
 .icon2:not(.highlighted) {
   filter: grayscale(100%);
@@ -142,7 +141,7 @@ figure {
 .question {
   color: #5893d4;
   font-weight: 600;
-  margin-top: 2vmin;
+  margin-bottom: 4vmin;
   text-align: center;
 }
 .question:hover {
@@ -151,11 +150,17 @@ figure {
   filter: contrast(150%);
 }
 
-.r1 .icon{
-  height: 6vw;
+@media (max-width: 1024px) {
+
 }
 @media (max-width: 768px) {
-
-
+  .icon{
+  flex: 0 0 50%;
+  height: 5vw;
 }
+.r1{
+  height: 9vw;
+}
+
+ }
 </style>

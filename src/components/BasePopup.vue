@@ -58,4 +58,11 @@ function handleBackgroundClick() {
 :deep(.blob-container) {
   display: none;
 }
+@media (max-width: 768px) {
+  .close-icon{
+    width: 6vmin;
+    top: 3vmin;
+    right: 5vmin;
+  }
+}
 </style>
