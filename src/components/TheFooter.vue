@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="container">
       <figure class="logo_p">
-        <img src="../assets/images/logo_w.png" alt="logo" class="logo2" />
+        <img src="../assets/images/logo_white.svg" alt="logo" class="logo2" />
         <figcaption class="caption">My personal website.</figcaption>
       </figure>
       <div class="nav">
@@ -57,7 +57,8 @@
   font-size: 1.7vmin;
 }
 .logo2 {
-  width: 7vmin;
+  width: 5vmin;
+  margin-bottom: 1vmin;
 }
 .copyright {
   grid-row: 2 / 4; 
