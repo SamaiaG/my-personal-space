@@ -9,7 +9,7 @@
             <img
               class="d-block project-image w-100"
               alt="First slide [800x400]"
-              src="@/assets/images/projects_covers/coverpro1.png"
+              src="/project_cover/coverpro1.png"
               data-holder-rendered="true"
             />
           </div>
@@ -17,7 +17,7 @@
             <img
               class="d-block project-image w-100"
               alt="Second slide [800x400]"
-              src="@/assets/images/projects_covers/coverpro2.png"
+              src="/project_cover/coverpro2.png"
               data-holder-rendered="true"
             />
           </div>
@@ -25,10 +25,10 @@
               <img
               class="d-block project-image see-more  w-100"
               alt="More slide [800x400]"
-              src="@/assets/images/projects_covers/coverpro2.png"              title="cake"
+              src="/project_cover/coverpro1.png"  
               data-holder-rendered="true"
             ></img>
-            <button class="see-more-btn"><RouterLink to="/cssfun" class="h-link">see all projects...</RouterLink>
+            <button class="see-more-btn"><RouterLink to="/allprojects" class="h-link">see all projects...</RouterLink>
             </button>
           </div>
         </div>

@@ -17,6 +17,8 @@ import TheFooter from './components/TheFooter.vue'
 }
 .content {
   margin: 10vmin 0;
+  min-height: 80vh;
+
 }
 
 @media (max-width: 768px) {

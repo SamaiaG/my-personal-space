@@ -30,7 +30,6 @@ const projectLink = ref('')
 onMounted(() => {
   const projectId = route.params.projectId
 
-  // Assuming data is fetched based on projectId
   const projectData = getProjectDetailsById(projectId)
   projectTitle.value = projectData.title
   projectDescription.value = projectData.description
