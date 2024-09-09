@@ -1,20 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rhodium+Libre&display=swap');
 
 :root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
 
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: #393737;
-
-  --section-gap: 160px;
-
-  --primary-color: #213956;
-  --secondary-color: #c4baa9;
-
-
-  --dark-shade: #232323;
 }
 
 *,
