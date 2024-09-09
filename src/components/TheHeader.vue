@@ -50,7 +50,7 @@ onUnmounted(() => {
 }
 
 #logo {
-  background-image: url('favlogo.svg');
+  background-image: url('../assets/images/logo_color.png');
   background-size: cover;
   background-position: center;
   width: 8vmin;
@@ -58,7 +58,7 @@ onUnmounted(() => {
   margin:2vmin;
 }
 #logo:hover {
-  background-image: url('../assets/images/logo_white.svg');
+  background-image: url('../assets/images/logo_white.png');
 }
 
 .hamburger {
