@@ -1,7 +1,7 @@
 <template>
   <div class="my-skills">
     <p class="description">
-      This is my range of skills and things I had the possibility to get in touch with.<br />
+      This is my range of skills and things I had the possibility to get in touch with.
       Each represents a part of my experience, which I use and develop constantly.
     </p>
 
@@ -161,6 +161,8 @@ const handleQuestionClick = () => {
 .r1{
   height: 9vw;
 }
-
+.description{
+  padding: 3vmin 10vmin;
+}
  }
 </style>

@@ -12,63 +12,105 @@
         or find me on
         <a href="https://www.linkedin.com/in/samaia-gahramanov-569343232/"> Linkedin</a>.
       </p>
-      <form class="contactForm">
+
+      <form class="contactForm" @submit.prevent="handleSubmit">
         <div class="form-fields">
-          <div class="name-and-email">
-            <div class="name">
-              <div class="form-floating mb-3">
+              <div class="name form-floating">
                 <input
                   type="text"
                   class="form-control"
                   id="floatingInput"
-                  placeholder="firstname"
+                  placeholder="yourname"
+                  v-model="userName"
                   required
                 />
-                <label for="floatingInput">First Name</label>
+                <label for="floatingInput">Your Name</label>
               </div>
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="floatingInput"
-                  placeholder="lastname"
-                  required
-                />
-                <label for="floatingInput">Last Name</label>
-              </div>
-            </div>
-            <div class="email form-floating mb-3">
+            <div class="email form-floating">
               <input
                 type="email"
                 class="form-control"
                 id="floatingInput"
                 placeholder="email"
+                v-model="userEmail"
                 required
               />
-              <label for="floatingInput">Email</label>
+              <label for="floatingInput">Your Email</label>
             </div>
-          </div>
-          <div class="message form-group mb-3">
+          <div class="message form-group">
             <textarea
               class="form-control"
               id="exampleFormControlTextarea1"
-              rows="3"
-              placeholder="Enter your message"
+              rows="5"
+              placeholder="Your message"
+              v-model="message"
               required
             ></textarea>
           </div>
         </div>
-        <BaseButton type="submit" class="submit-btn">Send</BaseButton>
+        <BaseButton type="submit" class="submit-btn" :disabled="isSubmitting">{{isSubmitting ? 'Sending...' : 'Send Message'}}</BaseButton>
       </form>
+      <p v-if="submitError" class="error-message">{{submitError}}</p>
+
     </div>
   </BaseSection>
 </div>
 </template>
 
 <script setup>
-import BaseSection from '@/components/BaseSection.vue'
-import BaseButton from '@/components/BaseButton.vue'
+import { ref } from 'vue';
+import emailjs from 'emailjs-com';
+
+import BaseSection from '@/components/BaseSection.vue';
+import BaseButton from '@/components/BaseButton.vue';
+
+const userName = ref('');
+const userEmail = ref('');
+const message = ref('');
+
+const isSubmitting = ref(false);
+const submitError = ref('');
+
+const serviceID = 'service_dvurih8';
+  const templateID = 'template_vf5qh4m';
+  const userID = 'gZN89EuNcBtTr07K4';
+
+const handleSubmit = async () => {
+  if (!validateForm()) return;
+
+  isSubmitting.value = true;
+
+  try {
+    const formData = {
+  from_name: userName.value, 
+  from_email: userEmail.value, 
+  message_html: message.value 
+};
+
+    const response = await emailjs.send(serviceID, templateID, formData, userID);
+
+    if (response.status === 200) {
+      alert('Message sent successfully!');
+    } else {
+      submitError.value = 'Failed to send the message. Please try again later.';
+    }
+  } catch (error) {
+    submitError.value = 'Error occurred. Please try again later.';
+  } finally {
+    isSubmitting.value = false;
+  }
+};
+
+const validateForm = () => {
+  if (!userName.value || !userEmail.value || !message.value) {
+    submitError.value = 'All fields are required.';
+    return false;
+  }
+  return true;
+};
 </script>
+
+
 <style scoped>
 .contactContainer {
   width: 100%;
@@ -98,29 +140,54 @@ import BaseButton from '@/components/BaseButton.vue'
   text-align: center;
   margin-bottom: 8vmin;
 }
+.name{
+  grid-column: 1;
+  grid-row:1
+}
+.email{
+  grid-column: 1;
+  grid-row: 2
+}
+.message{
+  grid-column:  2;
+  grid-row: 1/3;
+}
 
-.name {
-  display: flex;
-  justify-content: space-between;
-  gap: 5vmin;
-}
-.name-and-email {
-  display: flex;
-  flex-direction: column;
-}
 .form-fields {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 5vmin;
+  gap: 2vmin;
   margin: 5vmin 0;
+
 }
 .form-control {
   width: 100%;
-  font-size: 2vmin;
   font-family: 'Raleway', sans-serif;
-  padding: 2vmin 4vmin;
 }
 .form-floating {
   width: 100%;
+}
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 1024px) {
+  .contactTitle {
+    font-size: 32px;
+  }
+  .contactMessage {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .form-fields {
+    display: flex;
+    flex-direction: column;
+  }
+  .contactContainer{
+    padding: 0 5vmin;
+  }
 }
 </style>
