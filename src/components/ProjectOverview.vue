@@ -1,17 +1,14 @@
 <template>
-  <div class="card-container">
-  <div class="card mb-3 border-0 shadow p-3 bg-body rounded">
-    <img :src="imageSrc" alt="card image" class="card-image rounded cursor-pointer" @click="openModal" />
-    <div class="card-body">
-        <RouterLink :to="{ name: 'projectComponent', params: { projectId: projectId } }" class="title">{{title}}</RouterLink>
-      <p class="card-text description pt-3"> {{ description }}</p>
-    <p class="card-text"><small class="update text-muted">Last updated: {{lastUpdate}}</small></p>
+  <div class="gallery">
+      <div class="gallery-item">
+        <img :src="imageSrc" alt="card image" class="card-image rounded cursor-pointer" @click="openModal" />
+        <div class="item-description">
+          <h3> <RouterLink :to="{ name: 'projectComponent', params: { projectId: projectId } }" class="title">{{title}}</RouterLink></h3>
+          <p class="card-text description pt-3"> {{ description }}</p>
+          <p class="card-text"><small class="update text-muted">Last updated: {{lastUpdate}}</small></p>
+        </div>
+      </div>
   </div>
-</div>
-</div>
-<div class="modal-container" @click="closeModal" v-if="isModalOpen">
-  <img :src="imageSrc" alt="fullscreen image" class="modal-image"  />
-</div>
 </template>
 
 <script setup>
@@ -40,12 +37,7 @@ const closeModal = () => {
 </script>
 
 <style scoped>
-.card-container {
-  padding: 4vw 15%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} 
+
 .title {
   font-family: 'Raleway', sans-serif;
   font-size: 3.5vmin;
@@ -90,6 +82,43 @@ const closeModal = () => {
 .update{
   font-size: 1vmin;
 }
+
+.gallery {
+  padding: 2rem;
+}
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+.item-description {
+  padding: 1rem;
+  text-align: center;
+}
+.item-description h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+.item-description p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+.presentation {
+  display: flex;
+  gap: 3vmin;
+  align-items: center;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.1vmin;
+}
+
 
 @media (max-width: 1024px) {
  

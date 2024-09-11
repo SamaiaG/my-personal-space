@@ -30,6 +30,7 @@ const projects = [
 .all-projects {
  display: grid;
  grid-template-columns: 50% 50%;
+ padding: 2vmin 16vmin;
 }
 
 @media (max-width: 1024px) {
