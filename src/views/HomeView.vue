@@ -148,6 +148,7 @@ const closePopup = () => {
   background: rgb(230, 126, 34);
   background: linear-gradient(158deg, rgba(230, 126, 34, 0.8) 19%, rgba(88, 147, 212) 49%);
 }
+
 .h-link {
   color: white;
   text-decoration: none;}

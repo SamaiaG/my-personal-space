@@ -24,7 +24,7 @@
                   v-model="userName"
                   required
                 />
-                <label for="floatingInput">Your Name</label>
+                <label for="floatingInput">your name</label>
               </div>
             <div class="email form-floating">
               <input
@@ -35,20 +35,20 @@
                 v-model="userEmail"
                 required
               />
-              <label for="floatingInput">Your Email</label>
+              <label for="floatingInput">your email</label>
             </div>
           <div class="message form-group">
             <textarea
               class="form-control"
               id="exampleFormControlTextarea1"
               rows="5"
-              placeholder="Your message"
+              placeholder="your message"
               v-model="message"
               required
             ></textarea>
           </div>
         </div>
-        <BaseButton type="submit" class="submit-btn" :disabled="isSubmitting">{{isSubmitting ? 'Sending...' : 'Send Message'}}</BaseButton>
+        <BaseButton type="submit" class="submit-btn" :disabled="isSubmitting">{{isSubmitting ? 'sending...' : 'send message'}}</BaseButton>
       </form>
       <p v-if="submitError" class="error-message">{{submitError}}</p>
 
@@ -156,13 +156,14 @@ const validateForm = () => {
 .form-fields {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2vmin;
+  gap: 3.9vmin;
   margin: 5vmin 0;
 
 }
 .form-control {
   width: 100%;
   font-family: 'Raleway', sans-serif;
+  padding: 1rem 0.75rem;
 }
 .form-floating {
   width: 100%;
@@ -172,6 +173,14 @@ const validateForm = () => {
   text-align: center;
   margin-top: 10px;
 }
+a{
+  text-decoration: none;
+  color:#E67E22
+}
+a:hover {
+  text-decoration: underline;
+}
+
 
 @media (max-width: 1024px) {
   .contactTitle {

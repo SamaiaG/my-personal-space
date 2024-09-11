@@ -1,35 +1,25 @@
 <template>
   <div class="listed-portfolio">
   <BaseSection class="projects">
-    <h1>Some projects</h1>
+    <h1 class="sec-title"><RouterLink to="/allprojects" class="h-link">Here to see some projects</RouterLink></h1>
     <div class="bd-example">
       <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-inner">
           <div class="carousel-item">
             <img
-              class="d-block project-image w-100"
+              class="d-block project-image"
               alt="First slide [800x400]"
-              src="/project_cover/coverpro1.png"
+              src="/project_cover/thepickCard.png"
               data-holder-rendered="true"
             />
           </div>
           <div class="carousel-item">
             <img
-              class="d-block project-image w-100"
+              class="d-block project-image"
               alt="Second slide [800x400]"
-              src="/project_cover/coverpro2.png"
+              src="/project_cover/teamappCard.png"
               data-holder-rendered="true"
             />
-          </div>
-          <div class="carousel-item">
-              <img
-              class="d-block project-image see-more  w-100"
-              alt="More slide [800x400]"
-              src="/project_cover/coverpro1.png"  
-              data-holder-rendered="true"
-            ></img>
-            <button class="see-more-btn"><RouterLink to="/allprojects" class="h-link">see all projects...</RouterLink>
-            </button>
           </div>
         </div>
         <button class="carousel-control-prev" href="#" role="button">
@@ -41,14 +31,15 @@
       </div>
     </div>
   </BaseSection>
+
   <BaseSection class="css-projects">
-    <h1>Some CSS Fun</h1>
+    <h1 class="sec-title"><RouterLink to="/cssfun" class="h-link">Here to see some CSS Fun</RouterLink></h1>
     <div class="bd-example">
       <div id="carouselExampleIndicatorsCSS" class="carousel slide">
         <div class="carousel-inner">
           <div class="carousel-item">
             <iframe
-              class="d-block w-100"
+              class="d-block"
               alt="First slide [800x400]"
               src="https://samaiag.github.io/css-fun/girl/index.html"
               title="me"
@@ -57,32 +48,21 @@
           </div>
           <div class="carousel-item">
             <iframe
-              class="d-block w-100"
+              class="css-frame d-block"
               alt="Second slide [800x400]"
               src="https://samaiag.github.io/css-fun/flower%20pot/index.html"
-              title="girl"
+              title="plant"
               data-holder-rendered="true"
             ></iframe>
           </div>
           <div class="carousel-item">
             <iframe
-              class="d-block w-100"
+              class="css-frame d-block"
               alt="Third slide [800x400]"
               src="https://samaiag.github.io/css-fun/anxiety/index.html"
               title="girl"
               data-holder-rendered="true"
             ></iframe>
-          </div>
-          <div class="carousel-item">
-              <iframe
-              class="d-block see-more  w-100"
-              alt="Fourth slide [800x400]"
-              src="https://samaiag.github.io/css-fun/backing/index.html"
-              title="cake"
-              data-holder-rendered="true"
-            ></iframe>
-            <button class="see-more-btn"><RouterLink to="/cssfun" class="h-link">see more css fun tries...</RouterLink>
-            </button>
           </div>
         </div>
         <button class="carousel-control-prev" href="#" role="button">
@@ -155,60 +135,62 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.carousel-item {
-  display: none;
-}
-.carousel-inner {
-  width: 100vmin;
+.sec-title{
+  margin-bottom: 0;
+  font-size: 4vmin;
+  font-family: 'Raleway', sans-serif;
+  color: #393737;
 }
 
-.carousel-item.active {
-  display: block;
-}
-.d-block {
-  height: 35vmin;
-  width: 90vmin;
-}
 .carousel-inner {
   padding: 0 10vmin;
+
 }
+
+:deep(.section){
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+:deep(.s-container){
+  justify-content: center;
+}
+.carousel-item.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.d-block {
+  height: 40vmin;
+}
+
 .carousel-control-prev-icon {
   background-image: url('@/assets/images/icons/chevron-left.svg');
 }
 .carousel-control-next-icon {
   background-image: url('@/assets/images/icons/chevron-right.svg');
 }
-.h-link {
-  color: #595c62;
-  text-decoration: none;
-  font-size: 4vmin;
-}
 
-.see-more-btn{
+.h-link{
+  text-decoration: none;
+  color: #393737;
   font-family: 'Raleway', sans-serif;
-  position: absolute;
-  top: 14vmin;
-  background: none;
-  border: none;
-  padding: 1vmin 3vmin;
-width: 100%;
 }
 .h-link:hover {
-  color: #424448;
+  color:#E67E22
 }
 h1 {
   font-family: 'Raleway', sans-serif;
   letter-spacing: 0.1vmin;
 }
-.see-more{
-filter: blur(6px);
-opacity: 0.5;
-display: flex!important;
-justify-content: center;
-align-items: center;
 
+@media (max-width: 768px) {
+  .sec-title{
+    font-size: 24px;
+  }
+ 
 }
-.project-image{
-  object-fit: content!important;
-}
+
 </style>

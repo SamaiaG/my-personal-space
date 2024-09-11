@@ -76,7 +76,6 @@ onUnmounted(() => {
   background-image: url('../assets/images/icons/xmark-solid.svg');
 }
 
-
 .nav-wide {
   display: flex;
   align-items: stretch;

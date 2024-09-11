@@ -22,6 +22,9 @@
   cursor: pointer;
   border-radius: 0.5vmin;
 }
+.base-button:hover {  
+  text-decoration: underline;
+}
 
 @media (max-width: 1024px) {
   .base-button {

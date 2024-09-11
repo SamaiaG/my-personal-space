@@ -6,7 +6,7 @@
         <h1>This is me,</h1>
         <h2>and below is my kind of therapy.</h2>
       </div>
-      <iframe src="https://samaiag.github.io/css-fun/girl/index.html" title="girl" class="me"></iframe>
+      <iframe src="https://samaiag.github.io/css-fun/duolingoavatar/index.html" title="girl" class="me"></iframe>
     </div>
   </BaseSection>
 
@@ -59,7 +59,7 @@ iframe {
   letter-spacing: 0.1vmin;
 }
 .me {
-  width: 50vmin;
-  height: 40vmin;
+  width: 55vmin;
+  height: 45vmin;
 }
 </style>

@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="container">
       <figure class="logo_p">
-        <img src="../assets/images/logo_white.svg" alt="logo" class="logo2" />
+        <img src="../assets/images/logo_white.png" alt="logo" class="logo2" />
         <figcaption class="caption">My personal website.</figcaption>
       </figure>
       <div class="nav">
