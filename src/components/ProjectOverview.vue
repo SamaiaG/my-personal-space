@@ -8,7 +8,10 @@
           <p class="card-text"><small class="update text-muted">Last updated: {{lastUpdate}}</small></p>
         </div>
       </div>
-  </div>
+      <div v-if="isModalOpen" class="modal-container" @click="closeModal">
+      <img :src="imageSrc" alt="Full screen image" class="modal-image" />
+    </div>
+      </div>
 </template>
 
 <script setup>
