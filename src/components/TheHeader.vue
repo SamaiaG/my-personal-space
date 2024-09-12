@@ -1,7 +1,8 @@
 <template>
   <header>
     <div class="h-container">
-      <RouterLink to="/">  <div id="logo"></div></RouterLink>
+      <RouterLink to="/"> 
+        <img src='../assets/images/logo_color.png' alt="logo" class="logo" /></RouterLink>
       <div class="nav-wide">
         <RouterLink to="/about" class="h-link">About me</RouterLink>
         <RouterLink to="/skills" class="h-link">Skills</RouterLink>
@@ -46,19 +47,15 @@ onUnmounted(() => {
   width: 100vw;
   justify-content: space-between;
   padding: 0 16vmin;
-  backdrop-filter: blur(10px) ;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--second-shadow);
 }
 
-#logo {
-  background-image: url('../assets/images/logo_color.png');
-  background-size: cover;
-  background-position: center;
-  width: 8vmin;
-  height: 8vmin;
-  margin:2vmin;
-}
-#logo:hover {
-  background-image: url('../assets/images/logo_white.png');
+.logo {
+  width: 6vmin;
+  height: 6vmin;
+  margin: 1.5vmin;
 }
 
 .hamburger {
@@ -66,10 +63,10 @@ onUnmounted(() => {
   background-image: url('../assets/images/icons/bars-solid.svg');
   background-size: cover;
   background-position: center;
-  width: 6.5vmin;
-  height: 6.5vmin;
+  width: 5vmin;
+  height: 5vmin;
   margin-right:1vmin;
-  margin-top: 2vmin
+  margin: 2vmin;
 }
 
 .hamburger.is-open{
@@ -81,23 +78,23 @@ onUnmounted(() => {
   align-items: stretch;
 }
 .h-link {
-  font-size: 1rem;
+  font-weight: 500;
   text-decoration: none;
-  color: #393737;
+  color: #333333e4;
   padding: 0.8vmin 2vmin;
   place-content: center;
 }
 .h-link:hover,
 a:hover {
-  background-color: rgba(243, 139, 74, 0.8);
-  color: white;
+  box-shadow: var(--first-shadow);
+  transition: all 0.3s ease;
 }
-
 .hamburger-menu{
   position: fixed;
-  top: 10.3vmin;
+  top: 9vmin;
   right: 0;
 }
+
 @media (max-width: 768px) {
   .nav-wide{
     display: none;
@@ -107,7 +104,7 @@ a:hover {
     cursor: pointer;
   }
   .h-container {
-    padding: 0 6vmin;
+    padding: 0 3vmin;
   }
 }
 </style>

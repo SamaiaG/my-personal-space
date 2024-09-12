@@ -61,7 +61,6 @@ function getProjectDetailsById(id) {
 }
 .sub-tag {
   color: rgb(0, 0, 0, 0.35);
-  font-family: 'Raleway', sans-serif;
   letter-spacing: 0.3vmin;
   text-transform: uppercase;
   font-size: 1.5vmin;

@@ -117,21 +117,20 @@ const validateForm = () => {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  color: #393737;
+  color: var(--text-color);
   gap: 3vmin;
+}
+.contact-view{
+  display: flex;
+  justify-content: center;
+  align-items: center
 }
 .contactTitle {
   font-size: 2.5vw;
-  font-weight: 600;
-  font-family: 'Raleway', sans-serif;
   text-align: center;
 }
 .contactMessage {
   font-size: 1.2vw;
-  font-weight: 400;
-  font-family: 'Raleway', sans-serif;
-  line-height: 120%;
-  letter-spacing: 0.1vmin;
   text-align: center;
 }
 .contactForm {
@@ -157,13 +156,14 @@ const validateForm = () => {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3.9vmin;
-  margin: 5vmin 0;
-
+  margin: 5vmin 3vmin;
 }
 .form-control {
   width: 100%;
-  font-family: 'Raleway', sans-serif;
   padding: 1rem 0.75rem;
+  box-shadow: var(--second-shadow);
+  border: none
+
 }
 .form-floating {
   width: 100%;
@@ -175,7 +175,7 @@ const validateForm = () => {
 }
 a{
   text-decoration: none;
-  color:#E67E22
+  color: var(--color-primary-dark);
 }
 a:hover {
   text-decoration: underline;

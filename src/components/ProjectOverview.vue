@@ -37,19 +37,15 @@ const closeModal = () => {
 </script>
 
 <style scoped>
-
 .title {
-  font-family: 'Raleway', sans-serif;
   font-size: 3.5vmin;
   text-decoration: none;
   color: #393737;
 }
 .title:hover{
-  text-decoration: underline;
   color:#E67E22
 }
 .description {
-  font-family: 'Raleway', sans-serif;
   font-size: 1.5vmin;
   color: #393737;
   min-height: 6vh;
@@ -93,6 +89,7 @@ const closeModal = () => {
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s ease;
+  box-shadow: var(--second-shadow);
 }
 .gallery-item:hover {
   transform: translateY(-5px);
@@ -115,8 +112,6 @@ const closeModal = () => {
   display: flex;
   gap: 3vmin;
   align-items: center;
-  font-family: 'Raleway', sans-serif;
-  letter-spacing: 0.1vmin;
 }
 
 

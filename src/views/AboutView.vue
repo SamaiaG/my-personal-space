@@ -91,7 +91,6 @@ import BaseBlob from '@/components/BaseBlob.vue'
 
 <style scoped>
 .about {
-  font-family: 'Raleway', sans-serif;
   font-weight: 200;
   color: #393737;
   letter-spacing: 0.2vmin;
@@ -107,7 +106,7 @@ import BaseBlob from '@/components/BaseBlob.vue'
   display: flex;
   align-items: center;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .my-info{
   display: flex;
@@ -169,7 +168,7 @@ import BaseBlob from '@/components/BaseBlob.vue'
   text-decoration: none;
 }
 .studies-and-experience, .languages{
-  padding: 2vmin 15%;
+  padding: 2vmin 10%;
   width: 100%;
 }
 .languages{

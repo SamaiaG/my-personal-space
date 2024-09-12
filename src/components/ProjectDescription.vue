@@ -65,20 +65,21 @@ const props = defineProps({
 
 .title {
   font-size: 4vmin;
-  color: #393737;
-  font-family: 'Raleway', sans-serif;
+  color: var(--color-text);
   text-decoration: none;
 }
 .title:hover{
-  font-weight: 700;
+  font-weight: 500;
+  color: var(--color-primary-dark);
 }
 .tag {
   background-color: #f9efe7;
   opacity: 0.8;
   backdrop-filter: blur(10px) ;
   padding: 0.5vmin 1vmin;
-  color: #393737;
+  color: var(--color-text);
   font-size: 1.5vmin;
+  border-radius: 10%;
 }
 .tags {
   width: 100%;
@@ -93,30 +94,31 @@ const props = defineProps({
 }
 .project-image {
   height: 40vw;
+  margin-right: 1vmin;
   filter: drop-shadow(8px 8px 4px rgba(17, 12, 46, 0.2));
 }
 .see-project {
   grid-column: 1/2;
   grid-row: 2/3;
   width: 25vmin;
-  padding: 1vmin 4vmin !important;
-  background: rgb(230, 126, 34);
-  background: linear-gradient(158deg, rgba(230, 126, 34, 0.8) 24%, rgba(226, 156, 95, 0.8) 100%);
 }
 .h-link {
   color: white;
   text-decoration: none;
 }
 .h-link:hover {
-  text-decoration: underline;
+  color: var(--color-primary);
 }
 .sub-tag {
   font-size: 1.5vmin;
-  color: #393737;
+  color: var(--color-text);
   font-weight: 400;
-  font-family: 'Raleway', sans-serif;
   align-self: self-start;
   margin-bottom: 0;
+}
+
+.see-project:hover .h-link {
+  color: var(--color-primary-dark); /* Change to your desired hover color */
 }
 
 @media (max-width: 768px) {
@@ -136,10 +138,11 @@ const props = defineProps({
   margin: 6vmin; 
   align-self: end; 
   background: transparent;
+  box-shadow: none;
   width: auto
 }
 .h-link{
-  color: rgb(230, 126, 34);
+  color: var(--color-primary);
   font-weight: 600;
 }
 .tags {

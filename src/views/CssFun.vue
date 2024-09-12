@@ -2,12 +2,15 @@
   <div class="css-art">
     <BaseSection class="first-css-section">
       <div class="presentation">
-          <p class="heading"><span class="h h1">This is me,</span> <br> <span class="h h2">and below is my kind of therapy.</span> </p>
+        <div class="about-me">
+          <h1 class="heading">This is me,</h1>
+          <h3 class="heading">and below is my kind of therapy.</h3>
+        </div>
         <iframe src="https://samaiag.github.io/css-fun/duolingoavatar/index.html" title="girl" class="me"></iframe>
       </div>
     </BaseSection>
     <div class="css-items">
-    <p class="description">Here's a fun collection of my CSS illustrations! 
+    <p class="description"> Here's a fun collection of my CSS illustrations! 
       I create these whenever I'm feeling tired, using them as a way to unwind. Some are inspired by other artists,
        while others come straight from my imagination or everyday life. It's 
        a great way for me to relax and have fun with coding! Enjoy exploring my colorful creations!</p>
@@ -31,14 +34,16 @@ import BaseSection from '@/components/BaseSection.vue'
 import BaseBlob from '@/components/BaseBlob.vue';
 
 const galleryItems = [
+{ src: "https://samaiag.github.io/css-fun/girl/index.html", title: "Autoportret", description: "A playful shark swimming in the deep blue sea." },
   { src: "https://samaiag.github.io/css-fun/shark/index.html", title: "Shark", description: "A playful shark swimming in the deep blue sea." },
-  { src: "https://samaiag.github.io/css-fun/flower%20pot/index.html", title: "Flower Pot", description: "A cheerful potted plant bringing life to any room." },
+  { src: "https://samaiag.github.io/css-fun/duolingoavatar/index.html", title: "My Duolingo Avatar", description: "A colorful avatar created with Duolingo." },
+  { src: "https://samaiag.github.io/css-fun/curious%20cat/index.html", title: "Curious Cat", description: "An inquisitive feline exploring its surroundings." },
+  { src: "https://samaiag.github.io/css-fun/anxiety/index.html", title: "Anxiety", description: "A visual representation of inner turmoil." },
   { src: "https://samaiag.github.io/css-fun/minimalist%20dog/index.html", title: "Minimalist Dog", description: "A cute, simplified canine companion." },
+  { src: "https://samaiag.github.io/css-fun/flower%20pot/index.html", title: "Flower Pot", description: "A cheerful potted plant bringing life to any room." },
   { src: "https://samaiag.github.io/css-fun/peter%20griffin/index.html", title: "Peter Griffin", description: "The lovable Family Guy character in CSS form." },
   { src: "https://samaiag.github.io/css-fun/rabbit/index.html", title: "Rabbit", description: "A fluffy bunny hopping into your heart." },
-  { src: "https://samaiag.github.io/css-fun/curious%20cat/index.html", title: "Curious Cat", description: "An inquisitive feline exploring its surroundings." },
   { src: "https://samaiag.github.io/css-fun/superman/index.html", title: "Superman", description: "The Man of Steel, ready to save the day!" },
-  { src: "https://samaiag.github.io/css-fun/anxiety/index.html", title: "Anxiety", description: "A visual representation of inner turmoil." },
   { src: "https://samaiag.github.io/css-fun/backing/index.html", title: "Cake", description: "A delicious-looking cake to satisfy your sweet tooth." },
   { src: "https://samaiag.github.io/css-fun/gym/index.html", title: "Gym", description: "Fitness equipment to inspire your workout routine." },
   { src: "https://samaiag.github.io/css-fun/photography/index.html", title: "Camera", description: "Capture life's moments with this stylish camera." },
@@ -58,25 +63,9 @@ iframe {
   width: 100%;
   height: 200px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--second-shadow);
 }
-.heading{
-  font-weight: 800;
-    font-size: 2.5vw;
-    color: #393737;
-    font-family: 'Raleway', sans-serif;
-    text-align: left;
-}
-.h{
-  font-size: 3vw;
-  font-weight: 800;
-  color: #393737;
-  font-family: 'Raleway', sans-serif;
-  text-align: left;
-}
-.h2{
-  font-size: 1.5vw;
-}
+
 .css-items{
   padding: 2vmin 16vmin;
 }
@@ -93,14 +82,15 @@ iframe {
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s ease;
+  box-shadow: var(--second-shadow);
+
 }
 .gallery-item:hover {
   transform: translateY(-5px);
 }
 .description{
-  font-family: 'Raleway', sans-serif;
   font-size: 2vmin;
-  color: #393737;
+  color: var(--color-text);
   text-align: center;
   padding: 1vmin 2vmin;
 }
@@ -111,7 +101,7 @@ iframe {
 .item-description h3 {
   margin: 0 0 0.5vmin;
   font-size: 2vmin;
-  color: #333;
+  color: var(--color-text);
 }
 .item-description p {
   margin: 0;
@@ -123,7 +113,6 @@ iframe {
   gap: 3vmin;
   align-items: center;
   justify-content: space-around;
-  font-family: 'Raleway', sans-serif;
   letter-spacing: 0.1vmin;
 }
 .me {
@@ -131,5 +120,8 @@ iframe {
   height: 45vmin;
   box-shadow: none;
   margin:-5vmin
+}
+:deep(.section){
+  padding: 2vmin 16vmin;
 }
 </style>

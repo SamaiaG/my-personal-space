@@ -21,7 +21,6 @@ const props = defineProps({
     background-color: rgba(243, 139, 74); 
     box-shadow: rgba(17, 12, 46, 0.45) 0px 48px 100px 0px;
     width: 100%;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .h-link{
     text-decoration: none;
@@ -35,7 +34,6 @@ const props = defineProps({
 .h-link:hover{
     color: rgba(243, 139, 74, 0.8);
     background-color: #f9efe7;
-    font-family: 'Raleway', sans-serif;
-    
+    font-family: 'Raleway', sans-serif; 
 }
 </style>

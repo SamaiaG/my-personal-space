@@ -1,7 +1,7 @@
 <template>
   <div class="listed-portfolio">
   <BaseSection class="projects">
-    <h1 class="sec-title"><RouterLink to="/allprojects" class="h-link">Here to see some projects</RouterLink></h1>
+    <h1 class="sec-title">Some Projects</h1>
     <div class="bd-example">
       <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-inner">
@@ -30,10 +30,12 @@
         </button>
       </div>
     </div>
+    <BaseButton class="see-more">
+    <RouterLink to="/allprojects" class="h-link">see all... </RouterLink></BaseButton>
   </BaseSection>
 
   <BaseSection class="css-projects">
-    <h1 class="sec-title"><RouterLink to="/cssfun" class="h-link">Here to see some CSS Fun</RouterLink></h1>
+    <h1 class="sec-title">CSS Fun Masterpieces</h1>
     <div class="bd-example">
       <div id="carouselExampleIndicatorsCSS" class="carousel slide">
         <div class="carousel-inner">
@@ -41,7 +43,7 @@
             <iframe
               class="d-block"
               alt="First slide [800x400]"
-              src="https://samaiag.github.io/css-fun/girl/index.html"
+              src="https://samaiag.github.io/css-fun/duolingoavatar/index.html"
               title="me"
               data-holder-rendered="true"
             ></iframe>
@@ -73,6 +75,7 @@
         </button>
       </div>
     </div>
+    <BaseButton class="see-more"><RouterLink to="/cssfun" class="h-link">see all...</RouterLink></BaseButton> 
   </BaseSection>
   <BaseBlob />
 </div>
@@ -81,6 +84,7 @@
 <script setup>
 import BaseSection from '@/components/BaseSection.vue'
 import BaseBlob from '@/components/BaseBlob.vue'
+import BaseButton from '@/components/BaseButton.vue';
 import { onMounted } from 'vue'
 
 onMounted(() => {
@@ -172,15 +176,22 @@ onMounted(() => {
 .carousel-control-next-icon {
   background-image: url('@/assets/images/icons/chevron-right.svg');
 }
-
+.see-more{
+  padding: 0.3vw 1vw 0.5vw 1vw;
+}
 .h-link{
+  width: 100%;
   text-decoration: none;
-  color: #393737;
-  font-family: 'Raleway', sans-serif;
+  text-align: end;
+  color:white
 }
 .h-link:hover {
   color:#E67E22
 }
+.see-more:hover .h-link {
+  color: var(--color-primary-dark);
+}
+
 h1 {
   font-family: 'Raleway', sans-serif;
   letter-spacing: 0.1vmin;
@@ -191,6 +202,10 @@ h1 {
     font-size: 24px;
   }
  
+}
+iframe{
+  background-color:#fffafa52;
+  width: 72vmin;
 }
 
 </style>

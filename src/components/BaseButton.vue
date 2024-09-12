@@ -9,21 +9,20 @@
   min-width: 25%;
   max-width: 40vw;
   max-height: 7vmin;
-  background: rgb(230, 126, 34);
-  background: linear-gradient(
-    158deg,
-    rgba(230, 126, 34, 0.80015756302521) 35%,
-    rgba(88, 147, 212, 1) 100%
-  );
+  background: var(--color-primary);
   color: white;
   border: none;
-  padding: 0.8vw 2vw;
+  padding: 0.6vw 2vw 0.8vw 2vw;
   font-size: 1.2vw;
   cursor: pointer;
   border-radius: 0.5vmin;
+  box-shadow:var(--first-shadow);
+  margin: 1vmin
 }
 .base-button:hover {  
-  text-decoration: underline;
+  color: var(--color-primary-dark);
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 1024px) {

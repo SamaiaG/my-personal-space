@@ -10,7 +10,7 @@
         </p>
       </div>
       <div class="right-part">    
-        <iframe src="https://samaiag.github.io/css-fun/girl/index.html" title="girl" class="me"></iframe>
+        <iframe src="https://samaiag.github.io/css-fun/girlorangebg/index.html" title="girl" class="me"></iframe>
       </div>
       <div class="buttons">
         <BaseButton @click="toggleAboutView" class="about">get to know me better</BaseButton>
@@ -85,7 +85,6 @@ const closePopup = () => {
   grid-template-rows: auto;
   width: 100%;
   gap: 2%;
-  padding-left: 4vw
 }
 
 .left-part {
@@ -103,29 +102,7 @@ const closePopup = () => {
   grid-row: 1/3;
   height: 70vh;
   display: flex;
-  justify-content: end;
   align-items: center;
-}
-
-.title{
-  font-weight: 800;
-  font-size: 4vw;
-  color: #393737;
-  font-family: 'Raleway', sans-serif;
-  padding-top: 5vw;
-  text-align: left;
-  padding-bottom:2vw ;
-
-}
-
-.description {
-  font-weight: 400;
-  font-size: 1.7vw;
-  color: #393737;
-  font-family: 'Raleway', sans-serif;
-  line-height: 120%;
-  letter-spacing: 0.1vmin;
-  text-align: left;
 }
 .buttons {
   grid-column: 1/2;
@@ -136,17 +113,15 @@ const closePopup = () => {
   gap: 3vw;
 }
 
-.skills {
-  background: rgb(88, 147, 212);
-  background: linear-gradient(
-    158deg,
-    rgba(88, 147, 212, 0.8015581232492998) 24%,
-    rgba(230, 126, 34, 0.80015756302521) 100%
-  ) !important;
+.title, .description {
+  padding-bottom:2vw ;
 }
-.more-projects {
-  background: rgb(230, 126, 34);
-  background: linear-gradient(158deg, rgba(230, 126, 34, 0.8) 19%, rgba(88, 147, 212) 49%);
+
+.title{
+  font-size: 4vw;
+}
+.description{
+  font-size: 1.5vw;
 }
 
 .h-link {
@@ -154,7 +129,17 @@ const closePopup = () => {
   text-decoration: none;}
 .h-link:hover {
   text-decoration: underline;
+  color: var(--color-primary-dark);
 }
+
+.more-projects:hover .h-link {
+  color: var(--color-primary-dark);
+}
+.me {
+  width: 100%;
+  height:90%;
+}
+
 :deep(.contactForm) {
   display: none !important;
 }
@@ -162,14 +147,10 @@ const closePopup = () => {
   flex-direction: row !important;
   margin-bottom: none;
 }
-
-.me {
-  width: 100%;
-  height:90%;
-}
 :deep(.popup-section>.section){
-  padding: 6vmin 2vmin;
+  padding: 6vmin 7%;
 }
+
 @media (max-width: 1024px) {
   .hero-intro {
     padding: 8vw 0 4vw 10vw;

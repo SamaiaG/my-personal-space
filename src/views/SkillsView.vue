@@ -111,7 +111,7 @@ const handleQuestionClick = () => {
   letter-spacing: 0.1vmin;
   line-height: 2.5vmin;
   color: #393737;
-  margin-top: 5vmin;
+  margin: 5vmin 10% 1vmin 10%
 }
 
 .r1{
@@ -150,9 +150,6 @@ const handleQuestionClick = () => {
   filter: contrast(150%);
 }
 
-@media (max-width: 1024px) {
-
-}
 @media (max-width: 768px) {
   .icon{
   flex: 0 0 50%;
@@ -162,7 +159,7 @@ const handleQuestionClick = () => {
   height: 9vw;
 }
 .description{
-  padding: 3vmin 10vmin;
+  padding: 1vmin 10%;
 }
  }
 </style>

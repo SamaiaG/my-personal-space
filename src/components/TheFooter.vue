@@ -42,6 +42,9 @@
   text-wrap: nowrap;
 }
 
+.h-link:hover {
+  text-decoration: underline;
+}
 .container {
   display: grid;
   grid-template-columns: auto auto 1fr;
