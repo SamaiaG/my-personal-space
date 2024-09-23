@@ -23,6 +23,12 @@ const isHamOpen = ref(false);
 
 function toggleHam() {
   isHamOpen.value = !isHamOpen.value
+
+  if (isHamOpen.value) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto';
+  }
 }
 
 function handleClickOutside(event) {
@@ -65,7 +71,6 @@ onUnmounted(() => {
   background-position: center;
   width: 5vmin;
   height: 5vmin;
-  margin-right:1vmin;
   margin: 2vmin;
 }
 
@@ -90,9 +95,11 @@ a:hover {
   transition: all 0.3s ease;
 }
 .hamburger-menu{
+  display: none;
   position: fixed;
-  top: 9vmin;
+  top: 53px;
   right: 0;
+  z-index: 9999;
 }
 
 @media (max-width: 768px) {
@@ -102,9 +109,26 @@ a:hover {
   .hamburger{
     display: block;
     cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin-top:12px;
   }
   .h-container {
-    padding: 0 3vmin;
+    width: 100%;
+    padding: 0 20px;
   }
+  .logo{
+    width: 40px;
+    height: 40px;
+    margin: 7px;
+  }
+  .h-link:hover,
+a:hover {
+  box-shadow: none;
+  transition: none;
+}
+.hamburger-menu{
+  display: flex;
+}
 }
 </style>

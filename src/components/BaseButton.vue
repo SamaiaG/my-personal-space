@@ -6,9 +6,6 @@
 
 <style scoped>
 .base-button {
-  min-width: 25%;
-  max-width: 40vw;
-  max-height: 7vmin;
   background: var(--color-primary);
   color: white;
   border: none;
@@ -32,8 +29,9 @@
 }
 @media (max-width: 768px) {
   .base-button {
-    font-size: 3vmin;
-    padding: 1.5vmin 3vmin;
+    font-size: 16px;
+    width: 75%;
+    height: 35px;
   }
 }
 </style>

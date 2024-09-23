@@ -193,9 +193,13 @@ const closePopup = () => {
 }
 
 .buttons{
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  margin: 9vw 0;
+  gap: 20px;
+  margin: 20px
 }
+
 .title{
   font-size: 32px;
   text-align: center;
