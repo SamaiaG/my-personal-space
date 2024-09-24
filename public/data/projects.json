@@ -8,7 +8,7 @@
       "projectId": "1",
       "lastUpdate": "2024",
       "projectLink": "https://samaiag.github.io/the-pick/",
-      "projectTags": ["vue", "figma"]
+      "projectTags": ["Web Design", "Figma", "Web Development"]
     },
     {
       "title": "Team App",
@@ -19,6 +19,6 @@
       "projectId": "2",
       "lastUpdate": "2024",
       "projectLink":" https://samaias-team-app.webflow.io/",
-      "projectTags": ["vue", "figma"]
+      "projectTags": ["Web Design", "Figma", "Webflow"]
     }
   ]

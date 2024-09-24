@@ -24,11 +24,11 @@
 
     <ProjectDescription
     class="project-description"
-    v-for="project in projects"
+    v-for="project in projects.slice(0, 2)"
     :key="project.title"
       :title=project.title
       :description=project.description
-      :tags=project.tags
+      :tags=project.projectTags
       :imageSrc=project.imageSrc3
       :projectId=project.projectId />
 
