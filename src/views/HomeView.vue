@@ -20,22 +20,32 @@
   </BaseSection>
 
   <BaseSection class="second-section">
+    <div class="latest-work">
     <ProjectDescription
+    class="project-description"
       title="The Pick"
       description="This is a tool for making the choice-making easier. I have designed the page interface first with Figma, then later built it with Vue.js."
       :tags="['Website Design', 'Figma', 'Web Development']"
       imageSrc="project_cover/thepick.png"
       projectId="1"/>
     <ProjectDescription
+    class="project-description"
       title="Team App"
       description="This is a homepage design and build for a concept project – a chat application. I have designed the page first with Figma then later built a responsive page in Webflow."
       :tags="['Website Design', 'Figma', 'Webflow']"
       imageSrc="project_cover/teamApp.png"
       projectId="2"
     />
+    <div class="carousel">
+    <p class="sub-tag">LATEST WORK</p>
+    <CarouselComponent 
+    carouselId="projectsCarousel"
+    :slides="slides"  />
+  </div>
     <BaseButton class="more-projects">
       <RouterLink to="/portfolio" class="h-link">see more projects</RouterLink>
     </BaseButton>
+  </div>
   </BaseSection>
 
   <BasePopup @close="closePopup" v-show="isAboutViewVisible" >
@@ -51,7 +61,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import BaseSection from '@/components/BaseSection.vue'
 import BaseButton from '@/components/BaseButton.vue'
 import ProjectDescription from '@/components/ProjectDescription.vue'
@@ -60,10 +70,14 @@ import SkillsView from './SkillsView.vue'
 import BasePopup from '@/components/BasePopup.vue'
 import ContactView from './ContactView.vue'
 import BaseBlob from '@/components/BaseBlob.vue'
+import CarouselComponent from '@/components/CarouselComponent.vue'
 
+import axios from 'axios'
 
 const isAboutViewVisible = ref(false)
 const isSkillsViewVisible = ref(false)
+
+const slides = ref([])
 
 const toggleAboutView = () => {
   isAboutViewVisible.value = !isAboutViewVisible.value
@@ -76,6 +90,29 @@ const closePopup = () => {
   isAboutViewVisible.value = false
   isSkillsViewVisible.value = false
 }
+
+const fetchProjects = async () => {
+  try {
+    const response = await axios.get('data/projects.json');
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch projects:', error);
+    return [];
+  }
+};
+const transformProjectsToSlides = (projects) => {
+  return projects.map(project => ({
+    title: project.title,
+    description: project.description,
+    imageSrc: project.imageSrc,
+    type: 'image' 
+  }));
+};
+
+onMounted(async () => {
+    const projects = await fetchProjects();
+    slides.value = transformProjectsToSlides(projects);
+});
 </script>
 
 <style scoped>
@@ -139,7 +176,19 @@ const closePopup = () => {
   width: 100%;
   height:90%;
 }
-
+.second-section-wide{
+  display: flex;
+}
+.latest-work{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vmin 0;
+  gap: 20px;
+}
+.carousel{
+  display: none;
+}
 :deep(.contactForm) {
   display: none !important;
 }
@@ -150,7 +199,12 @@ const closePopup = () => {
 :deep(.popup-section>.section){
   padding: 6vmin 7%;
 }
-
+.sub-tag {
+  font-size: 1.5vmin;
+  color: var(--color-text);
+  font-weight: 400;
+  margin-bottom: 0;
+}
 @media (max-width: 1024px) {
   .hero-intro {
     padding: 8vw 0 4vw 10vw;
@@ -211,8 +265,15 @@ const closePopup = () => {
 .me{
   height: 45vh;
 }
-.second-section{
-  padding-bottom: 10vmin;
+.project-description{
+  display: none;
+}
+.carousel{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 }
 </style>

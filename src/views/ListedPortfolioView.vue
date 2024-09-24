@@ -2,79 +2,17 @@
   <div class="listed-portfolio">
   <BaseSection class="projects">
     <h1 class="sec-title">Some Projects</h1>
-    <div class="bd-example">
-      <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-inner">
-          <div class="carousel-item">
-            <img
-              class="d-block project-image"
-              alt="First slide [800x400]"
-              src="/project_cover/thepickCard.png"
-              data-holder-rendered="true"
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              class="d-block project-image"
-              alt="Second slide [800x400]"
-              src="/project_cover/teamappCard.png"
-              data-holder-rendered="true"
-            />
-          </div>
-        </div>
-        <button class="carousel-control-prev" href="#" role="button">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </button>
-        <button class="carousel-control-next" href="#" role="button">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </button>
-      </div>
-    </div>
+    <CarouselComponent 
+    carouselId="projectsCarousel"
+    :slides="slides"  />
     <BaseButton class="see-more">
     <RouterLink to="/allprojects" class="h-link">see all... </RouterLink></BaseButton>
   </BaseSection>
 
   <BaseSection class="css-projects">
     <h1 class="sec-title">CSS Fun Masterpieces</h1>
-    <div class="bd-example">
-      <div id="carouselExampleIndicatorsCSS" class="carousel slide">
-        <div class="carousel-inner">
-          <div class="carousel-item">
-            <iframe
-              class="d-block"
-              alt="First slide [800x400]"
-              src="https://samaiag.github.io/css-fun/duolingoavatar/index.html"
-              title="me"
-              data-holder-rendered="true"
-            ></iframe>
-          </div>
-          <div class="carousel-item">
-            <iframe
-              class="css-frame d-block"
-              alt="Second slide [800x400]"
-              src="https://samaiag.github.io/css-fun/flower%20pot/index.html"
-              title="plant"
-              data-holder-rendered="true"
-            ></iframe>
-          </div>
-          <div class="carousel-item">
-            <iframe
-              class="css-frame d-block"
-              alt="Third slide [800x400]"
-              src="https://samaiag.github.io/css-fun/anxiety/index.html"
-              title="girl"
-              data-holder-rendered="true"
-            ></iframe>
-          </div>
-        </div>
-        <button class="carousel-control-prev" href="#" role="button">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </button>
-        <button class="carousel-control-next" href="#" role="button">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </button>
-      </div>
-    </div>
+    <CarouselComponent carouselId="carouselCSS"
+    :slides="cssSlides" />
     <BaseButton class="see-more"><RouterLink to="/cssfun" class="h-link">see all...</RouterLink></BaseButton> 
   </BaseSection>
   <BaseBlob />
@@ -82,61 +20,63 @@
 </template>
 
 <script setup>
-import BaseSection from '@/components/BaseSection.vue'
-import BaseBlob from '@/components/BaseBlob.vue'
+import BaseSection from '@/components/BaseSection.vue';
+import BaseBlob from '@/components/BaseBlob.vue';
 import BaseButton from '@/components/BaseButton.vue';
-import { onMounted } from 'vue'
+import CarouselComponent from '@/components/CarouselComponent.vue';
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
 
-onMounted(() => {
-  const carousel = document.getElementById('carouselExampleIndicators')
-  const carouselCSS = document.getElementById('carouselExampleIndicatorsCSS')
+const slides = ref([]);
+const cssSlides = ref([]);
 
-  const items = carousel.querySelectorAll('.carousel-item')
-  const itemsCSS = carouselCSS.querySelectorAll('.carousel-item')
-
-  let currentIndex = 0
-  let currentIndexCSS = 0
-
-  function showSlide(index) {
-    items.forEach((item, i) => {
-      item.classList.toggle('active', i === index)
-    })
+const fetchProjects = async () => {
+  try {
+    const response = await axios.get('data/projects.json');
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch projects:', error);
+    return [];
   }
-  function showSlideCSS(index) {
-    itemsCSS.forEach((item, i) => {
-      item.classList.toggle('active', i === index)
-    })
-  }
+};
 
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % items.length
-    showSlide(currentIndex)
+const fetchCssProjects = async () => {
+  try {
+    const response = await axios.get('data/cssfun.json');
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch projects:', error);
+    return [];
   }
-  function nextSlideCSS() {
-    currentIndexCSS = (currentIndexCSS + 1) % itemsCSS.length
-    showSlideCSS(currentIndexCSS)
-  }
+};
 
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + items.length) % items.length
-    showSlide(currentIndex)
-  }
-  function prevSlideCSS() {
-    currentIndexCSS = (currentIndexCSS - 1 + itemsCSS.length) % itemsCSS.length
-    showSlideCSS(currentIndexCSS)
-  }
+const transformProjectsToSlides = (projects) => {
+  return projects.map(project => ({
+    title: project.title,
+    description: project.description,
+    imageSrc: project.imageSrc,
+    type: 'image' // Set type to 'image'
+  }));
+};
 
-  carousel.querySelector('.carousel-control-next').addEventListener('click', nextSlide)
-  carousel.querySelector('.carousel-control-prev').addEventListener('click', prevSlide)
+const transformCssProjectsToSlides = (projects) => {
+  return projects.map(project => ({
+    title: project.title,
+    description: project.description,
+    imageSrc: project.src,
+    type: 'iframe' // Set type to 'iframe'
+  }));
+};
 
-  carouselCSS.querySelector('.carousel-control-next').addEventListener('click', nextSlideCSS)
-  carouselCSS.querySelector('.carousel-control-prev').addEventListener('click', prevSlideCSS)
-
-  // Initialize the first slide as active
-  showSlide(0)
-  showSlideCSS(0)
-})
+onMounted(async () => {
+    const projects = await fetchProjects();
+    const cssProjects = await fetchCssProjects();
+    slides.value = transformProjectsToSlides(projects);
+    cssSlides.value = transformCssProjectsToSlides(cssProjects);
+    console.log('CSS Slides:', cssSlides.value); // check the value
+});
 </script>
+
 
 <style scoped>
 .sec-title{
@@ -192,10 +132,6 @@ onMounted(() => {
   color: var(--color-primary-dark);
 }
 
-h1 {
-  font-family: 'Raleway', sans-serif;
-  letter-spacing: 0.1vmin;
-}
 
 @media (max-width: 768px) {
   .sec-title{
@@ -203,9 +139,4 @@ h1 {
   }
  
 }
-iframe{
-  background-color:#fffafa52;
-  width: 72vmin;
-}
-
 </style>

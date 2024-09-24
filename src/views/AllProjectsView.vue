@@ -1,30 +1,40 @@
 <template>
-    <div class="all-projects">
-            <ProjectOverview class="project" v-for="project in projects" :key="project.title" :title="project.title" :description="project.description" :imageSrc="project.imageSrc" :projectId="project.projectId" :lastUpdate="project.lastUpdate"></ProjectOverview>
-    </div>
+  <div class="all-projects">
+    <ProjectOverview 
+      class="project" 
+      v-for="project in projects" 
+      :key="project.title" 
+      :title="project.title" 
+      :description="project.description" 
+      :imageSrc="project.imageSrc" 
+      :projectId="project.projectId" 
+      :lastUpdate="project.lastUpdate"
+    ></ProjectOverview>
+  </div>
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
 import ProjectOverview from '@/components/ProjectOverview.vue';
 
-const projects = [
-  {
-    title: 'The Pick',  
-    description: 'This is a tool for making the choice-making easier. I have designed the page interface first with Figma, then later built it with Vue.js.',
-    imageSrc: 'project_cover/thepickCard.png',
-    projectId: '1',
-    lastUpdate: '2024'
-  },
-  {
-    title: 'Team App',
-    description: 'This is a homepage design and build for a concept project – a chat application. I have designed the page first with Figma then later built a responsive page in Webflow.',
-    imageSrc: 'project_cover/teamappCard.png',
-    projectId: '2',
-    lastUpdate: '2024'
+const projects = ref([]);
+
+const fetchProjects = async () => {
+  try {
+    const response = await axios.get('data/projects.json');
+    projects.value = response.data;
+  } catch (error) {
+    console.error('Failed to fetch projects:', error);
   }
- 
-]
+};
+
+onMounted(() => {
+  fetchProjects();
+});
 </script>
+
+
 
 <style scoped>  
 .all-projects {
