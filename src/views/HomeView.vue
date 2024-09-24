@@ -21,21 +21,17 @@
 
   <BaseSection class="second-section">
     <div class="latest-work">
+
     <ProjectDescription
     class="project-description"
-      title="The Pick"
-      description="This is a tool for making the choice-making easier. I have designed the page interface first with Figma, then later built it with Vue.js."
-      :tags="['Website Design', 'Figma', 'Web Development']"
-      imageSrc="project_cover/thepick.png"
-      projectId="1"/>
-    <ProjectDescription
-    class="project-description"
-      title="Team App"
-      description="This is a homepage design and build for a concept project – a chat application. I have designed the page first with Figma then later built a responsive page in Webflow."
-      :tags="['Website Design', 'Figma', 'Webflow']"
-      imageSrc="project_cover/teamApp.png"
-      projectId="2"
-    />
+    v-for="project in projects"
+    :key="project.title"
+      :title=project.title
+      :description=project.description
+      :tags=project.tags
+      :imageSrc=project.imageSrc3
+      :projectId=project.projectId />
+
     <div class="carousel">
     <p class="sub-tag">LATEST WORK</p>
     <CarouselComponent 
@@ -78,6 +74,7 @@ const isAboutViewVisible = ref(false)
 const isSkillsViewVisible = ref(false)
 
 const slides = ref([])
+const projects = ref([])
 
 const toggleAboutView = () => {
   isAboutViewVisible.value = !isAboutViewVisible.value
@@ -100,6 +97,16 @@ const fetchProjects = async () => {
     return [];
   }
 };
+const fetchProjects2 = async () => {
+  try {
+    const response = await axios.get('data/projects.json');
+    projects.value = response.data;
+  } catch (error) {
+    console.error('Failed to fetch projects:', error);
+  }
+  console.log('fetching projects...');
+};
+
 const transformProjectsToSlides = (projects) => {
   return projects.map(project => ({
     title: project.title,
@@ -113,7 +120,10 @@ const transformProjectsToSlides = (projects) => {
 onMounted(async () => {
     const projects = await fetchProjects();
     slides.value = transformProjectsToSlides(projects);
+    fetchProjects2();
 });
+
+
 </script>
 
 <style scoped>

@@ -79,7 +79,7 @@ const props = defineProps({
   padding: 0.5vmin 1vmin;
   color: var(--color-text);
   font-size: 1.5vmin;
-  border-radius: 10%;
+  border-radius: 5px;
 }
 .tags {
   width: 100%;
