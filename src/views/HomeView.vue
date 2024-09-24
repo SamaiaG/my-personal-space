@@ -105,7 +105,8 @@ const transformProjectsToSlides = (projects) => {
     title: project.title,
     description: project.description,
     imageSrc: project.imageSrc,
-    type: 'image' 
+    type: 'image',
+    projectId: project.projectId
   }));
 };
 

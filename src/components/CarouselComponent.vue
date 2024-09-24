@@ -17,7 +17,19 @@
             <iframe :src="slide.imageSrc" class="carousel-iframe"  :title="slide.title"></iframe>
           </template>
           <div class="carousel-caption ">
-            <h5 class="title">{{ slide.title }}</h5>
+            <h5> 
+                <RouterLink 
+                    v-if="slide.type === 'image'" 
+                    :to="{ name: 'projectComponent', params: { projectId: slide.projectId } }" 
+                    class="title" >
+                        {{ slide.title }}
+                </RouterLink>
+                <span 
+                    v-if="slide.type === 'iframe'" 
+                    class="title" >
+                    {{ slide.title }}
+                </span>
+            </h5>      
             <p class="description">{{ slide.description }}</p>
           </div>
         </div>
@@ -70,6 +82,11 @@ img{
 }
 .title{
     font-size: 2vmin;
+    color: white;
+    text-decoration: none;
+}
+.title:hover{
+    font-weight:800;
 }
 .description{
     display: block;

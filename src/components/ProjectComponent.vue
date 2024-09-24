@@ -10,40 +10,56 @@
         see this project live
       </a>
     </BaseSection>
-    <img :src="projectImage" alt="project image" class="project-image" />  </div>
+    <img :src="projectImage" alt="project image" class="project-image" />  
+    </div>
 </template>
 
 <script setup>
-  import { ref, onMounted } from 'vue'
-  import { useRoute } from 'vue-router'
-  import BaseSection from '@/components/BaseSection.vue'
-  
-  import image1 from '@/assets/images/projects_covers/thePickEntire.png'
-  import image2 from '@/assets/images/projects_covers/teamAppEntire.png'
+import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+import BaseSection from '@/components/BaseSection.vue';
 
-  const route = useRoute()
-const projectTitle = ref('')
-const projectDescription = ref('')
-const projectImage = ref('')
-const projectLink = ref('')
+import image1 from '@/assets/images/projects_covers/thePickEntire.png';
+import image2 from '@/assets/images/projects_covers/teamAppEntire.png';
+
+const route = useRoute();
+const projectTitle = ref('');
+const projectDescription = ref('');
+const projectImage = ref('');
+const projectLink = ref(''); 
 
 onMounted(() => {
-  const projectId = route.params.projectId
+  const projectId = route.params.projectId;
 
-  const projectData = getProjectDetailsById(projectId)
-  projectTitle.value = projectData.title
-  projectDescription.value = projectData.description
-  projectImage.value = projectData.imageSrc
-  projectLink.value = projectData.Plink
-})
+  const projectData = getProjectDetailsById(projectId);
+  if (projectData) {
+    projectTitle.value = projectData.title;
+    projectDescription.value = projectData.description;
+    projectImage.value = projectData.imageSrc;
+    projectLink.value = projectData.projectLink;
+  }
+});
 
 function getProjectDetailsById(id) {
   const projects = [
-    { id: '1', title: 'The Pick', description: 'This is a tool for making the choice-making easier. I have designed the page interface first with Figma, then later built it with Vue.js.', imageSrc: image1, Plink: 'https://samaiag.github.io/the-pick/' },
-    { id: '2', title: 'Team App', description: 'This is a homepage design and build for a concept project – a chat application. I have designed the page first with Figma then later built a responsive page in Webflow.', imageSrc: image2, Plink: 'https://samaias-team-app.webflow.io/' },
-  ]
-  return projects.find(project => project.id === id) || {}
+    {
+      id: '1',
+      title: 'The Pick',
+      description: 'This is a tool for making the choice-making easier. I have designed the page interface first with Figma, then later built it with Vue.js.',
+      imageSrc: image1,
+      projectLink: 'https://samaiag.github.io/the-pick/',  
+    },
+    {
+      id: '2',
+      title: 'Team App',
+      description: 'This is a homepage design and build for a concept project – a chat application. I have designed the page first with Figma then later built a responsive page in Webflow.',
+      imageSrc: image2,
+      projectLink: 'https://samaias-team-app.webflow.io/',  // Use correct key
+    },
+  ];
+  return projects.find(project => project.id === id) || {};
 }
+
 </script>
   
 

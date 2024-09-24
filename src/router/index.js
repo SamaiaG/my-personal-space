@@ -17,7 +17,7 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/project/:projectId',  // Dynamic route with a parameter
+      path: '/project/:projectId', 
       name: 'projectComponent',
       component: ProjectComponent,
       props: true, 

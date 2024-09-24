@@ -11,7 +11,8 @@
 
   <BaseSection class="css-projects">
     <h1 class="sec-title">CSS Fun Masterpieces</h1>
-    <CarouselComponent carouselId="carouselCSS"
+    <CarouselComponent 
+    carouselId="carouselCSS"
     :slides="cssSlides" />
     <BaseButton class="see-more"><RouterLink to="/cssfun" class="h-link">see all...</RouterLink></BaseButton> 
   </BaseSection>
@@ -55,7 +56,8 @@ const transformProjectsToSlides = (projects) => {
     title: project.title,
     description: project.description,
     imageSrc: project.imageSrc,
-    type: 'image' // Set type to 'image'
+    type: 'image',
+    projectId: project.projectId
   }));
 };
 
@@ -64,7 +66,8 @@ const transformCssProjectsToSlides = (projects) => {
     title: project.title,
     description: project.description,
     imageSrc: project.src,
-    type: 'iframe' // Set type to 'iframe'
+    type: 'iframe',
+    projectId: project.cssId
   }));
 };
 
@@ -73,7 +76,6 @@ onMounted(async () => {
     const cssProjects = await fetchCssProjects();
     slides.value = transformProjectsToSlides(projects);
     cssSlides.value = transformCssProjectsToSlides(cssProjects);
-    console.log('CSS Slides:', cssSlides.value); // check the value
 });
 </script>
 
