@@ -1,60 +1,87 @@
 <template>
-  <div class="gallery">
-      <div class="gallery-item">
+  <div class="item-container">
+    <div class="gallery-item">
+      <template v-if="imageSrc">
         <img :src="imageSrc" alt="card image" class="card-image rounded cursor-pointer" @click="openModal" />
-        <div class="item-description">
-          <h3> <RouterLink :to="{ name: 'projectComponent', params: { projectId: projectId } }" class="title">{{title}}</RouterLink></h3>
-          <p class="card-text description pt-3"> {{ description }}</p>
-          <p class="card-text"><small class="update text-muted">Last updated: {{lastUpdate}}</small></p>
-        </div>
+      </template>
+      <template v-else-if="src">
+        <iframe :src="src" class="card-iframe" @click="openModal" title="Project Preview"></iframe>
+      </template>
+      <div class="item-description">
+        <h3>
+          <!-- Conditional rendering of the title link -->
+          <template v-if="!isCssProject">
+            <RouterLink :to="{ name: 'projectComponent', params: { projectId: projectId } }" class="title">{{ title }}</RouterLink>
+          </template>
+          <template v-else>
+            <span class="title">{{ title }}</span>
+          </template>
+        </h3>
+        <!-- Conditional rendering of the description -->
+        <template v-if="!isCssProject">
+          <p class="card-text description pt-3">{{ description.slice(0, 100) + '...' }}</p>
+        </template>
+        <p v-if="!isCssProject" class="card-text"><small class="update text-muted">Last updated: {{ lastUpdate }}</small></p>
       </div>
-      <div v-if="isModalOpen" class="modal-container" @click="closeModal">
-      <img :src="imageSrc" alt="Full screen image" class="modal-image" />
     </div>
-      </div>
+    <div v-if="isModalOpen" class="modal-container" @click.self="closeModal">
+  <div class="modal-content">
+    <template v-if="imageSrc">
+      <img :src="imageSrc" alt="Full screen image" class="modal-image" />
+    </template>
+    <template v-else-if="src">
+      <iframe :src="src" class="modal-iframe" title="Project Fullscreen"></iframe>
+    </template>
+  </div>
+</div>
+</div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue';
 
 const props = defineProps({
   title: String,
   description: String,
   tags: Array,
   imageSrc: String,
+  src: String,
   lastUpdate: String,
-  projectLink: String,
   projectId: String
-})
+});
 
-const isModalOpen = ref(false)
+// Determine if the project is a CSS project
+const isCssProject = computed(() => !!props.src); 
+
+const isModalOpen = ref(false);
 
 const openModal = () => {
-  isModalOpen.value = true
+  isModalOpen.value = true;
+  document.body.style.overflow = 'hidden';
 }
 
 const closeModal = () => {
-  isModalOpen.value = false
+  isModalOpen.value = false;
+  document.body.style.overflow = '';
 }
-
 </script>
 
 <style scoped>
 .title {
-  font-size: 3.5vmin;
   text-decoration: none;
   color: #393737;
 }
-.title:hover{
-  color:#E67E22
+.title:hover {
+  color: #E67E22;
 }
 .description {
-  font-size: 1.5vmin;
+  font-size: 1vmin;
   color: #393737;
   min-height: 6vh;
 }
-.card{
-  width: 80%;
+.item-container {
+  width: 100%;
+  padding: 4vmin 6vmin;
 }
 
 /* modal */
@@ -69,22 +96,38 @@ const closeModal = () => {
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
-
-.modal-image {
+.modal-content {
+  position: relative;
   width: 80vw;
   height: 80vh;
+}
+.modal-image,
+.modal-iframe {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  border: none;
+  border-radius: 10px;
 }
 
-.update{
+.card-image {
+  width: 100%;
+  height: 30vh;
+  object-fit: cover;
+  object-position: left;
+}
+
+.card-iframe {
+  width: 100%;
+  height: 30vh;
+  border: none;
+}
+
+.update {
   font-size: 1vmin;
 }
 
-.gallery {
-  padding: 2rem;
-}
 .gallery-item {
   display: flex;
   flex-direction: column;
@@ -111,20 +154,16 @@ const closeModal = () => {
   font-size: 0.9rem;
   color: #666;
 }
-.presentation {
-  display: flex;
-  gap: 3vmin;
-  align-items: center;
-}
-
 
 @media (max-width: 1024px) {
- 
   .title {
     font-size: 4vmin;
   }
   .description {
     font-size: 2vmin;
+  }
+  .item-container {
+    padding: 2vmin 0;
   }
 }
 </style>

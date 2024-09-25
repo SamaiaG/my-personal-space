@@ -38,13 +38,12 @@
             class="icon r1"
           />
           <img
-            :class="{ highlighted: isQuestionClicked }"
             src="../assets/images/skillsicons/webflow.svg"
             alt="webflow"
             class="icon r2"
           />
         
-            <img  :class="{ highlighted: isQuestionClicked }" src="../assets/images/skillsicons/tailwind.svg" alt="tailwind" class="icon r2" />
+            <img src="../assets/images/skillsicons/tailwind.svg" alt="tailwind" class="icon r2" />
           <img
             :class="{ highlighted: isQuestionClicked }"
             src="../assets/images/skillsicons/github.svg"

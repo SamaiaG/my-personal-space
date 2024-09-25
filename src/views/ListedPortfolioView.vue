@@ -84,40 +84,9 @@ onMounted(async () => {
 .sec-title{
   margin-bottom: 0;
   font-size: 4vmin;
-  font-family: 'Raleway', sans-serif;
   color: #393737;
 }
 
-.carousel-inner {
-  padding: 0 10vmin;
-
-}
-
-:deep(.section){
-  min-height: 40vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-:deep(.s-container){
-  justify-content: center;
-}
-.carousel-item.active {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.d-block {
-  height: 40vmin;
-}
-
-.carousel-control-prev-icon {
-  background-image: url('@/assets/images/icons/chevron-left.svg');
-}
-.carousel-control-next-icon {
-  background-image: url('@/assets/images/icons/chevron-right.svg');
-}
 .see-more{
   padding: 0.3vw 1vw 0.5vw 1vw;
 }

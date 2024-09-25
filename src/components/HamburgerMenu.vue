@@ -17,7 +17,7 @@ const props = defineProps({
 .hamburger-menu {
     display: flex;
     flex-direction: column;
-    background-color: rgba(243, 139, 74); 
+    background-color: var(--color-primary-opaque); 
     box-shadow: rgba(17, 12, 46, 0.45) 0px 48px 100px 0px;
     width: 100%;
     height: 100vh;
@@ -25,7 +25,6 @@ const props = defineProps({
 .h-link{
     text-decoration: none;
     color: #f9efe7;
-    font-family: 'Raleway', sans-serif;
     font-size: 18px;
     cursor: pointer;
     padding: 24px;
@@ -33,8 +32,7 @@ const props = defineProps({
     text-align: center;
 }
 .h-link:hover{
-    color: rgba(243, 139, 74, 0.8);
-    background-color: #f9efe7;
-    font-family: 'Raleway', sans-serif; 
+    color: var(--color-primary);
+    background-color: var(--color-background);
 }
 </style>

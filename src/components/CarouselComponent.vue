@@ -30,7 +30,6 @@
                     {{ slide.title }}
                 </span>
             </h5>      
-            <p class="description">{{ slide.description }}</p>
           </div>
         </div>
       </div>
@@ -53,57 +52,76 @@
   </script>
 
 <style scoped>
-img{
+img,  iframe{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 6px;
+  object-position: left;
 }
- iframe {
+
+.slide{
+   background-color: rgba(255, 255, 255);
+   padding: 1vmin;
+   box-shadow: var(--first-shadow);
+   border-radius: 10px;
+   width: 80%;
+}
+
+.carousel-inner{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 50vh;
 }
 
 .carousel-caption{
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
+    background-color:  rgba(255, 255, 255);
     left: 0;
     right: 0;
     bottom: 0;
     padding: 1.5vmin;
 }
 .carousel-item{
-    width: 55vw;
-    height: 50vh;
+    height: 100%;
 }
 .carousel-indicators{
-    margin-bottom: 0
+    margin-bottom: 0;
 }
+.carousel-indicators button{
+  background-color: #E67E22;
+}
+
 .title{
     font-size: 2vmin;
-    color: white;
+    color: var(--color-text);
     text-decoration: none;
 }
 .title:hover{
     font-weight:800;
-}
-.description{
-    display: block;
-    font-size: 1.5vmin;
+    color: var(--color-primary);
 }
 
+.carousel-control-prev, .carousel-control-next{
+  opacity: 0.1;
+  width: 10%;
+}
+.carousel-control-prev-icon {
+  background-image: url('@/assets/images/icons/chevron-left.svg');
+}
+.carousel-control-next-icon {
+  background-image: url('@/assets/images/icons/chevron-right.svg');
+}
 @media (max-width: 768px) {
-    .carousel-item {
-    width: 100vw;
-    height: 35vh;
-}
-.description{
-    display: none;
-}
+  
 .title{
     font-size: 18px;
     margin-bottom: 3vmin;
+}
+.carousel-inner{
+    height: 35vh;
+}
+.slide{
+  width: 100%;
 }
 }
 </style>

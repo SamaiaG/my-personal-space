@@ -26,24 +26,12 @@
 }
 .b1,
 .b3 {
-  background: rgb(230, 126, 34);
-  background: linear-gradient(
-    126deg,
-    rgba(230, 126, 34, 1) 0%,
-    rgba(211, 84, 0, 1) 35%,
-    rgba(244, 164, 96, 1) 100%
-  );
+  background: var(--blob-orange);
   animation: move1 20s linear reverse infinite;
 }
 .b2,
 .b4 {
-  background: rgb(11, 37, 69);
-  background: linear-gradient(
-    158deg,
-    rgba(11, 37, 69, 1) 0%,
-    rgba(36, 65, 107, 1) 35%,
-    rgba(88, 147, 212, 1) 100%
-  );
+  background: var(--blob-blue);
   animation: move2 20s linear reverse infinite;
 }
 

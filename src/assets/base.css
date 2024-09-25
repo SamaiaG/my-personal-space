@@ -4,10 +4,24 @@
   --color-text: #333333e4;  ;
   --color-background: #f9efe7;
   --color-primary: rgb(230, 126, 34, 0.8);
+  --color-primary-opaque: rgba(243, 139, 74);
   --color-primary-dark: rgb(230, 126, 34);
   --color-secondary: #333333;
   --first-shadow:  rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   --second-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  --blob-orange:  linear-gradient(
+    126deg,
+    rgba(230, 126, 34, 1) 0%,
+    rgba(211, 84, 0, 1) 35%,
+    rgba(244, 164, 96, 1) 100%
+  );
+  --blob-blue: linear-gradient(
+    158deg,
+    rgba(11, 37, 69, 1) 0%,
+    rgba(36, 65, 107, 1) 35%,
+    rgba(88, 147, 212, 1) 100%
+  );
 }
 
 *,
