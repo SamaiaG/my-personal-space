@@ -200,8 +200,12 @@ onMounted(async () => {
   width: 100%;
   height:90%;
 }
-.second-section-wide{
-  display: flex;
+
+.sub-tag {
+  color: rgb(0, 0, 0, 0.35);
+  letter-spacing: 0.3vmin;
+  text-transform: uppercase;
+  font-size: 1.5vmin;
 }
 .latest-work{
   display: flex;
@@ -292,7 +296,9 @@ onMounted(async () => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+}
+.sub-tag{
+  font-size: 2.5vmin;
 }
 }
 </style>

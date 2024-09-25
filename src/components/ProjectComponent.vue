@@ -45,7 +45,7 @@ function getProjectDetailsById(id) {
     {
       id: '1',
       title: 'The Pick',
-      description: 'This is a tool for making the choice-making easier. I have designed the page interface first with Figma, then later built it with Vue.js.',
+      description: "'The Pick' is a decision-making tool designed to simplify the process of making tough choices. Inspired by the challenge of picking a gift for someone special, the tool allows users to input options, fill in relevant details, and at the end, it randomly selects a decision. Developed using Vue.js for functionality and designed with Figma for a clean, user-friendly interface, 'The Pick' offers an effortless solution for those moments when you can't make up your mind.",
       imageSrc: image1,
       projectLink: 'https://samaiag.github.io/the-pick/',  
     },
@@ -54,7 +54,7 @@ function getProjectDetailsById(id) {
       title: 'Team App',
       description: 'This is a homepage design and build for a concept project – a chat application. I have designed the page first with Figma then later built a responsive page in Webflow.',
       imageSrc: image2,
-      projectLink: 'https://samaias-team-app.webflow.io/',  // Use correct key
+      projectLink: 'https://samaias-team-app.webflow.io/', 
     },
   ];
   return projects.find(project => project.id === id) || {};
@@ -102,7 +102,7 @@ function getProjectDetailsById(id) {
   top: -25vh;
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
   margin-bottom: -20vh;
-  z-index: 999;
+  z-index: 9;
   border-radius: 5px;
   object-fit: cover;
 }

@@ -116,9 +116,10 @@ img,  iframe{
 .title{
     font-size: 18px;
     margin-bottom: 3vmin;
+    line-height: 2;
 }
 .carousel-inner{
-    height: 35vh;
+    height: 45vh;
 }
 .slide{
   width: 100%;

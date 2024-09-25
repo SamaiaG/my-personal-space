@@ -9,7 +9,7 @@
         </div>
       </div>
       <p class="description">
-        {{ description }}
+        {{ description.slice(0, 200) + '...' }}
       </p>
     </div>
     <div class="right-part">

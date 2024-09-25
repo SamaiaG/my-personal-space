@@ -93,6 +93,8 @@ onUnmounted(() => {
 a:hover {
   box-shadow: var(--first-shadow);
   transition: all 0.3s ease;
+  color: var(--color-primary-dark);
+  cursor: pointer;
 }
 .hamburger-menu{
   display: none;
