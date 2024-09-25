@@ -90,17 +90,17 @@ onMounted(async () => {
 .see-more{
   padding: 0.3vw 1vw 0.5vw 1vw;
 }
+.see-more:hover .h-link{
+  color: white
+}
 .h-link{
   width: 100%;
   text-decoration: none;
   text-align: end;
-  color:white
+  color:var(--color-text)
 }
 .h-link:hover {
   color:#E67E22
-}
-.see-more:hover .h-link {
-  color: var(--color-primary-dark);
 }
 
 

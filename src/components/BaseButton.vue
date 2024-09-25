@@ -6,8 +6,8 @@
 
 <style scoped>
 .base-button {
-  background: var(--color-primary);
-  color: white;
+  background: rgba(255, 255, 255, 0.5);
+  color:  var(--color-primary-dark);
   border: none;
   padding: 0.6vw 2vw 0.8vw 2vw;
   font-size: 1.2vw;
@@ -17,8 +17,8 @@
   margin: 1vmin
 }
 .base-button:hover {  
-  color: var(--color-primary-dark);
-  background-color: rgba(255, 255, 255, 0.5);
+  color:white;
+  background-color: var(--color-primary);
   transition: all 0.3s ease;
 }
 

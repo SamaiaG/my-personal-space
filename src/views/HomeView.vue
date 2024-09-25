@@ -172,14 +172,27 @@ onMounted(async () => {
   font-size: 1.5vw;
 }
 
+
+
 .h-link {
-  color: white;
-  text-decoration: none;}
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
 .h-link:hover {
   text-decoration: underline;
   color: var(--color-primary-dark);
 }
 
+.more-projects {
+  background: var(--color-primary);
+}
+.more-projects:hover {
+  background: white;
+}
+.more-projects .h-link{
+  color: white;
+}
 .more-projects:hover .h-link {
   color: var(--color-primary-dark);
 }
@@ -210,12 +223,7 @@ onMounted(async () => {
 :deep(.popup-section>.section){
   padding: 6vmin 7%;
 }
-.sub-tag {
-  font-size: 1.5vmin;
-  color: var(--color-text);
-  font-weight: 400;
-  margin-bottom: 0;
-}
+
 @media (max-width: 1024px) {
   .hero-intro {
     padding: 8vw 0 4vw 10vw;

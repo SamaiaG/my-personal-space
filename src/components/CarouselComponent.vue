@@ -65,12 +65,12 @@ img,  iframe{
    padding: 1vmin;
    box-shadow: var(--first-shadow);
    border-radius: 10px;
-   width: 80%;
+   width: 70%;
 }
 
 .carousel-inner{
     width: 100%;
-    height: 50vh;
+    height: 60vh;
 }
 
 .carousel-caption{

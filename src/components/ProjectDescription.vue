@@ -78,7 +78,7 @@ const props = defineProps({
   backdrop-filter: blur(10px) ;
   padding: 0.5vmin 1vmin;
   color: var(--color-text);
-  font-size: 1.5vmin;
+  font-size: 1.2vmin;
   border-radius: 5px;
 }
 .tags {
@@ -117,8 +117,11 @@ const props = defineProps({
   margin-bottom: 0;
 }
 
+.see-project .h-link {
+  color: var(--color-text);
+}
 .see-project:hover .h-link {
-  color: var(--color-primary-dark); /* Change to your desired hover color */
+  color: white; 
 }
 
 @media (max-width: 768px) {
