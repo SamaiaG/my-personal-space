@@ -113,6 +113,14 @@ img,  iframe{
 }
 @media (max-width: 768px) {
   
+  .carousel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+  }
 .title{
     font-size: 18px;
     margin-bottom: 3vmin;
@@ -120,6 +128,10 @@ img,  iframe{
 }
 .carousel-inner{
     height: 45vh;
+    width: 100%;
+}
+.carousel-item{
+    height: 100%;
 }
 .slide{
   width: 100%;

@@ -2,25 +2,25 @@
     {
       "cssId": "1",
       "src": "https://samaiag.github.io/css-fun/girl/index.html",
-      "title": "Autoportret",
+      "title": "Selfportret",
       "description": "Me."
     },
     {
       "cssId": "2",
       "src": "https://samaiag.github.io/css-fun/shark/index.html",
-      "title": "Shark",
+      "title": "Any random shark",
       "description": "A playful shark swimming in the deep blue sea."
     },
     {
       "cssId": "3",
       "src": "https://samaiag.github.io/css-fun/duolingoavatar/index.html",
-      "title": "My Duolingo Avatar",
+      "title": "My Duolingo avatar",
       "description": "A colorful avatar created with Duolingo."
     },
     {
       "cssId": "4",
       "src": "https://samaiag.github.io/css-fun/curious%20cat/index.html",
-      "title": "Curious Cat",
+      "title": "Any random cat",
       "description": "An inquisitive feline exploring its surroundings."
     },
     {
@@ -50,7 +50,7 @@
     {
       "cssId": "9",
       "src": "https://samaiag.github.io/css-fun/rabbit/index.html",
-      "title": "Rabbit",
+      "title": "Some magic rabbit ears ",
       "description": "A fluffy bunny hopping into your heart."
     },
     {
@@ -62,61 +62,61 @@
     {
       "cssId": "11",
       "src": "https://samaiag.github.io/css-fun/backing/index.html",
-      "title": "Cake",
+      "title": "A cake",
       "description": "A delicious-looking cake to satisfy your sweet tooth."
     },
     {
       "cssId": "12",
       "src": "https://samaiag.github.io/css-fun/gym/index.html",
-      "title": "Gym",
+      "title": "An gym inspired illustration",
       "description": "Fitness equipment to inspire your workout routine."
     },
     {
       "cssId": "13",
       "src": "https://samaiag.github.io/css-fun/photography/index.html",
-      "title": "Camera",
+      "title": "A camera",
       "description": "Capture life's moments with this stylish camera."
     },
     {
       "cssId": "14",
       "src": "https://samaiag.github.io/css-fun/travel/index.html",
-      "title": "Globe",
+      "title": "Around the world",
       "description": "Explore the world with this wanderlust-inducing globe."
     },
     {
       "cssId": "15",
       "src": "https://samaiag.github.io/css-fun/sunset/index.html",
-      "title": "Sunset",
-      "description": "A beautiful sunset to end your day."
+      "title": "The sunset of my childhood",
+      "description": "The sunset of my childhood."
     },
     {
       "cssId": "16",
       "src": "https://samaiag.github.io/css-fun/elephant/index.html",
-      "title": "Elephant",
-      "description": "A majestic elephant never forgets."
+      "title": "The elephant I used to draw as a kid",
+      "description": "The elephant I used to draw as a kid."
     },
     {
       "cssId": "17",
       "src": "https://samaiag.github.io/css-fun/fishes/index.html",
-      "title": "Fishes",
-      "description": "Colorful fish swimming in harmony."
+      "title": "5 years old me draws fishes",
+      "description": "5 years old me draws fishes."
     },
     {
       "cssId": "18",
       "src": "https://samaiag.github.io/css-fun/egg/index.html",
-      "title": "Egg",
+      "title": "My first pure CSS illustration",
       "description": "An egg-cellent addition to your CSS collection."
     },
     {
       "cssId": "19",
       "src": "https://samaiag.github.io/css-fun/butterfly/index.html",
-      "title": "Butterfly",
+      "title": "A 'delicate' butterfly line draw try",
       "description": "A delicate butterfly fluttering by."
     },
     {
       "cssId": "20",
       "src": "https://samaiag.github.io/css-fun/cat/index.html",
-      "title": "Cat",
+      "title": "A curious car made with borders only",
       "description": "A purr-fect feline friend in CSS."
     }
   ]
