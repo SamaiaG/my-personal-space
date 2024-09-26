@@ -301,5 +301,8 @@ onMounted(async () => {
   font-size: 2.5vmin;
   align-self: center;
 }
+.second-section :deep(.s-container){
+  align-items: stretch;
+}
 }
 </style>
