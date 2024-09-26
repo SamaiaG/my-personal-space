@@ -9,7 +9,6 @@
       </template>
       <div class="item-description">
         <h3>
-          <!-- Conditional rendering of the title link -->
           <template v-if="!isCssProject">
             <RouterLink :to="{ name: 'projectComponent', params: { projectId: projectId } }" class="title">{{ title }}</RouterLink>
           </template>
@@ -17,7 +16,6 @@
             <span class="title">{{ title }}</span>
           </template>
         </h3>
-        <!-- Conditional rendering of the description -->
         <template v-if="!isCssProject">
           <p class="card-text description pt-3">{{ description.slice(0, 100) + '...' }}</p>
         </template>
@@ -50,7 +48,7 @@ const props = defineProps({
   projectId: String
 });
 
-// Determine if the project is a CSS project
+// check if the project is a CSS project
 const isCssProject = computed(() => !!props.src); 
 
 const isModalOpen = ref(false);

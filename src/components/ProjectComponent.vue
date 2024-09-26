@@ -107,9 +107,7 @@ function getProjectDetailsById(id) {
   object-fit: cover;
 }
 @media (max-width: 1024px) {
-  .project-section {
-    height: 60vh !important;
-}
+
 .project-image {
   top: -20vh;
   margin-bottom: -10vh;
@@ -119,7 +117,7 @@ function getProjectDetailsById(id) {
   }
   @media (max-width: 768px){
     .project-section {
-    height: 40vh !important;
+    height: 50vh !important;
 }
     .project-title {
       font-size: 32px;
@@ -132,7 +130,7 @@ function getProjectDetailsById(id) {
     }
     .project-image {
   width: 90vw;
-  top: -8vh;
+  top: -4vh;
   margin-bottom: -5vh;
 }
 }
