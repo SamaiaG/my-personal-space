@@ -294,11 +294,12 @@ onMounted(async () => {
 .carousel{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
 }
 .sub-tag{
   font-size: 2.5vmin;
+  align-self: center;
 }
 }
 </style>
