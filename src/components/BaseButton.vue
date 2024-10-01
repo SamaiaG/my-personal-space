@@ -14,7 +14,6 @@
   cursor: pointer;
   border-radius: 0.5vmin;
   box-shadow:var(--first-shadow);
-  margin: 1vmin
 }
 .base-button:hover {  
   color:white;

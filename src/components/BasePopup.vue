@@ -13,6 +13,7 @@
 </template>
 
 <script setup>
+
 const emit = defineEmits(['close']);
 
 function handleBackgroundClick() {

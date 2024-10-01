@@ -1,6 +1,7 @@
 <template>
 <div class="home">
   <BaseSection class="hero-section">
+    <div class="hero-container">
     <div class="hero-intro">
       <div class="left-part">
         <h1 class="title">Hi and welcome!</h1>
@@ -17,6 +18,7 @@
         <BaseButton @click="toggleSkillsView" class="skills">see my learning journey</BaseButton>
       </div>
     </div>
+  </div>
   </BaseSection>
 
   <BaseSection class="second-section">
@@ -51,6 +53,12 @@
     <SkillsView class="popup-section"/>
   </BasePopup>
 
+<InfoPopup @close="handlePopupClose" v-if="showInfoPopup">
+  <div class="info-popup">
+    <p class="info-text">Welcome!<br> This site is still being developed and updated regularly.</p>
+  </div>  
+</InfoPopup>
+
   <ContactView class="contact" />
   <BaseBlob class="the-blobs" />
 </div>
@@ -67,11 +75,13 @@ import BasePopup from '@/components/BasePopup.vue'
 import ContactView from './ContactView.vue'
 import BaseBlob from '@/components/BaseBlob.vue'
 import CarouselComponent from '@/components/CarouselComponent.vue'
+import InfoPopup from '@/components/InfoPopup.vue'
 
 import axios from 'axios'
 
 const isAboutViewVisible = ref(false)
 const isSkillsViewVisible = ref(false)
+const showInfoPopup = ref(false)
 
 const slides = ref([])
 const projects = ref([])
@@ -104,7 +114,6 @@ const fetchProjects2 = async () => {
   } catch (error) {
     console.error('Failed to fetch projects:', error);
   }
-  console.log('fetching projects...');
 };
 
 const transformProjectsToSlides = (projects) => {
@@ -117,7 +126,21 @@ const transformProjectsToSlides = (projects) => {
   }));
 };
 
+
+const handlePopupClose = () => {
+  showInfoPopup.value = false
+  localStorage.setItem('infoPopupSeen', 'true') 
+}
+
+const checkInfoPopup = () => {
+  const hasSeenPopup = localStorage.getItem('infoPopupSeen')
+  showInfoPopup.value = !hasSeenPopup
+}
+
+
 onMounted(async () => {
+  checkInfoPopup(); // Check for the info popup on component mount
+  
     const projects = await fetchProjects();
     slides.value = transformProjectsToSlides(projects);
     fetchProjects2();
@@ -127,6 +150,9 @@ onMounted(async () => {
 </script>
 
 <style scoped>
+.hero-container{
+  width: 90%;
+}
 .hero-intro {
   display: grid;
   grid-template-columns: 49% 49%;
@@ -149,8 +175,6 @@ onMounted(async () => {
   grid-column: 2/3;
   grid-row: 1/3;
   height: 70vh;
-  display: flex;
-  align-items: center;
 }
 .buttons {
   grid-column: 1/2;
@@ -158,7 +182,7 @@ onMounted(async () => {
   display: flex;
   justify-content: start;
   align-items: start;
-  gap: 3vw;
+  gap: 2vw;
 }
 
 .title, .description {
@@ -171,8 +195,6 @@ onMounted(async () => {
 .description{
   font-size: 1.5vw;
 }
-
-
 
 .h-link {
   color: var(--color-primary);
@@ -198,7 +220,7 @@ onMounted(async () => {
 }
 .me {
   width: 100%;
-  height:90%;
+  height:100%;
 }
 
 .sub-tag {
@@ -217,6 +239,7 @@ onMounted(async () => {
 .carousel{
   display: none;
 }
+
 :deep(.contactForm) {
   display: none !important;
 }
@@ -227,22 +250,29 @@ onMounted(async () => {
 :deep(.popup-section>.section){
   padding: 6vmin 7%;
 }
-
+.info-text{
+  color: var(--color-text);
+  font-size: 2vmin;
+  text-align: center;
+}
 @media (max-width: 1024px) {
   .hero-intro {
-    padding: 8vw 0 4vw 10vw;
+    padding: 1vw;
   }
   .right-part{
     height: auto;
   }
   .me{
-    height:120%;
+    height:100%;
   }
   :deep(.popup){
     width: 95% !important;
     padding: 0;
     max-height: 95vh;
   }
+  .info-text{
+  font-size: 14px;
+}
 }
 
 @media (max-width: 768px) {
