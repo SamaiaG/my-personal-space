@@ -1,237 +1,242 @@
 <template>
+
   <div class="about">
-    <BaseSection class="about-me">
-      <h1 class="name">Samaia Gahramanov</h1>
-      <div class="main-info">
-        <div class="my-info">
-
-          <div class="fig born-date">
-            <img src="@/assets/images/icons/calendar.png" alt="Birthdate" class="l-icon birthdate" />
-            <p class="birthdate-text text">17 September 1996</p>
-          </div>
-
-          <div class="fig birthplace">
-            <p class="birthplace-text text">born in the Republic of Moldova</p>
-            <img
-              src="@/assets/images/icons/moldova.png"
-              alt="Republic of Moldova"
-              class="l-icon birthplace-img"
-            />
-          </div>
-          <div class="fig current-place">
-            <p class="current-place-text text"> based in Germany</p>
-            <img src="@/assets/images/icons/germany.png" alt="Germany" class="l-icon birthplace-img" />
-            <p class="fig current-city text"> 
-              (Cologne <img src="@/assets/images/icons/cologne.png" class="l-icon city" />)
-            </p>
-          </div>
+  
+    <div class="my-image">
+      <img src="../assets/images/myPhoto.jpg" alt="" class="my-photo" />
+    </div>
+    <div class="about-text">
+      <div class="about-me">
+        <h1 class="name">Samaia Gahramanov</h1>
+        <div class="current-place">
+          <p class="text"> Located in Germany <span><img src="@/assets/images/icons/cologne.png" class="l-icon city" /></span> </p>
         </div>
-        <div class="my-image">
-          <img src="../assets/images/my-photo.png" alt="" class="my-photo" />
-        </div>
+        <p class="email text">samaiagahramanov@gmail.com</p>
       </div>
-    </BaseSection>
-    <div class="studies-and-experience">
-      <div class="se">
-        <div class="period">September 2023 - March 2024</div>
-        <div class="details">
-          <div class="detail what">Internship</div>
-          <div class="detail at">adesso SE</div>
-          <div class="detail location">Cologne, Germany</div>
-        </div>
+      <div class="more-about">
+      <h1 class="s-title">A little about me</h1>
+      <p class="text">
+        I am a beginner UX Designer with a passion for creativity and problem-solving. Born in the Republic of Moldova 🇲🇩, a small country in Eastern Europe, I grew up in a village at my grandparents' house before moving to the capital to study Applied Informatics at the State University of Moldova.
+        As a child, I was always creative—I loved writing, I excelled in literature and language studies. Despite this, I decided to study Applied Informatics because it was a completely new field for me. My curiosity and interest in the unknown pushed me to explore the world of technology, leading me to earn a bachelor's degree 🎓 in this field.
+        <br><br>In 2020, I moved to Germany 🇩🇪, where I used my time to explore UX design with Adobe XD while simultaneously learning German and discovering a new culture. My curiosity led me to some software testing and Python programming courses as I tried to find my own path in the tech world. After a long time of learning and experimenting, I had the opportunity to do an internship in software development. At the beginning of the project, my team and I had to design the application, and for the second time, I felt truly captivated by the design process. Despite being new to Figma, I was drawn to the creative and strategic aspects of UX/UI.
+        After the internship, I decided to dive deeper into UX/UI, working on my portfolio and refining my skills. This journey has given me valuable insights into my creativity, perseverance, and passion for user-centered design 👩‍💻. 
+        <br> <br>📷 Beyond design, I love traveling, exploring new places, creating, observing, and capturing moments through photography. Below, you’ll find a selection of my favorite shots captured in the last years —glimpses of the places, moments, and perspectives that have inspired me along the way. 
+      </p>
       </div>
-      <div class="se">
-        <div class="period">December 2022 - February 2023</div>
-        <div class="details">
-          <div class="detail what">Python Associate Programmer Course</div>
-          <div class="detail at">WBS Training AG</div>
-          <div class="detail location">(online)</div>
-        </div>
-      </div>
-      <div class="se">
-        <div class="period">October 2021 - March 2022</div>
-        <div class="details">
-          <div class="detail what">Software Testing Training</div>
-          <div class="detail at">IT School</div>
-          <div class="detail location">Romania (online)</div>
-        </div>
-      </div>
-      <div class="se">
-        <div class="period">September 2015 - July 2018</div>
-        <div class="details">
-          <div class="detail what">Applied Informatics</div>
-          <div class="detail at">State University of the Republic of Moldova</div>
-          <div class="detail location">Chișinău, Republic of Moldova</div>
-          <div class="degree">Bachelor</div>
-        </div>
+      <div class="softskills">
+        <h1 class="s-title">My Guiding Principles</h1>
+        <p class="text"> <strong>📚 Never stop learning.</strong> <br> Knowledge is limitless, and learning is the key in our fast-moving world. By learning, I mean not only studying. Learn languages, learn inline skating, learn baking, and cooking your favorite foods. At the end of the day, all that you have learned will contribute to moving you forward. </p>
+        <p class="text"> <strong>🧘‍♀️ Be flexible to changes.</strong> <br> Things are often not going as planned. Embrace change with an open mind, calmness, and see challenges as opportunities for growth.</p>
+        <p class="text"> <strong>💖 Listen and empathize.</strong> <br> True understanding comes from active listening. Putting yourself in others' shoes helps create meaningful connections and better solutions.</p>
+        <p class="text"> <strong>🛠️ Do good out of what you have.</strong> <br> It is not about having the best tools; it’s about making the best of what’s available, using your brain, flexibility, and empathy to turn limitations into results.</p>
+        <p class="text"> <strong>🪞 Reflect.</strong> <br> Take time to analyze yourself, the world around you, your experiences, and your feelings in order to refine your path forward. Growth comes from self-awareness.</p>
       </div>
     </div>
-    <div class="languages">
-      <div class="romanian l-bar">Romanian (Native)</div>
-      <div class="russian l-bar">Russian</div>
-      <div class="german l-bar">German</div>
-      <div class="english l-bar">English</div>
+  
+    <div class="lan-att">
+      <div class="languages">
+        <div class="language">
+          <p class="text">Romanian</p>
+          <p class="text">Russian</p>
+          <p class="text">German</p>
+          <p class="text">English</p>
+        </div>  
+
+        <div class="bars">
+          <div class="bar b-rom"> <p class="text lan">Native</p></div>
+          <div class="bar b-ru"> <p class="text lan">C1</p></div>
+          <div class="bar b-de"><p class="text lan">C1</p></div>
+          <div class="bar b-en"><p class="text lan">B2</p></div>
+        </div> 
+      </div> 
+    
+    <div class="attachements div6">
+      <a class="att" target="_blank" href="https://drive.google.com/file/d/1Ch53_JaCXZaokKO5hwtJ3Xkc8VPA9-v9/view?usp=sharing">
+        <img src="@/assets/images/icons/CVde.png" class="at-icon">
+      </a>
+      <a class="att" target="_blank" href="https://drive.google.com/file/d/1kKoSm1Nb-usgTGqEoRxC5NW6rMol1kSr/view?usp=sharing">
+        <img src="@/assets/images/icons/CVen.png" class="at-icon">
+      </a>
+      <a class="att" target="_blank" href="https://www.credly.com/badges/766b4fc6-20e0-4f0e-a35e-c168a9a64be1/public_url">
+        <img src="@/assets/images/icons/UXCert.png" class="at-icon">
+      </a>
     </div>
-    <p class="contact">
-      For more details, please
-      <a class="gmail" href="mailto:samaiagahramanov@gmail.com?subject=Hello from your website">
-        contact me</a
-      >
-      directly. <br />
-      I’ll be happy to share more infos with you.
-    </p>
-    <BaseBlob />
+    </div>
+  
+    <div class="gallery">
+      <ImageGallery />
+    </div>
   </div>
 </template>
 
 <script setup>
-import BaseSection from '@/components/BaseSection.vue'
-import BaseBlob from '@/components/BaseBlob.vue'
+import ImageGallery from '@/components/ImageGallery.vue';
 </script>
 
 <style scoped>
 .about {
-  font-weight: 200;
-  color: #393737;
-  letter-spacing: 0.2vmin;
-  display: flex;
-  flex-direction: column;
-  gap: 5vmin;
+    display: flex;
+    flex-direction: column;
+    gap: 10vmin;
+    padding: 3vmin 16vmin;
 }
-:deep(.s-container){
-  gap: 3vmin;
-}
-
-.main-info {
-  display: flex;
-  align-items: center;
+.my-image{
+  height: 30vh;
   width: 100%;
-  justify-content: space-between;
-}
-.my-info{
   display: flex;
-  flex-direction: column;
-  gap: 1vmin;
-  font-size: 2vw;
+  justify-content: center;
 }
 .my-photo {
-  width: 22vmin;
+   border-radius: 50%;
+    object-fit: cover;
+    height: 100%;
 }
-.fig {
-  display: flex;
-  align-items: flex-end;
-  gap: 1vmin;
-}
-.current-city {
-  gap: 0;
-}
-.l-icon {
-  width: 4vmin;
-  height: 4vmin;
-}
-
-.birthplace {
-  margin: 0 !important;
-}
-
-.se {
-  width: 100%;
+.about-text{
   display: grid;
-  grid-template-columns: 50% 50%;
-  margin: 0 0 5vmin 0;
-  gap: 6vmin;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 5%;
+} 
+.name{
+  font-weight: 500!important;
 }
-.text{
-  margin: 0;
+.current-place{
+  display: flex;
+  align-items: center;
 }
-
-.what,
-.degree {
-  font-weight: 600;
+.city{
+  height: 3vmin;
 }
-.location {
-  color: #e67e22;
-}
-.degree {
-  color: #5893d4;
+.email{
   font-style: italic;
 }
 
-.contact {
-  padding: 2vmin 0 8vmin 0;
-  text-align: center;
-  font-size: 2vmin;
-  letter-spacing: 0.2vmin;
+.text{
+  font-size: 1.8vmin;
+  font-family: 'Nunito', sans-serif;
 }
-.gmail {
-  color: #5893d4;
-  text-decoration: none;
+.more-about{
+  grid-row: span 2 / span 2;
 }
-.studies-and-experience, .languages{
-  padding: 2vmin 10%;
+.softskills, .more-about{
+  display: flex;
+  flex-direction: column;
+  gap: 1vmin
+}
+.lan-att{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
   width: 100%;
+  gap: 5%
 }
 .languages{
-  align-self: center;
-}
-.l-bar{
-  height: 4vmin;
   display: flex;
-  align-items: center;
-  justify-content: start;
-  font-size: 1.5vmin;
-  font-weight: 600;
-  color: white;
-  padding: 2vmin 4vmin;
-  border-radius: 0.5vmin;
-  margin: 0 0 1vmin 0;
-}
-
-.romanian{
   width: 100%;
-  background: rgb(211,84,0);
-  background: linear-gradient(90deg, rgba(211,84,0,1) 0%, rgba(244,164,96,1) 35%);
+  justify-content: start;
+  gap: 2vmin
 }
 
-.russian{
-  width: 90%;
-  background: rgb(244,164,96);
-  background: linear-gradient(90deg, rgba(244,164,96,1) 0%, rgba(88,147,212,1) 62%);
+
+.attachements{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 1vmin
 }
-.german{
-  width: 70%;
-  background: rgb(88,147,212);
-  background: linear-gradient(90deg, rgba(88,147,212,1) 0%, rgba(36,65,107,1) 81%);
+.att{
+  width: 12vmin;
+  height: 12vmin;
 }
-.english{
-  width: 60%;
-  background: rgb(36,65,107);
-  background: linear-gradient(90deg, rgba(36,65,107,1) 0%, rgba(235,235,235,1) 81%);
+.language,.bars{
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  gap: 2vmin
 }
+.bars{  
+  width: 100%;
+}
+.text{
+  margin-bottom: 0;
+}
+.bar{
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-blue);
+  padding: 0.5vmin 1vmin;
+  align-self: stretch;
+  margin: 0.2vmin 0;
+}
+.b-ru{
+  width: 85%;
+  background-color: var(--accent-peach);
+}
+.b-de{
+  width: 80%;
+  background-color: var(--light-blue);
+}
+.b-en{
+  width: 65%;
+  background-color: #FEB4B4;
+}
+.lan{
+  font-style: italic;
+  color: white !important;
+  font-size: 1.4vmin;
+  display: none;
+}
+.bar:hover .lan{
+  display: block;
+}
+.at-icon{
+  width: 100%;
+  height: 100%;
+  margin: 0 1vmin;
+}
+
 @media (max-width: 1024px) {
-.main-info{
-  font-size: 14px;
+  .about-text{
+    grid-template-columns: 1fr;
+    gap: 5vmin
+  }
+  .my-image{
+    height: 20vh;
+  }
+  .name{
+    font-size: 1.6rem;
+  }
+  .text{
+    font-size: 1rem;
+  }
+  .city{
+  height: 5vmin;
 }
-.about-me{
-  padding: 5vmin 8vmin;
+.s-title{
+  font-size: 1.3rem;
 }
-
-.name{
-  font-size: 24px;
+.lan-att{
+  grid-template-columns: 1fr;
+  gap: 4vmin;
 }
-.studies-and-experience{
-  padding: 2vmin 8vmin;
+.lan-att .text{
+  font-size: 1.3rem;
+}
+.attachements {
+  justify-content: center;
+}
+.att{
+  width: 20vmin;
+  height: 20vmin;
 }
 }
 @media (max-width: 768px) {
-  .se{
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    font-size: 12px;
-  }
-  .main-info{
-  font-size: 14px;
+  .about{
+  padding: 1.66rem;
 }
+.lan-att .text {
+      font-size: 0.9rem;
+      text-align: end;
+    }
+ 
 }
 </style>

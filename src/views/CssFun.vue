@@ -1,21 +1,10 @@
 <template>
-  <div class="css-art">
-    <BaseSection class="first-css-section">
-      <div class="presentation">
-        <div class="about-me">
-          <h1 class="heading">This is me,</h1>
-          <h3 class="heading2">and below is my kind of therapy.</h3>
-        </div>
-        <iframe src="https://samaiag.github.io/css-fun/duolingoavatar/index.html" title="girl" class="me"></iframe>
-      </div>
-    </BaseSection>
     <div class="css-items">
+      <h1 class="sec-title">My kind of therapy</h1>
       <p class="description">
-        Here's a fun collection of my CSS illustrations! I create these whenever
-        I'm feeling tired, using them as a way to unwind. Some are inspired by
-        other artists, while others come straight from my imagination or
-        everyday life. It's a great way for me to relax and have fun with
-        coding! Enjoy exploring my colorful creations!
+        Here's a fun collection of my CSS illustrations! I create these whenever I'm feeling tired, using them as a 
+        way to unwind. Some are inspired by other artists, while others come straight from my imagination or everyday life.
+        Enjoy exploring my colorful creations! 🎨✨
       </p>
 
       <div class="gallery">
@@ -27,19 +16,17 @@
       :description='project.description' 
       :src="project.src" 
       :projectId="project.cssId"
+      :link="project.link"
     ></ProjectOverview>
       </div>
     </div>
-    <BaseBlob />
-  </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 import ProjectOverview from '@/components/ProjectOverview.vue';
-import BaseBlob from '@/components/BaseBlob.vue';
-import BaseSection from '@/components/BaseSection.vue';
+
 
 const projects = ref([]);
 
@@ -58,65 +45,46 @@ onMounted(() => {
 </script>
 
 <style scoped>
-iframe {
-  border: none;
+.css-items {
   width: 100%;
-  height: 200px;
-  border-radius: 10px;
-  box-shadow: var(--second-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 5vmin;
+  padding: 5vmin  16vmin 0 16vmin;
 }
 
-.css-items {
-  padding: 2vmin 16vmin;
+.sec-title, .description{
+  width: 100%;
+  display: flex;
+  justify-content: start;
+}
+.sec-title{
+  font-size: 3vmin;
 }
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
 }
 
-
-.presentation {
-  display: flex;
-  gap: 3vmin;
-  align-items: center;
-  justify-content: space-around;
-  letter-spacing: 0.1vmin;
-}
-.me {
-  width: 55vmin;
-  height: 45vmin;
-  box-shadow: none;
-  margin: -5vmin;
-}
-
-.heading{
-  font-size: 4vmin;
-  color: var(--color-text);
-}
-.heading2{
-  font-size: 3vmin;
-  color: var(--color-text);
-}
-
-:deep(.item-container){
+:deep(.item-container), :deep(.project-description) {
   padding: 1vmin;
 }
 
-
-@media (max-width: 768px) {
-  .presentation{
-    flex-direction: column;
-  }
+@media (max-width: 1024px) {
   .gallery{
-    padding: 0;
-  }
-  .heading{
-    font-size: 24px;
-  }
-  .heading, .heading2{
-    text-align: center;
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
   }
 }
+@media (max-width: 768px) {
+  .sec-title{
+  font-size: 1.5rem;
+}
+  .description{
+    font-size: 1.2rem;
+  }
+  .css-items {
+  padding: 1.66rem  ;
+}
+}
+
 </style>

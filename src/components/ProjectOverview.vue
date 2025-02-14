@@ -1,42 +1,17 @@
 <template>
   <div class="item-container">
     <div class="gallery-item">
-      <template v-if="imageSrc">
-        <img :src="imageSrc" alt="card image" class="card-image rounded cursor-pointer" @click="openModal" />
-      </template>
-      <template v-else-if="src">
-        <iframe :src="src" class="card-iframe" @click="openModal" title="Project Preview"></iframe>
-      </template>
-      <div class="item-description">
-        <h3>
-          <template v-if="!isCssProject">
-            <RouterLink :to="{ name: 'projectComponent', params: { projectId: projectId } }" class="title">{{ title }}</RouterLink>
-          </template>
-          <template v-else>
-            <span class="title">{{ title }}</span>
-          </template>
-        </h3>
-        <template v-if="!isCssProject">
-          <p class="card-text description pt-3">{{ description.slice(0, 100) + '...' }}</p>
-        </template>
-        <p v-if="!isCssProject" class="card-text"><small class="update text-muted">Last updated: {{ lastUpdate }}</small></p>
-      </div>
+      <iframe :src="src" class="card-iframe"  title="Project Preview"></iframe>
     </div>
-    <div v-if="isModalOpen" class="modal-container" @click.self="closeModal">
-  <div class="modal-content">
-    <template v-if="imageSrc">
-      <img :src="imageSrc" alt="Full screen image" class="modal-image" />
-    </template>
-    <template v-else-if="src">
-      <iframe :src="src" class="modal-iframe" title="Project Fullscreen"></iframe>
-    </template>
+    <div class="project-description">
+      <h2 class="card-title">{{ title }}</h2>
+      <p class="card-description" >{{ description }}</p>
+      <p class="card-link" v-if="link"><a :href="link" target="_blank" class="link">See my illustrations on GitHub.</a></p>
+    </div>
   </div>
-</div>
-</div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
 
 const props = defineProps({
   title: String,
@@ -44,69 +19,51 @@ const props = defineProps({
   tags: Array,
   imageSrc: String,
   src: String,
-  lastUpdate: String,
+  link: String,
   projectId: String
 });
 
-// check if the project is a CSS project
-const isCssProject = computed(() => !!props.src); 
-
-const isModalOpen = ref(false);
-
-const openModal = () => {
-  isModalOpen.value = true;
-  document.body.style.overflow = 'hidden';
-}
-
-const closeModal = () => {
-  isModalOpen.value = false;
-  document.body.style.overflow = '';
-}
 </script>
 
 <style scoped>
-.title {
-  text-decoration: none;
-  color: #393737;
-}
-.title:hover {
-  color: #E67E22;
-}
-.description {
-  font-size: 1vmin;
-  color: #393737;
-  min-height: 6vh;
-}
 .item-container {
   width: 100%;
   padding: 4vmin 6vmin;
+  position: relative;
 }
 
-/* modal */
-.modal-container {
-  position: fixed;
-  top: 0;
+.project-description {
+  width: 100%;
+  position: absolute;
+  background: rgba(255,255,255,0.4);
+-webkit-backdrop-filter: blur(22px);
+backdrop-filter: blur(22px);
+padding: 4vmin 6vmin;
+  bottom: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 9999;
-  display: flex;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
-.modal-content {
-  position: relative;
-  width: 80vw;
-  height: 80vh;
+
+.item-container:hover .project-description {
+  display: flex;
 }
-.modal-image,
-.modal-iframe {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border: none;
-  border-radius: 10px;
+
+.card-title {
+  font-size: 2.5vmin;
+  color: var(--primary-blue);
+  text-align: center;
+}
+.card-description, .link {
+  font-size: 1.7vmin;
+  color: var(--text-charcoal);
+}
+.link{ 
+  font-style: italic;
 }
 
 .card-image {
@@ -162,6 +119,9 @@ const closeModal = () => {
   }
   .item-container {
     padding: 2vmin 0;
+  }
+  .gallery-item {
+    height: 20vh;
   }
 }
 </style>

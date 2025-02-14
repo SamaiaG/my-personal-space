@@ -1,113 +1,84 @@
 <template>
   <div class="listed-portfolio">
-  <BaseSection class="projects">
-    <h1 class="sec-title">Some Projects</h1>
-    <CarouselComponent 
-    carouselId="projectsCarousel"
-    :slides="slides"  />
-    <BaseButton class="see-more">
-    <RouterLink to="/allprojects" class="h-link">see all... </RouterLink></BaseButton>
-  </BaseSection>
-
-  <BaseSection class="css-projects">
-    <h1 class="sec-title">CSS Fun Masterpieces</h1>
-    <CarouselComponent 
-    carouselId="carouselCSS"
-    :slides="cssSlides" />
-    <BaseButton class="see-more"><RouterLink to="/cssfun" class="h-link">see all...</RouterLink></BaseButton> 
-  </BaseSection>
-  <BaseBlob />
-</div>
+    <h1 class="sec-title">My projects</h1>
+    <p class="description">
+      From research to design, see how I approach user-centered solutions that bring ideas to life
+    </p>
+    <div v-for="(project, index) in projects.slice(0, 3)" :key="index" class="project-item">
+      <ProjectDescription
+        :title="project.title"
+        :shortDescription="project.shortDescription"
+        :tags="project.projectTags"
+        :imageSrc="project.imageSrc3"
+        :imageMobile="project.imageMobile"
+        :projectId="project.projectId"
+        :index="index"
+      />
+    </div>
+  </div>
 </template>
 
 <script setup>
-import BaseSection from '@/components/BaseSection.vue';
-import BaseBlob from '@/components/BaseBlob.vue';
-import BaseButton from '@/components/BaseButton.vue';
-import CarouselComponent from '@/components/CarouselComponent.vue';
 import { ref, onMounted } from 'vue';
+import ProjectDescription from '@/components/ProjectDescription.vue';
 import axios from 'axios';
 
-const slides = ref([]);
-const cssSlides = ref([]);
+const projects = ref([]);
 
 const fetchProjects = async () => {
   try {
     const response = await axios.get('data/projects.json');
-    return response.data;
+    projects.value = response.data;
   } catch (error) {
     console.error('Failed to fetch projects:', error);
-    return [];
   }
 };
 
-const fetchCssProjects = async () => {
-  try {
-    const response = await axios.get('data/cssfun.json');
-    return response.data;
-  } catch (error) {
-    console.error('Failed to fetch projects:', error);
-    return [];
-  }
-};
-
-const transformProjectsToSlides = (projects) => {
-  return projects.map(project => ({
-    title: project.title,
-    description: project.description,
-    imageSrc: project.imageSrc,
-    type: 'image',
-    projectId: project.projectId
-  }));
-};
-
-const transformCssProjectsToSlides = (projects) => {
-  return projects.map(project => ({
-    title: project.title,
-    description: project.description,
-    imageSrc: project.src,
-    type: 'iframe',
-    projectId: project.cssId
-  }));
-};
-
-onMounted(async () => {
-    const projects = await fetchProjects();
-    const cssProjects = await fetchCssProjects();
-    slides.value = transformProjectsToSlides(projects);
-    cssSlides.value = transformCssProjectsToSlides(cssProjects);
+onMounted(() => {
+  fetchProjects();
 });
 </script>
 
 
 <style scoped>
-.sec-title{
-  margin-bottom: 0;
-  font-size: 4vmin;
-  color: #393737;
-}
-
-.see-more{
-  padding: 0.3vw 1vw 0.5vw 1vw;
-}
-.see-more:hover .h-link{
-  color: white
-}
-.h-link{
+.listed-portfolio{
   width: 100%;
-  text-decoration: none;
-  text-align: end;
-  color:var(--color-text)
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5vmin;
+  padding: 5vmin  16vmin 0 16vmin;
 }
-.h-link:hover {
-  color:#E67E22
+.sec-title, .description{
+  width: 100%;
+  display: flex;
+  justify-content: start;
 }
-
+.sec-title{
+  font-size: 3vmin;
+}
+.project-item {
+  position: relative; 
+  width: 100%; 
+  height: auto; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 
 @media (max-width: 768px) {
-  .sec-title{
-    font-size: 24px;
+  .listed-portfolio{
+    padding: 1.66rem 0;
   }
- 
+  .sec-title, .description{
+    padding: 0 1.66rem;
+  }
+  .sec-title{
+  font-size: 1.5rem;
+}
+  .description{
+    font-size: 1.2rem;
+  }
 }
 </style>

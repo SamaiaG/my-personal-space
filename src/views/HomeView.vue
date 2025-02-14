@@ -1,113 +1,62 @@
 <template>
-<div class="home">
-  <BaseSection class="hero-section">
-    <div class="hero-container">
-    <div class="hero-intro">
-      <div class="left-part">
-        <h1 class="title">Hi and welcome!</h1>
-        <p class="description">
-          I am Samaia - a newbie developer, and this is
-          the place I created to put the things together.
-        </p>
-      </div>
-      <div class="right-part">    
-        <iframe src="https://samaiag.github.io/css-fun/girlorangebg/index.html" title="girl" class="me"></iframe>
-      </div>
-      <div class="buttons">
-        <BaseButton @click="toggleAboutView" class="about">get to know me better</BaseButton>
-        <BaseButton @click="toggleSkillsView" class="skills">see my learning journey</BaseButton>
+  <div class="home">
+    <div class="hero-section">
+      <div class="hero-top">
+        <div class="left-part">
+          <h1 class="title">Hi and welcome!</h1>
+          <p class="description">
+            I am Samaia - a newbie designer, and this is the place I created to put things together.
+          </p>
+          <div class="nav">
+            <RouterLink to="/portfolio" class="nav-link">Projects</RouterLink> +
+            <RouterLink to="/cssfun" class="nav-link">Fun</RouterLink> +
+            <RouterLink to="/about" class="nav-link">About me</RouterLink>
+          </div>
+        </div>
+        <div class="right-part">
+          <iframe src="https://samaiag.github.io/css-fun/girl/index.html" title="girl" class="me"></iframe>
+        </div>
+        <div class="nav-mobile">
+            <RouterLink to="/portfolio" class="nav-link">Projects</RouterLink> +
+            <RouterLink to="/cssfun" class="nav-link">Fun</RouterLink> +
+            <RouterLink to="/about" class="nav-link">About me</RouterLink>
+          </div>
+        <ArrowComponent @scrollToSection="scrollToSecondSection" class="arrow"/>
       </div>
     </div>
-  </div>
-  </BaseSection>
 
-  <BaseSection class="second-section">
-    <div class="latest-work">
+    <div class="second-section" ref="secondSection">
 
-    <ProjectDescription
+      <div v-for="(project, index) in projects.slice(0, 3)" class="project-item">
+ 
+  <ProjectDescription
+    :title="project.title"
+    :shortDescription="project.shortDescription"
+    :tags="project.projectTags"
+    :imageSrc="project.imageSrc3"
+    :imageMobile="project.imageMobile"
+    :projectId="project.projectId"
+    :index="index"
     class="project-description"
-    v-for="project in projects.slice(0, 2)"
-    :key="project.title"
-      :title=project.title
-      :description=project.description
-      :tags=project.projectTags
-      :imageSrc=project.imageSrc3
-      :projectId=project.projectId />
-
-    <div class="carousel">
-    <p class="sub-tag">LATEST WORK</p>
-    <CarouselComponent 
-    carouselId="projectsCarousel"
-    :slides="slides"  />
-  </div>
-    <BaseButton class="more-projects">
-      <RouterLink to="/portfolio" class="h-link">see more projects</RouterLink>
-    </BaseButton>
-  </div>
-  </BaseSection>
-
-  <BasePopup @close="closePopup" v-show="isAboutViewVisible" >
-    <AboutView class="popup-section"/>
-  </BasePopup>
-  <BasePopup @close="closePopup" v-show="isSkillsViewVisible">
-    <SkillsView class="popup-section"/>
-  </BasePopup>
-
-<InfoPopup @close="handlePopupClose" v-if="showInfoPopup">
-  <div class="info-popup">
-    <p class="info-text">Welcome!<br> This site is still being developed and updated regularly.</p>
-  </div>  
-</InfoPopup>
-
-  <ContactView class="contact" />
-  <BaseBlob class="the-blobs" />
+  />
 </div>
+  
+    </div>
+  </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import BaseSection from '@/components/BaseSection.vue'
-import BaseButton from '@/components/BaseButton.vue'
-import ProjectDescription from '@/components/ProjectDescription.vue'
-import AboutView from './AboutView.vue'
-import SkillsView from './SkillsView.vue'
-import BasePopup from '@/components/BasePopup.vue'
-import ContactView from './ContactView.vue'
-import BaseBlob from '@/components/BaseBlob.vue'
-import CarouselComponent from '@/components/CarouselComponent.vue'
-import InfoPopup from '@/components/InfoPopup.vue'
+import { ref, onMounted } from 'vue';
+import ProjectDescription from '@/components/ProjectDescription.vue';
+import ArrowComponent from '../components/ArrowComponent.vue';
+import axios from 'axios';
 
-import axios from 'axios'
+const showInfoPopup = ref(false);
 
-const isAboutViewVisible = ref(false)
-const isSkillsViewVisible = ref(false)
-const showInfoPopup = ref(false)
-
-const slides = ref([])
-const projects = ref([])
-
-const toggleAboutView = () => {
-  isAboutViewVisible.value = !isAboutViewVisible.value
-}
-const toggleSkillsView = () => {
-  isSkillsViewVisible.value = !isSkillsViewVisible.value
-}
-
-const closePopup = () => {
-  isAboutViewVisible.value = false
-  isSkillsViewVisible.value = false
-}
+const projects = ref([]);
+const secondSection = ref(null)
 
 const fetchProjects = async () => {
-  try {
-    const response = await axios.get('data/projects.json');
-    return response.data;
-  } catch (error) {
-    console.error('Failed to fetch projects:', error);
-    return [];
-  }
-};
-const fetchProjects2 = async () => {
   try {
     const response = await axios.get('data/projects.json');
     projects.value = response.data;
@@ -116,77 +65,76 @@ const fetchProjects2 = async () => {
   }
 };
 
-const transformProjectsToSlides = (projects) => {
-  return projects.map(project => ({
-    title: project.title,
-    description: project.description,
-    imageSrc: project.imageSrc,
-    type: 'image',
-    projectId: project.projectId
-  }));
+const checkInfoPopup = () => {
+  const hasSeenPopup = localStorage.getItem('infoPopupSeen');
+  showInfoPopup.value = !hasSeenPopup;
 };
 
-
-const handlePopupClose = () => {
-  showInfoPopup.value = false
-  localStorage.setItem('infoPopupSeen', 'true') 
+const scrollToSecondSection = () => {
+  const sectionElement = secondSection.value?.$el || secondSection.value
+  if (sectionElement) {
+    sectionElement.scrollIntoView({ behavior: 'smooth' })
+  } else {
+    console.error('Second section not found')
+  }
 }
 
-const checkInfoPopup = () => {
-  const hasSeenPopup = localStorage.getItem('infoPopupSeen')
-  showInfoPopup.value = !hasSeenPopup
-}
-
-
-onMounted(async () => {
-  checkInfoPopup(); // Check for the info popup on component mount
-  
-    const projects = await fetchProjects();
-    slides.value = transformProjectsToSlides(projects);
-    fetchProjects2();
+onMounted(() => {
+  checkInfoPopup();
+  fetchProjects();
 });
-
-
 </script>
 
+
 <style scoped>
-.hero-container{
-  width: 90%;
+.home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16vmin;
 }
-.hero-intro {
-  display: grid;
-  grid-template-columns: 49% 49%;
-  grid-template-rows: auto;
+
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  gap: 2%;
+  height: 90vh;
+}
+
+.hero-top{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 90%;
 }
 
 .left-part {
-  grid-column: 1/2;
-  grid-row: 1/2;
   display: flex;
   flex-direction: column;
-  justify-content: end;
-  align-items: stretch;
-  padding-bottom:2vw ;
+  justify-content: center;
+  width: 50%;
+  gap: 2vmin;
 }
 
 .right-part {
-  grid-column: 2/3;
-  grid-row: 1/3;
-  height: 70vh;
-}
-.buttons {
-  grid-column: 1/2;
-  grid-row: 2/3;
   display: flex;
-  justify-content: start;
-  align-items: start;
-  gap: 2vw;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
 }
 
-.title, .description {
-  padding-bottom:2vw ;
+.nav {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 2vw;
+  color: var(--accent-peach);
+  margin-top: 2vmin;
+}
+.nav-mobile{
+  display: none;
 }
 
 .title{
@@ -196,143 +144,91 @@ onMounted(async () => {
   font-size: 1.5vw;
 }
 
-.h-link {
-  color: var(--color-primary);
+.nav-link {
+  color:  var(--text-charcoal);
   text-decoration: none;
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 36%, rgba(250,214,214,1) 81%);
+  font-size: 1.5vw;
+  cursor: pointer;
+  padding:0!important;
 }
 
-.h-link:hover {
-  text-decoration: underline;
-  color: var(--color-primary-dark);
-}
+.nav-link:hover {
+  text-decoration: none;
+  color:  var(--text-charcoal);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 36%, rgba(197,212,234,1) 81%);
+  transition: all 0.3s ease;
+} 
 
-.more-projects {
-  background: var(--color-primary);
-}
-.more-projects:hover {
-  background: white;
-}
-.more-projects .h-link{
-  color: white;
-}
-.more-projects:hover .h-link {
-  color: var(--color-primary-dark);
-}
-.me {
+.second-section{
   width: 100%;
-  height:100%;
-}
-
-.sub-tag {
-  color: rgb(0, 0, 0, 0.35);
-  letter-spacing: 0.3vmin;
-  text-transform: uppercase;
-  font-size: 1.5vmin;
-}
-.latest-work{
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5vmin 0;
-  gap: 20px;
-}
-.carousel{
-  display: none;
 }
 
-:deep(.contactForm) {
-  display: none !important;
+.me{
+  width: 100%;
+  height: 100%;
+  border: none;
 }
-:deep(.contactContainer) {
-  flex-direction: row !important;
-  margin-bottom: none;
+
+.project-item {
+  position: relative; 
+  width: 100%; 
+  height: auto; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8vmin 0;
+  overflow: hidden; 
 }
-:deep(.popup-section>.section){
-  padding: 6vmin 7%;
-}
-.info-text{
-  color: var(--color-text);
-  font-size: 2vmin;
-  text-align: center;
-}
-@media (max-width: 1024px) {
-  .hero-intro {
-    padding: 1vw;
-  }
-  .right-part{
-    height: auto;
-  }
-  .me{
-    height:100%;
-  }
-  :deep(.popup){
-    width: 95% !important;
-    padding: 0;
-    max-height: 95vh;
-  }
-  .info-text{
-  font-size: 14px;
-}
+.arrow{
+  display: block;
 }
 
 @media (max-width: 768px) {
-  :deep(.contactContainer) {
-  flex-direction: column !important;
-  margin-top: 3vmin
-}
-:deep(.contactTitle){
-  font-size: 24px;
-}
-:deep(.contactMessage){
-  font-size: 16px;
-}
-.hero-section {
-  height: auto !important;
-}
+  .home{
+    padding: 1.66rem 0;
+  }
+  .hero-section{
+    padding: 0 1.66rem ;
+  }
+  .hero-top{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .left-part{
+    width: 90%;
+  }
+  .title{
+    font-size: 8vw;
+  }
+  .description{
+    font-size: 1.2rem;
+  }
+  .nav{
+    display: none;
+  }
+  .nav-link{
+    font-size: 1.6rem;
+  }
+  .nav-mobile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--accent-peach);
+  }
+  .right-part{
+    width: 90%;
+    height: 100%;
+  }
 
-.hero-intro {
-  display: flex;
-  flex-direction: column;
-  padding-top: 5vw;
-  padding-left: 0;
-  text-align: center;
-  gap: 0;
-}
-
-.buttons{
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  margin: 20px
-}
-
-.title{
-  font-size: 32px;
-  text-align: center;
-}
-.description {
-  font-size: 16px;
-  text-align: center;
-}
-.me{
-  height: 45vh;
-}
-.project-description{
+  .arrow{
   display: none;
-}
-.carousel{
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
-}
-.sub-tag{
-  font-size: 2.5vmin;
-  align-self: center;
-}
-.second-section :deep(.s-container){
-  align-items: stretch;
 }
 }
 </style>

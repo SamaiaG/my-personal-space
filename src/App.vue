@@ -22,10 +22,11 @@ import TheFooter from './components/TheFooter.vue'
 
 @media (max-width: 768px) {
   .header {
-  position: relative;
+  width: 100%;
+  position: fixed;
 }
 .content {
-  margin-top: 0;
+  margin-top: 13vmin;
 }
 }
 </style>

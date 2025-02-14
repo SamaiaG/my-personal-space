@@ -3,8 +3,6 @@ import HomeView from '../views/HomeView.vue'
 import ProjectComponent from '@/components/ProjectComponent.vue'
 import ListedPortfolioView from '@/views/ListedPortfolioView.vue'
 import AboutView from '@/views/AboutView.vue'
-import SkillsView from '@/views/SkillsView.vue'
-import ContactView from '@/views/ContactView.vue'
 import CssFun from '@/views/CssFun.vue'
 import AllProjectsView from '@/views/AllProjectsView.vue'
 
@@ -17,7 +15,7 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/project/:projectId', 
+      path: '/projects/:projectId', 
       name: 'projectComponent',
       component: ProjectComponent,
       props: true, 
@@ -31,16 +29,6 @@ const router = createRouter({
       path: '/about',
       name: 'about',
       component: AboutView
-    },
-    {
-      path: '/skills',
-      name: 'skills',
-      component: SkillsView
-    },
-    {
-      path: '/contact',
-      name: 'contact',
-      component: ContactView
     },
     {
       path: '/cssfun',

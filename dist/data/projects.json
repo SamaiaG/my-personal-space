@@ -13,7 +13,7 @@
     {
       "title": "Team App",
       "description": "This is a homepage design and build for a concept project – a chat application. I have designed the page first with Figma then later built a responsive page in Webflow.",
-      "imageSrc": "project_cover/teamappCard.png",
+      "imageSrc": "project_cover/SideBySideCard.png",
       "imageSrc2":"@/assets/images/projects_covers/teamAppEntire.png",
       "imageSrc3": "project_cover/teamApp.png",
       "projectId": "2",

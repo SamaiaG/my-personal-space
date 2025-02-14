@@ -1,27 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Rhodium+Libre&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 
 :root {
-  --color-text: #333333e4;  ;
-  --color-background: #f9efe7;
-  --color-primary: rgb(230, 126, 34, 0.8);
-  --color-primary-opaque: rgba(243, 139, 74);
-  --color-primary-dark: rgb(230, 126, 34);
-  --color-secondary: #333333;
   --first-shadow:  rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   --second-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-  --blob-orange:  linear-gradient(
-    126deg,
-    rgba(230, 126, 34, 1) 0%,
-    rgba(211, 84, 0, 1) 35%,
-    rgba(244, 164, 96, 1) 100%
-  );
-  --blob-blue: linear-gradient(
-    158deg,
-    rgba(11, 37, 69, 1) 0%,
-    rgba(36, 65, 107, 1) 35%,
-    rgba(88, 147, 212, 1) 100%
-  );
+  --primary-blue: #45496A;
+  --light-blue: #C5D4EA;
+  --accent-peach: #FAD6D6;
+  --absolute-white: #FFFFFF;
+  --text-charcoal: #2B2B2B;
 }
 
 *,
@@ -30,28 +19,48 @@
   box-sizing: border-box;
   margin: 0;
   font-weight: normal;
+  color: var(--text-charcoal);
 }
 
 body {
+  max-width: 2560px;
   min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
+  color: var(--text-charcoal);
+  background: var(--absolute-white);
   transition:
     color 0.5s,
     background-color 0.5s;
-  font-family: Roboto, Inter, sans-serif;
+  font-family: 'Barlow', 'Nunito', sans-serif;
   line-height: 170%;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Barlow', sans-serif;
 }
 h1{
-  font-size: 3.2vmin;
+  font-weight: 400!important;
   letter-spacing: 1.5px;
+  color: var(--primary-blue)!important;
 }
+
+h2{
+  font-weight: 400 !important;
+  letter-spacing: 1.5px;
+  color: var(--primary-blue)!important;
+  font-size: 1.6vmin;
+}
+
 p {
   font-size: 2vmin;
   font-weight: 400;
   letter-spacing: 1.5px;
+  color: var(--text-charcoal)!important;
 }

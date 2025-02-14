@@ -2,12 +2,11 @@
   <header>
     <div class="h-container">
       <RouterLink to="/"> 
-        <img src='../assets/images/logo_color.png' alt="logo" class="logo" /></RouterLink>
+        <img src='../assets/images/Logo.png' alt="logo" class="logo" /></RouterLink>
       <div class="nav-wide">
-        <RouterLink to="/about" class="h-link">About me</RouterLink>
-        <RouterLink to="/skills" class="h-link">Skills</RouterLink>
-        <RouterLink to="/portfolio" class="h-link">Portfolio</RouterLink>
-        <RouterLink to="/contact" class="h-link">Contact</RouterLink>
+          <RouterLink to="/portfolio" class="h-link">Projects</RouterLink>
+          <RouterLink to="/cssfun" class="h-link">Fun</RouterLink>
+          <RouterLink to="/about" class="h-link">About me</RouterLink>
       </div>
       <div class="hamburger" :class="{ 'is-open': isHamOpen }" @click="toggleHam"></div>
       <HamburgerMenu class="hamburger-menu" v-if="isHamOpen" :closeHam="toggleHam" />
@@ -53,20 +52,23 @@ onUnmounted(() => {
   width: 100vw;
   justify-content: space-between;
   padding: 0 16vmin;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #C5D4EA;
   backdrop-filter: blur(10px);
   box-shadow: var(--second-shadow);
 }
 
 .logo {
-  width: 6vmin;
-  height: 6vmin;
-  margin: 1.5vmin;
+  width: 8vmin;
+  height: 8vmin;
+  margin-top: 0.8vmin;
+}
+.logo:hover{
+  filter: drop-shadow(3px 0px 0px #FFFFFF);
 }
 
 .hamburger {
   display: none;
-  background-image: url('../assets/images/icons/bars-solid.svg');
+  background-image: url('../assets/images/icons/hamburgermenu.png');
   background-size: cover;
   background-position: center;
   width: 5vmin;
@@ -75,7 +77,7 @@ onUnmounted(() => {
 }
 
 .hamburger.is-open{
-  background-image: url('../assets/images/icons/xmark-solid.svg');
+  background-image: url('../assets/images/icons/hamclose.png');
 }
 
 .nav-wide {
@@ -84,6 +86,8 @@ onUnmounted(() => {
 }
 .h-link {
   font-weight: 500;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.8vmin;
   text-decoration: none;
   color: #333333e4;
   padding: 0.8vmin 2vmin;
@@ -91,7 +95,7 @@ onUnmounted(() => {
 }
 .h-link:hover,
 a:hover {
-  box-shadow: var(--first-shadow);
+  text-shadow: 3px 0px 0px #FFFFFF;
   transition: all 0.3s ease;
   color: var(--color-primary-dark);
   cursor: pointer;
@@ -117,7 +121,7 @@ a:hover {
   }
   .h-container {
     width: 100%;
-    padding: 0 20px;
+    padding: 0 1.66rem;
   }
   .logo{
     width: 40px;

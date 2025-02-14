@@ -3,121 +3,141 @@
       "cssId": "1",
       "src": "https://samaiag.github.io/css-fun/girl/index.html",
       "title": "Selfportret",
-      "description": "Me."
+      "description": "Me.",
+      "link":""
     },
     {
       "cssId": "2",
       "src": "https://samaiag.github.io/css-fun/shark/index.html",
       "title": "Any random shark",
-      "description": "A playful shark swimming in the deep blue sea."
+      "description": "",
+      "link":""
     },
     {
       "cssId": "3",
       "src": "https://samaiag.github.io/css-fun/duolingoavatar/index.html",
       "title": "My Duolingo avatar",
-      "description": "A colorful avatar created with Duolingo."
+      "description": "",
+      "link":""
     },
     {
       "cssId": "4",
       "src": "https://samaiag.github.io/css-fun/curious%20cat/index.html",
       "title": "Any random cat",
-      "description": "An inquisitive feline exploring its surroundings."
+      "description": "",
+      "link":""
     },
     {
       "cssId": "5",
       "src": "https://samaiag.github.io/css-fun/anxiety/index.html",
       "title": "Anxiety",
-      "description": "A visual representation of inner turmoil."
+      "description": "Inner thoughts.",
+      "link":""
     },
     {
       "cssId": "6",
       "src": "https://samaiag.github.io/css-fun/minimalist%20dog/index.html",
       "title": "Minimalist Dog",
-      "description": "A cute, simplified canine companion."
+      "description": "",
+      "link":""
     },
     {
       "cssId": "7",
       "src": "https://samaiag.github.io/css-fun/flower%20pot/index.html",
       "title": "Flower Pot",
-      "description": "A cheerful potted plant bringing life to any room."
+      "description": "",
+      "link":""
     },
     {
       "cssId": "8",
       "src": "https://samaiag.github.io/css-fun/peter%20griffin/index.html",
       "title": "Peter Griffin",
-      "description": "The lovable Family Guy character in CSS form."
+      "description": "",
+      "link":""
     },
     {
       "cssId": "9",
       "src": "https://samaiag.github.io/css-fun/rabbit/index.html",
       "title": "Some magic rabbit ears ",
-      "description": "A fluffy bunny hopping into your heart."
+      "description": "",
+      "link":""
     },
     {
       "cssId": "10",
       "src": "https://samaiag.github.io/css-fun/superman/index.html",
       "title": "Superman",
-      "description": "The Man of Steel, ready to save the day!"
+      "description": "Ready to save the day!",
+      "link":""
     },
     {
       "cssId": "11",
       "src": "https://samaiag.github.io/css-fun/backing/index.html",
       "title": "A cake",
-      "description": "A delicious-looking cake to satisfy your sweet tooth."
+      "description": "From 'The hobbies' series.",
+      "link":""
     },
     {
       "cssId": "12",
       "src": "https://samaiag.github.io/css-fun/gym/index.html",
       "title": "An gym inspired illustration",
-      "description": "Fitness equipment to inspire your workout routine."
+      "description": "From 'The hobbies' series.",
+      "link":""
     },
     {
       "cssId": "13",
       "src": "https://samaiag.github.io/css-fun/photography/index.html",
       "title": "A camera",
-      "description": "Capture life's moments with this stylish camera."
+      "description": "From 'The hobbies' series.",
+      "link":""
     },
     {
       "cssId": "14",
       "src": "https://samaiag.github.io/css-fun/travel/index.html",
       "title": "Around the world",
-      "description": "Explore the world with this wanderlust-inducing globe."
+      "description": "From 'The hobbies' series.",
+      "link":""
     },
     {
       "cssId": "15",
       "src": "https://samaiag.github.io/css-fun/sunset/index.html",
       "title": "The sunset of my childhood",
-      "description": "The sunset of my childhood."
+      "description": "or how I learned to draw.",
+      "link":""
     },
     {
       "cssId": "16",
       "src": "https://samaiag.github.io/css-fun/elephant/index.html",
       "title": "The elephant I used to draw as a kid",
-      "description": "The elephant I used to draw as a kid."
+      "description": "or how I learned to draw II.",
+      "link":""
     },
     {
       "cssId": "17",
       "src": "https://samaiag.github.io/css-fun/fishes/index.html",
-      "title": "5 years old me draws fishes",
-      "description": "5 years old me draws fishes."
+      "title": "Fishes",
+      "description": "or how I used to draw them at 5.",
+      "link":""
     },
     {
       "cssId": "18",
       "src": "https://samaiag.github.io/css-fun/egg/index.html",
       "title": "My first pure CSS illustration",
-      "description": "An egg-cellent addition to your CSS collection."
+      "description": "",
+      "link":""
     },
     {
       "cssId": "19",
-      "src": "https://samaiag.github.io/css-fun/butterfly/index.html",
-      "title": "A 'delicate' butterfly line draw try",
-      "description": "A delicate butterfly fluttering by."
+      "src": "https://samaiag.github.io/css-fun/cat/index.html",
+      "title": "A curious cat made with borders only",
+      "description": "",
+      "link":""
     },
     {
       "cssId": "20",
-      "src": "https://samaiag.github.io/css-fun/cat/index.html",
-      "title": "A curious car made with borders only",
-      "description": "A purr-fect feline friend in CSS."
+      "src": "https://samaiag.github.io/css-fun/githubLogo/index.html",
+      "title": "GitHub icon",
+      "description": "",
+      "link":"https://github.com/SamaiaG/css-fun"
     }
   ]
   

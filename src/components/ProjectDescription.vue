@@ -1,86 +1,136 @@
 <template>
-  <div class="project-description">
+  <div
+    class="project-description"
+    :style="index % 2 === 0 ? regularBackground : reversedBackground"
+    :class="{ 'reverse-layout': index % 2 === 1 }"
+  >
     <div class="left-part">
-      <p class="sub-tag">LATEST WORK</p>
-      <RouterLink :to="{ name: 'projectComponent', params: { projectId: projectId } }" class="title">{{title}}</RouterLink>
+      <img :src="isMobile ? imageMobile : imageSrc"  alt="project image" class="project-image" />
+    </div>
+    <div class="right-part">
+      <RouterLink 
+        :to="{ name: 'projectComponent', params: { projectId: projectId } }" 
+        class="title"
+      >
+        {{ title }}
+      </RouterLink>
       <div class="tags">
-        <div v-for="(tag, index) in tags" :key="index" :class="['tag', `t${index + 1}`]">
+        <div 
+          v-for="(tag, tagIndex) in tags" 
+          :key="tagIndex" 
+          class="tag"
+        >
           {{ tag }}
         </div>
       </div>
       <p class="description">
-        {{ description.slice(0, 200) + '...' }}
+        {{ shortDescription}}
       </p>
-    </div>
-    <div class="right-part">
-      <img :src="imageSrc" alt="project image" class="project-image" />
-    </div>
-    <BaseButton class="see-project">
-        <RouterLink :to="{ name: 'projectComponent', params: { projectId: projectId } }" class="h-link">see this project...</RouterLink>
-    </BaseButton>
+      <div class="see-project">
+        <RouterLink 
+          :to="{ name: 'projectComponent', params: { projectId: projectId } }" 
+          class="h-link"
+        >
+          See this project
+        </RouterLink> 
+        <SmallArrow /> 
+      </div>
+    </div>  
   </div>
 </template>
 
-
 <script setup>
-import BaseButton from '@/components/BaseButton.vue'
+import { ref, onMounted } from 'vue';
+import SmallArrow from './SmallArrow.vue';
 
 const props = defineProps({
   title: String,
-  description: String,
+  shortDescription: String,
   tags: Array,
   imageSrc: String,
-  projectLink: String,
-  projectId: String
-})
-</script>
+  imageMobile: String,
+  projectId: String,
+  index: Number,
+});
 
+const isMobile = ref(window.innerWidth <= 768);
+
+const handleResize = () => {
+  isMobile.value = window.innerWidth <= 768;
+};
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize);
+});
+
+const regularBackground = {
+  background: "linear-gradient(294deg, rgba(255,255,255,1) 40%, rgba(69,73,106,1) 100%)",
+};
+
+const reversedBackground = {
+  background: "linear-gradient(90deg, rgba(255,255,255,1) 40%, rgba(69,73,106,1) 100%)",
+};
+</script>
 
 <style scoped>
 .project-description {
+  position: relative; 
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin: 5vmin 0;
+  height: 60vh;
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
   align-items: center;
-  gap: 5vmin;
+  padding: 1.66rem;
+  gap: 5%;
+  z-index: 0; 
 }
-.left-part {
-  grid-column: 1/2;
-  grid-row: 1/2;
+
+.left-part,
+.right-part {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  width: 100%;
   gap: 3vmin;
+  width: 50%;
 }
-.right-part{
-  grid-column: 2/3;
-  grid-row: 1/3;
-  display: flex;
-  justify-content: center;
+
+.left-part {
   align-items: center;
+}
+.reverse-layout {
+  flex-direction: row-reverse;
+}
+
+.reverse-layout .left-part {
+  align-items: center; 
+  width: 50%;
+}
+
+.reverse-layout .right-part {
+  align-items: start; 
 }
 
 .title {
   font-size: 4vmin;
-  color: var(--color-text);
+  color: var(--primary-blue);
+  font-family: 'Barlow', sans-serif;
   text-decoration: none;
 }
-.title:hover{
+
+.title:hover {
   font-weight: 500;
-  color: var(--color-primary-dark);
 }
+
 .tag {
-  background-color: #f9efe7;
-  opacity: 0.8;
-  backdrop-filter: blur(10px) ;
+  background-color: var(--accent-peach);
+  backdrop-filter: blur(10px);
   padding: 0.5vmin 1vmin;
-  color: var(--color-text);
-  font-size: 1.2vmin;
-  border-radius: 5px;
+  color: var(--primary-blue);
+  font-size: 1.3vmin;
+  font-weight: 500;
 }
+
 .tags {
   width: 100%;
   display: flex;
@@ -88,82 +138,54 @@ const props = defineProps({
   align-items: center;
   gap: 1vmin;
 }
+
 .description {
-  color: black;
-  font-size: 2vmin;
+  color: var(--text-charcoal);
+  font-size: 1.7vmin;
+  font-family: 'Nunito', sans-serif;
 }
+
 .project-image {
-  height: 40vw;
+  width: 70%;
   margin-right: 1vmin;
   filter: drop-shadow(8px 8px 4px rgba(17, 12, 46, 0.2));
 }
+
 .see-project {
-  grid-column: 1/2;
-  grid-row: 2/3;
-  width: 25vmin;
-}
-.h-link {
-  color: white;
-  text-decoration: none;
-}
-.h-link:hover {
-  color: var(--color-primary);
-}
-.sub-tag {
-  font-size: 1.5vmin;
-  color: var(--color-text);
-  font-weight: 400;
-  align-self: self-start;
-  margin-bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 4vmin;
 }
 
-.see-project .h-link {
-  color: var(--color-text);
+.h-link {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.7vmin;
 }
-.see-project:hover .h-link {
-  color: white; 
+
+.h-link:hover {
+  text-shadow: 3px 0px 0px var(--accent-peach);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
-  .project-description {
-   display: flex;
-   flex-direction: column;
-   gap: 4vmin
+  .project-description{
+    height: auto;
   }
-  .left-part {
-    align-items: center;
-    gap: 4vmin
+  .tag {
+    display: none;
   }
-
-.see-project{
-  font-size: 12px;
-  padding: 0.5vmin 1.5vmin !important;
-  margin: 6vmin; 
-  align-self: end; 
-  background: transparent;
-  box-shadow: none;
-  width: auto
-}
-.h-link{
-  color: var(--color-primary);
-  font-weight: 600;
-}
-.tags {
-  justify-content: center;
-}
-.tag{
-  font-size: 2vmin;
-  padding: 1vmin 2vmin;
-}
-.title {
-  font-size: 28px;
-}
-.description{
-  font-size: 16px;
-  text-align: center;
-}
-.project-image {
-  height: 70vw;
-}
+  .project-image {
+    width: 100%;
+  }
+  .title{
+    font-size: 1.5rem;
+  }
+  .description, .h-link{
+    font-size: 0.8rem;
+  }
 }
 </style>
