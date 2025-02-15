@@ -6,14 +6,7 @@
           :key="index" 
           :src="image" 
           class="prototype-image" 
-          @click="openModal(image)"
         />
-      </div>
-  
-      <div v-if="modalOpen" class="modal" @click="closeModal">
-        <div class="image-bg">
-          <img :src="modalImage" class="modal-content" @click.stop />
-        </div>
       </div>
     </div>
   </template>
@@ -30,7 +23,6 @@
   const project = ref(null);
   const prototypeImages = ref([]);
   const modalOpen = ref(false);
-  const modalImage = ref('');
   const route = useRoute();
   
   onMounted(() => {
@@ -40,15 +32,7 @@
       prototypeImages.value = project.value.prototypeImage;
     }
   });
-  
-  const openModal = (imageSrc) => {
-    modalImage.value = imageSrc;
-    modalOpen.value = true;
-  };
-  
-  const closeModal = () => {
-    modalOpen.value = false;
-  };
+
   </script>
   
   <style scoped>
@@ -76,28 +60,6 @@
   .prototype-image:hover {
     transform: scale(1.1);
   }
-  
-  .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .image-bg {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .modal-content {
-    max-width: 90%;
-    max-height: 90%;
-    background:rgba(0, 0, 0, 0.3);
-  }
+
   </style>
   

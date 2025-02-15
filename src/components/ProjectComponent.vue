@@ -345,7 +345,7 @@ const closeModal = () => {
 .project-details1{
   width: 100%;
   display: grid;
-  grid-template-columns: 33% 0.3vmin 33% 0.3vmin 33%;
+  grid-template-columns: auto 0.3vmin auto 0.3vmin auto;
 }
 
  .user-persona{
@@ -598,9 +598,7 @@ const closeModal = () => {
 .paragraph{
   font-size: 1rem;
 }
-.project-details1{
-  
-}
+
 .pd-list{
   flex-direction: column;
 }

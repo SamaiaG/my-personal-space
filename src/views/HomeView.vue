@@ -207,7 +207,7 @@ onMounted(() => {
     font-size: 8vw;
   }
   .description{
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .nav{
     display: none;

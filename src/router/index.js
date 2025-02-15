@@ -4,7 +4,6 @@ import ProjectComponent from '@/components/ProjectComponent.vue'
 import ListedPortfolioView from '@/views/ListedPortfolioView.vue'
 import AboutView from '@/views/AboutView.vue'
 import CssFun from '@/views/CssFun.vue'
-import AllProjectsView from '@/views/AllProjectsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,11 +33,6 @@ const router = createRouter({
       path: '/cssfun',
       name: 'cssfun',
       component: CssFun
-    },
-    {
-      path: '/allprojects',
-      name: 'allprojects',
-      component: AllProjectsView
     }
   ]
 })

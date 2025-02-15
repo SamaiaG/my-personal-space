@@ -108,6 +108,12 @@ a:hover {
   z-index: 9999;
 }
 
+@media (max-width: 1024px) {
+  .h-link {
+  font-size: 2vmin;
+}
+}
+
 @media (max-width: 768px) {
   .nav-wide{
     display: none;
