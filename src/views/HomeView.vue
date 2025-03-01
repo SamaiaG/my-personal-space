@@ -5,7 +5,7 @@
         <div class="left-part">
           <h1 class="title">Hi and welcome!</h1>
           <p class="description">
-            I am Samaia - a newbie designer, and this is the place I created to put things together.
+            I am Samaia - a <em>Junior UX/UI Designer</em>, and this is the place I created to put the things together.
           </p>
           <div class="nav">
             <RouterLink to="/portfolio" class="nav-link">Projects</RouterLink> +
