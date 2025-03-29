@@ -51,10 +51,10 @@
       </div> 
     
     <div class="attachements div6">
-      <a class="att" target="_blank" href="https://drive.google.com/file/d/1PmFdRKRVGy3U6JymA_Eszwwvy6mw2Kjt/view?usp=sharing">
+      <a class="att" target="_blank" href="https://drive.google.com/file/d/1fALXPY6uVUhq2nJWPaATM70AdJMNwHb0/view?usp=drive_link">
         <img src="@/assets/images/icons/CVde.png" class="at-icon">
       </a>
-      <a class="att" target="_blank" href="https://drive.google.com/file/d/1AcrR73pcFjFX-6XMqOLFWZvH8ZG2B178/view?usp=sharing">
+      <a class="att" target="_blank" href="https://drive.google.com/file/d/1fN2DJIVfU1s-37_e7g2v2xgXceXt2nr_/view?usp=drive_link">
         <img src="@/assets/images/icons/CVen.png" class="at-icon">
       </a>
       <a class="att" target="_blank" href="https://www.credly.com/badges/766b4fc6-20e0-4f0e-a35e-c168a9a64be1/public_url">

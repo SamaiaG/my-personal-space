@@ -61,6 +61,5 @@ h2{
 p {
   font-size: 2vmin;
   font-weight: 400;
-  letter-spacing: 1.5px;
   color: var(--text-charcoal)!important;
 }
